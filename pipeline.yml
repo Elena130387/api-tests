@@ -1,0 +1,41 @@
+trigger: none
+
+name: $(Date:dd-MM-yyyy_HH-mm)
+
+# variables:
+# - group: test-credentials
+
+pool: Default
+
+jobs:
+  - job: Tests
+    timeoutInMinutes: 10
+    displayName: API_Tests
+    workspace:
+      clean: all
+    variables:
+      - name: API_DIR
+        value: $(Build.SourcesDirectory)/tests
+      - name: NODE_OPTIONS
+        value: --max-old-space-size=8192
+    steps:
+      - task: Bash@3
+        displayName: 'Yarn install'
+        inputs:
+          workingDirectory: '$(Build.SourcesDirectory)'
+          targetType: 'inline'
+          script: 'yarn install'
+      - task: Bash@3
+        displayName: 'Yarn install'
+        inputs:
+          workingDirectory: '$(Build.SourcesDirectory)'
+          targetType: 'inline'
+          script: 'printenv'
+
+      - task: Bash@3
+        displayName: 'Run tests'
+        inputs:
+          workingDirectory: '$(Build.SourcesDirectory)'
+          targetType: 'inline'
+          script: |
+            yarn run mocha --require ts-node/register ./tests/**/*.ts
