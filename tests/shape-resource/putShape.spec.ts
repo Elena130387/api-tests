@@ -14,6 +14,7 @@ describe('put created shape', function() {
 
     afterEach('delete shape', async function () {
         const response = await callRestApi(`${shapeUrl}/${this.shapeId}`, getRestBody('DELETE', null))
+
         assert(isEmpty(response.body))
 
         const getDeletedShape = await callRestApi(`${shapeUrl}/${this.shapeId}`, getRestBody('GET', null))
