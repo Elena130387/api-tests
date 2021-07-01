@@ -15,16 +15,15 @@ jobs:
       - name: NODE_OPTIONS
         value: --max-old-space-size=8192
     steps:
-      - task: Bash@3
-        displayName: 'Yarn install'
+      - task: NodeTool@0
+        displayName: 'Install Node.js'
         inputs:
-          targetType: 'inline'
-          script: 'npm install -g npm && npm install -g yarn'
+          versionSpec: '12.x'
       - task: Bash@3
         displayName: 'install dependency'
         inputs:
           targetType: 'inline'
-          script: 'yarn install'
+          script: 'npm install -g yarn && yarn install'
       - task: Bash@3
         displayName: 'Run tests'
         inputs:
