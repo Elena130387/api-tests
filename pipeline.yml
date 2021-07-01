@@ -10,32 +10,27 @@ pool: Syncretis-Ubuntu
 jobs:
   - job: Tests
     timeoutInMinutes: 10
-    displayName: API_Tests
+    displayName: api_Tests
     workspace:
       clean: all
     variables:
-      - name: API_DIR
-        value: $(Build.SourcesDirectory)/api-tests
       - name: NODE_OPTIONS
         value: --max-old-space-size=8192
     steps:
       - task: Bash@3
         displayName: 'Yarn install'
         inputs:
-          workingDirectory: '$(Build.SourcesDirectory)/api-tests'
           targetType: 'inline'
           script: 'yarn install'
       - task: Bash@3
         displayName: 'Yarn install'
         inputs:
-          workingDirectory: '$(Build.SourcesDirectory)/api-tests'
           targetType: 'inline'
           script: 'printenv'
 
       - task: Bash@3
         displayName: 'Run tests'
         inputs:
-          workingDirectory: '$(Build.SourcesDirectory)/api-tests'
           targetType: 'inline'
           script: |
             yarn run mocha --require ts-node/register ./tests/**/*.ts
