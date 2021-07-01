@@ -10,7 +10,7 @@ pool: Syncretis-Ubuntu
 resources:
   containers:
     - container: node
-      image: node:16.3-alpine
+      image: alpine:latest
       options: --add-host exro-dev.syncretis.com:51.138.95.195 --entrypoint ""
 
 
