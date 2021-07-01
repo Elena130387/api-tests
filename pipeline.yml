@@ -7,18 +7,23 @@ name: $(Date:dd-MM-yyyy_HH-mm)
 
 pool: Syncretis-Ubuntu
 
+resources:
+  containers:
+    - container: node
+      image: node:16.3-alpine
+
+
 jobs:
   - job: Tests
     timeoutInMinutes: 10
     displayName: api_Tests
+    workspace:
+      clean: all
+    container: node
     variables:
       - name: NODE_OPTIONS
         value: --max-old-space-size=8192
     steps:
-      - task: NodeTool@0
-        displayName: 'Install Node.js'
-        inputs:
-          versionSpec: '14.x'
       - task: Bash@3
         displayName: 'install dependency'
         inputs:
