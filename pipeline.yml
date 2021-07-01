@@ -11,7 +11,7 @@ resources:
   containers:
     - container: node
       image: node:16.3-alpine
-      options: --add-host exro-dev.syncretis.com:51.138.95.195
+      options: --add-host exro-dev.syncretis.com:51.138.95.195 --entrypoint "" 
 
 
 jobs:
