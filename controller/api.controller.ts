@@ -38,3 +38,4 @@ export const callRestApi = async (
 
     return response.body ? JSON.parse(response.body) : response
 }
+

@@ -7,35 +7,32 @@ name: $(Date:dd-MM-yyyy_HH-mm)
 
 pool: Syncretis-Ubuntu
 
+resources:
+  containers:
+    - container: node
+      image: node:16.3-alpine
+      options: --add-host exro-dev.syncretis.com:51.138.95.195 --entrypoint ""
+
+
 jobs:
   - job: Tests
     timeoutInMinutes: 10
-    displayName: API_Tests
+    displayName: api_Tests
     workspace:
       clean: all
+    container: node
     variables:
-      - name: API_DIR
-        value: $(Build.SourcesDirectory)/api-tests
       - name: NODE_OPTIONS
         value: --max-old-space-size=8192
     steps:
       - task: Bash@3
-        displayName: 'Yarn install'
+        displayName: 'install dependency'
         inputs:
-          workingDirectory: '$(Build.SourcesDirectory)/api-tests'
           targetType: 'inline'
-          script: 'yarn install'
-      - task: Bash@3
-        displayName: 'Yarn install'
-        inputs:
-          workingDirectory: '$(Build.SourcesDirectory)/api-tests'
-          targetType: 'inline'
-          script: 'printenv'
-
+          script: 'npm install -g yarn && yarn install'
       - task: Bash@3
         displayName: 'Run tests'
         inputs:
-          workingDirectory: '$(Build.SourcesDirectory)/api-tests'
           targetType: 'inline'
           script: |
-            yarn run mocha --require ts-node/register ./tests/**/*.ts
+            yarn jest

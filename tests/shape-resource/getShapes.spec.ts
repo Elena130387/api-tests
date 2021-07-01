@@ -1,7 +1,5 @@
 import {getShapesCountQuery, shapeUrl} from "../../helper/urls";
 import {callRestApi, getRestBody} from "../../controller/api.controller";
-import assert from "assert";
-import {defaultText} from "../../helper/errors";
 
 describe('Get shapes by count', function () {
     const COUNT = 20
@@ -9,6 +7,6 @@ describe('Get shapes by count', function () {
     it(`successfully get first ${COUNT} shapes`, async function () {
         const response = await callRestApi(shapeUrl, getRestBody('GET', null, getShapesCountQuery(COUNT)))
 
-        assert.equal(response.length, COUNT, defaultText('count', COUNT, response.length) )
+        expect(response.length).toEqual(COUNT)
     })
 })
