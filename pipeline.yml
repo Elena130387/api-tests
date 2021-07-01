@@ -19,7 +19,7 @@ jobs:
         displayName: 'Yarn install'
         inputs:
           targetType: 'inline'
-          script: 'npm install --global yarn'
+          script: 'npm install -g npm && npm install -g yarn'
       - task: Bash@3
         displayName: 'install dependency'
         inputs:
