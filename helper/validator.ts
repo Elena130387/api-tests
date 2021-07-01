@@ -1,7 +1,6 @@
 import SwaggerParser from "@apidevtools/swagger-parser";
 import Ajv from "ajv";
 
-
 export const loadApiSpec = async (url: string | undefined) => SwaggerParser.dereference(url)
 
 export const validate = (schema: any, body: any) => {
