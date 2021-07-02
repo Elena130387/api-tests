@@ -4,5 +4,5 @@ module.exports = {
 };
 
 process.env = Object.assign(process.env, {
-  MAIN_URL: 'http://exro-dev.syncretis.com/',
+  MAIN_URL: 'https://exro-dev.syncretis.com/',
 });

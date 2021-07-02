@@ -1,4 +1,4 @@
-export const swaggerUrl = 'http://exro-dev.syncretis.com'
+export const swaggerUrl = 'https://exro-dev.syncretis.com'
 export const shapeUrl = `${swaggerUrl}/calculation-management/shapes`
 export const executionsUrl = `${swaggerUrl}/estimator/executions`
 
