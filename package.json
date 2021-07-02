@@ -6,7 +6,8 @@
   "scripts": {
     "prepush": "yarn run lint",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "NikolayKozub <Nikolay.Kozub@syncretis.com>",
   "license": "MIT",

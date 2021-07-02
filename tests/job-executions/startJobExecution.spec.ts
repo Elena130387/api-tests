@@ -4,9 +4,8 @@ import { startJobObj } from "../../requests/executions/startJob";
 describe('start job execution', function() {
     const SHAPE_ID = 2262
 
-    it.only('successfully start job execution',async function () {
+    it('successfully start job execution',async function () {
         const {MAIN_URL} = process.env
-        console.log('MAIN URL', MAIN_URL)
         const response = await callRestApi(`${MAIN_URL}estimator/executions`, getRestBody('POST', startJobObj(true, SHAPE_ID)))
 
         const {exitCode, status, tilesDone, tilesTotal, testDataGenerating, shape} = response.jobExecution

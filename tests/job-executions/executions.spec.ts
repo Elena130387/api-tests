@@ -6,7 +6,6 @@ describe('find job executions', function() {
     const OFFSET = 0
 
     it('successfully find job executions',async function () {
-        console.log('name', process.env.MAIN_URL)
         const response = await callRestApi(executionsUrl, getRestBody('GET', null, executionsQuery(LIMIT, OFFSET)))
 
         const {links, content} = response
