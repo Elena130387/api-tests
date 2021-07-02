@@ -11,7 +11,6 @@ resources:
   containers:
     - container: node
       image: alpine:latest
-      options: --add-host exro-dev.syncretis.com:51.138.95.195 --entrypoint=""
 
 jobs:
   - job: Tests
