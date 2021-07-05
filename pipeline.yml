@@ -5,12 +5,13 @@ name: $(Date:dd-MM-yyyy_HH-mm)
 # variables:
 # - group: test-credentials
 
-pool: Syncretis-Ubuntu
+pool: Default
 
 resources:
   containers:
     - container: node
-      image: alpine:latest
+      image: node:14
+
 
 jobs:
   - job: Tests
@@ -27,7 +28,7 @@ jobs:
         displayName: 'install dependency'
         inputs:
           targetType: 'inline'
-          script: 'npm install -g yarn && yarn install'
+          script: 'npm install yarn && yarn install'
       - task: Bash@3
         displayName: 'Run tests'
         inputs:
