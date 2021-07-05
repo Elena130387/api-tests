@@ -1,11 +1,13 @@
+import { DAY } from "../../helper/date";
+
 export const startJobObj = (forceProcessing: boolean, shapeId: number) => ({
   forceProcessing,
   "initialPolygons": [
         {
             "coordinates": [
                 {
-                    "lat": 25.99345622,
-                    "lon": -80.19969094
+                    "lat": +`25.993456${DAY}`,
+                    "lon": +`-80.199690${DAY}`
                 },
                 {
                     "lat": 25.97986877,
@@ -22,8 +24,8 @@ export const startJobObj = (forceProcessing: boolean, shapeId: number) => ({
         {
             "coordinates": [
                 {
-                    "lat": 25.99345622,
-                    "lon": -80.19969094
+                    "lat": +`25.993456${DAY}`,
+                    "lon": +`-80.199690${DAY}`
                 },
                 {
                     "lat": 25.97986877,
