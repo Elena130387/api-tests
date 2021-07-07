@@ -10,7 +10,7 @@ pool: Default
 resources:
   containers:
     - container: node
-      image: node:14
+      image: node:15
 
 
 jobs:
