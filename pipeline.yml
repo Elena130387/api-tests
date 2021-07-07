@@ -1,0 +1,37 @@
+trigger: none
+
+name: $(Date:dd-MM-yyyy_HH-mm)
+
+# variables:
+# - group: test-credentials
+
+pool: Default
+
+resources:
+  containers:
+    - container: node
+      image: node:15
+
+
+jobs:
+  - job: Tests
+    timeoutInMinutes: 10
+    displayName: api_Tests
+    workspace:
+      clean: all
+    container: node
+    variables:
+      - name: NODE_OPTIONS
+        value: --max-old-space-size=8192
+    steps:
+      - task: Bash@3
+        displayName: 'install dependency'
+        inputs:
+          targetType: 'inline'
+          script: 'npm install yarn && yarn install'
+      - task: Bash@3
+        displayName: 'Run tests'
+        inputs:
+          targetType: 'inline'
+          script: |
+            yarn jest
