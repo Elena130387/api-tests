@@ -1,3 +1,4 @@
+
 import {getShapesCountQuery} from "../../helper/urls";
 import {callRestApi, getRestBody} from "../api.controller";
 import {simpleShapeObject} from "../../requests/shape-resource/createNewShape";
@@ -11,3 +12,17 @@ export const getShapeByCount = (count:number) => callRestApi(CALCULATION_URL, ge
 export const deleteShapeById = (shapeId: number) =>  callRestApi(`${CALCULATION_URL}/${shapeId}`, getRestBody('DELETE', null))
 export const createShape = (name: string) =>  callRestApi(CALCULATION_URL, getRestBody('POST', simpleShapeObject(name)))
 export const renameShapeById = (shapeId: number, name: string) =>  callRestApi(`${CALCULATION_URL}/${shapeId}`, getRestBody('PUT', renameShape(name)))
+
+export async function waitWhenAllProcessDone (shapeId: number) {
+    await new Promise((r) => setTimeout(r, 1000));
+
+    const response = await getShapeById(shapeId)
+    const {total, completed} = response.progress
+
+    if(total > 0 && total === completed) {
+        expect(total).toEqual(completed)
+
+        return
+    }
+    await waitWhenAllProcessDone(shapeId)
+}

@@ -20,3 +20,5 @@ export const validate = (schema: any, body: any) => {
         throw new Error(`Invalid schema: ${JSON.stringify({errors: validate.errors, response: body}, null, 2)}`)
     }
 }
+
+export const prettyJSON = (obj:any) => JSON.stringify(obj, null, 2)
