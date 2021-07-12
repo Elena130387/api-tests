@@ -27,7 +27,7 @@ describe('wait when progress shape will done', function () {
         expect(__typename).toEqual('Shape')
     })
 
-    it(`successfully completed progress`, async function () {
+    it('successfully completed progress', async function () {
         await waitWhenAllProcessDone(shapeId)
     },  15000)
 })
