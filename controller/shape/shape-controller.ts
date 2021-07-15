@@ -28,15 +28,12 @@ export async function waitWhenAllProcessDone (shapeId: number) {
 }
 
 export async function waitWhenProcessStopped (shapeId: number) {
-    console.log('id', shapeId)
     const STATUS = 'stopped'
+
     await new Promise((r) => setTimeout(r, 1000));
 
     const response = await getShapeById(shapeId)
     const {status, polygons} = response
-
-    console.log('status', status)
-    console.log('POLYGON', polygons[0].status)
 
     if(status === STATUS && polygons[0].status === STATUS) {
        ;[status, polygons[0].status].forEach(el => expect(el).toEqual(STATUS))

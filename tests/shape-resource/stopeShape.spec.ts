@@ -31,7 +31,6 @@ describe('stop creating shape', function() {
 
     it('stop running shape process', async function () {
         const response = await stopShape(shapeId)
-        console.log('response', response)
         const {name} = response.data.stopCalculation
 
         expect(name).toEqual(NAME)
