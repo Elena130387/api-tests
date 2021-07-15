@@ -2,6 +2,7 @@ import {query} from "./query";
 import {callRestApi, getRestBody} from "../api.controller";
 import {LOCAL_TIME} from "../../helper/date";
 import { defaultGraphShapeObj } from "../../requests/graphql/createShape";
+import { getFacade } from "../../requests/graphql/facade";
 
 const {MAIN_URL} = process.env
 export const GRAPH_URL = `${MAIN_URL}/graphql`
@@ -17,6 +18,14 @@ export const allShapesGqlObj = () => ({
         variables: {},
         query: query.getAll,
     })
+
+export const getFacadeObj = (params: any) => ({
+    operationName: 'getFacade',
+    variables: {...params},
+    query: query.facade,
+})
+
+export const createFacade = () => callRestApi(GRAPH_URL, getRestBody('POST', getFacadeObj(getFacade)))
 
 export const createGqlShape = (coordinates: number[][]) =>
     callRestApi(GRAPH_URL, getRestBody('POST', createGqlObj(
