@@ -2,7 +2,6 @@ import {
     createGqlShape,
 } from "../../controller/graphql/shape";
 import {deleteShapeById, getShapeById} from "../../controller/shape/shape-controller";
-import {isEmpty} from "../../helper/checkValue";
 import { simpleCoordinates } from "../../requests/graphql/createShape";
 
 describe('create new graphql shape', function() {
@@ -10,10 +9,10 @@ describe('create new graphql shape', function() {
 
     afterAll(async function () {
         const response = await deleteShapeById(shapeId)
-        expect(isEmpty(response.body))
+        expect(response.body).toMatchObject({})
 
         const getDeletedShape = await getShapeById(shapeId)
-        expect(isEmpty(getDeletedShape.body))
+        expect(getDeletedShape.body).toMatchObject({})
     })
 
     it('successfully create shape',async function () {

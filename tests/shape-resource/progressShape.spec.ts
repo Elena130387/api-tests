@@ -3,7 +3,6 @@ import {
     getShapeById,
     waitWhenAllProcessDone
 } from "../../controller/shape/shape-controller";
-import {isEmpty} from "../../helper/checkValue";
 import {createGqlShape} from "../../controller/graphql/shape";
 import {smallCoordinates} from "../../requests/graphql/createShape";
 
@@ -12,10 +11,10 @@ describe('wait when progress shape will done', function () {
 
     afterAll(async function () {
         const response = await deleteShapeById(shapeId)
-        expect(isEmpty(response.body))
+        expect(response.body).toMatchObject({})
 
         const getDeletedShape = await getShapeById(shapeId)
-        expect(isEmpty(getDeletedShape.body))
+        expect(getDeletedShape.body).toMatchObject({})
     })
 
     it('successfully create shape',async function () {

@@ -1,5 +1,4 @@
 import {FULLDATE} from "../../helper/date";
-import { isEmpty } from "../../helper/checkValue";
 import {createShape, deleteShapeById, getShapeById} from "../../controller/shape/shape-controller";
 
 describe('create new shape', function() {
@@ -9,10 +8,10 @@ describe('create new shape', function() {
 
     afterAll(async function () {
         const response = await deleteShapeById(shapeId)
-        expect(isEmpty(response.body))
+        expect(response.body).toMatchObject({})
 
         const getDeletedShape = await getShapeById(shapeId)
-        expect(isEmpty(getDeletedShape.body))
+        expect(getDeletedShape.body).toMatchObject({})
     })
 
     it('successfully create new shape',async function () {

@@ -1,5 +1,4 @@
 import {findRunningJob} from "../../controller/job-execution/job-executions-controller";
-import {isEmpty} from "../../helper/checkValue";
 import {deleteShapeById, getShapeById} from "../../controller/shape/shape-controller";
 import {createGqlShape} from "../../controller/graphql/shape";
 import {smallCoordinates} from "../../requests/graphql/createShape";
@@ -18,10 +17,11 @@ describe('fined running job', function() {
 
     afterAll(async function () {
         const response = await deleteShapeById(shapeId)
-        expect(isEmpty(response.body))
+        expect(response.body).toMatchObject({})
 
         const getDeletedShape = await getShapeById(shapeId)
-        expect(isEmpty(getDeletedShape.body))
+        expect(getDeletedShape.body).toMatchObject({})
+
     })
 
     it('fined running job',async function () {
