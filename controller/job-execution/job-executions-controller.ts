@@ -8,3 +8,5 @@ const EXECUTIONS_URL = `${MAIN_URL}/estimator/executions`
 export const findJobExecutions = (limit: number, offset: number) => callRestApi(EXECUTIONS_URL, getRestBody('GET', null, executionsQuery(limit, offset)))
 export const getJobExecutionsById = (shapeId: number) => callRestApi(`${EXECUTIONS_URL}/${shapeId}`, getRestBody('GET', null))
 export const startJobExecution = (forceProcessing: boolean, shapeId: number) =>  callRestApi(EXECUTIONS_URL, getRestBody('POST', startJobObj(forceProcessing, shapeId)))
+export const deleteJobExecution = ( shapeId: number) =>  callRestApi(EXECUTIONS_URL, getRestBody('DELETE', null, `?ids=${shapeId}`))
+export const findRunningJob = () =>  callRestApi(`${EXECUTIONS_URL}/running`, getRestBody('GET', null))
