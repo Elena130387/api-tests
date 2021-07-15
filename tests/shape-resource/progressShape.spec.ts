@@ -5,16 +5,17 @@ import {
 } from "../../controller/shape/shape-controller";
 import {createGqlShape} from "../../controller/graphql/shape";
 import {smallCoordinates} from "../../requests/graphql/createShape";
+import {isEmpty} from "../../helper/checkValue";
 
 describe('wait when progress shape will done', function () {
     let shapeId: number;
 
     afterAll(async function () {
         const response = await deleteShapeById(shapeId)
-        expect(response.body).toMatch("")
+        expect(isEmpty(response.body))
 
         const getDeletedShape = await getShapeById(shapeId)
-        expect(getDeletedShape.body).toMatch("")
+        expect(isEmpty(getDeletedShape.body))
     })
 
     it('successfully create shape',async function () {

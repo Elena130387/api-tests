@@ -17,10 +17,10 @@ describe('fined running job', function() {
 
     afterAll(async function () {
         const response = await deleteShapeById(shapeId)
-        expect(response.body).toMatch("")
+        expect(response.body).toEqual("")
 
         const getDeletedShape = await getShapeById(shapeId)
-        expect(getDeletedShape.body).toMatch("")
+        expect(getDeletedShape.body).toEqual("")
 
     })
 
