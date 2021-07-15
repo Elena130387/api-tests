@@ -25,7 +25,14 @@ export const getFacadeObj = (params: any) => ({
     query: query.facade,
 })
 
+export const stopShapeObj = (id: number) => ({
+    operationName: 'stopShape',
+    variables: {id},
+    query: query.stop,
+})
+
 export const createFacade = () => callRestApi(GRAPH_URL, getRestBody('POST', getFacadeObj(getFacade)))
+export const stopShape = (id: number) => callRestApi(GRAPH_URL, getRestBody('POST', stopShapeObj(id)))
 
 export const createGqlShape = (coordinates: number[][]) =>
     callRestApi(GRAPH_URL, getRestBody('POST', createGqlObj(
