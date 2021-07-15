@@ -11,10 +11,10 @@ describe('wait when progress shape will done', function () {
 
     afterAll(async function () {
         const response = await deleteShapeById(shapeId)
-        expect(response.body).toMatchObject({})
+        expect(response.body).toMatch("")
 
         const getDeletedShape = await getShapeById(shapeId)
-        expect(getDeletedShape.body).toMatchObject({})
+        expect(getDeletedShape.body).toMatch("")
     })
 
     it('successfully create shape',async function () {

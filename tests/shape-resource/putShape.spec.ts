@@ -9,11 +9,11 @@ describe('put created shape', function() {
 
     afterAll(async function () {
         const response = await deleteShapeById(shapeId)
-        expect(response.body).toMatchObject({})
+        expect(response.body).toMatch("")
 
 
         const getDeletedShape = await getShapeById(shapeId)
-        expect(getDeletedShape.body).toMatchObject({})
+        expect(getDeletedShape.body).toMatch("")
     })
 
     it('successfully rename shape',async function () {
@@ -25,7 +25,7 @@ describe('put created shape', function() {
         expect(typeof id).toEqual('number')
 
         const renameResponse = await renameShapeById(id, UPDATE_NAME)
-        expect(renameResponse.body).toMatchObject({})
+        expect(renameResponse.body).toMatch("")
 
 
         const getUpdatedShape = await getShapeById(id)

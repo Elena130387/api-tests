@@ -8,10 +8,10 @@ describe('create new shape', function() {
 
     afterAll(async function () {
         const response = await deleteShapeById(shapeId)
-        expect(response.body).toMatchObject({})
+        expect(response.body).toMatch("")
 
         const getDeletedShape = await getShapeById(shapeId)
-        expect(getDeletedShape.body).toMatchObject({})
+        expect(getDeletedShape.body).toMatch("")
     })
 
     it('successfully create new shape',async function () {
