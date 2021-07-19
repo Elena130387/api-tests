@@ -29,5 +29,5 @@ describe('wait when progress shape will done', function () {
 
     it('successfully completed progress', async function () {
         await waitWhenAllProcessDone(shapeId)
-    },  15000)
+    },  20000)
 })
