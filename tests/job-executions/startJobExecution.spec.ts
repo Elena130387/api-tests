@@ -4,7 +4,7 @@ import { startJobObj } from "../../requests/executions/startJob";
 describe('start job execution', function() {
     const SHAPE_ID = 2262
 
-    it("successfully start job execution",async function () {
+    it('successfully start job execution',async function () {
         const response = await startJobExecution(true, SHAPE_ID)
 
         const {exitCode, status, tilesDone, tilesTotal, testDataGenerating, shape, polygon} = response.jobExecution
