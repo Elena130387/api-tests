@@ -11,13 +11,13 @@ export const createGqlObj = (createShapeObj: any) => ({
         operationName: 'createShape',
         variables: { input:{...createShapeObj}},
         query: query.create,
-    })
+})
 
 export const allShapesGqlObj = () => ({
         operationName: 'getShapes',
         variables: {},
         query: query.getAll,
-    })
+})
 
 export const getFacadeObj = (params: any) => ({
     operationName: 'getFacade',
