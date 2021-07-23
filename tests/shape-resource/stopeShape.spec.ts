@@ -1,25 +1,14 @@
 import {FULLDATE} from "../../helper/date";
 import {
     createShape,
-    deleteShapeById,
-    getShapeById,
     waitWhenProcessStopped
 } from "../../controller/shape/shape-controller";
-import {isEmpty} from "../../helper/checkValue";
 import {stopShape} from "../../controller/graphql/shape";
 
 describe('stop creating shape', function() {
     let shapeId: number
     const STATUS = 'starting'
     const NAME = `new test: ${FULLDATE}`
-
-    afterAll(async function () {
-        const response = await deleteShapeById(shapeId)
-        expect(isEmpty(response.body))
-
-        const getDeletedShape = await getShapeById(shapeId)
-        expect(isEmpty(getDeletedShape.body))
-    })
 
     it('successfully create new shape',async function () {
         const response = await createShape(NAME)

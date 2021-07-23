@@ -1,5 +1,5 @@
 import {FULLDATE} from "../../helper/date";
-import {createShape, deleteShapeById, getShapeById, renameShapeById} from "../../controller/shape/shape-controller";
+import {createShape, getShapeById, renameShapeById} from "../../controller/shape/shape-controller";
 import {isEmpty} from "../../helper/checkValue";
 
 describe('put created shape', function() {
@@ -7,15 +7,6 @@ describe('put created shape', function() {
     const STATUS = 'starting'
     const NAME = `new test: ${FULLDATE}`
     const UPDATE_NAME = FULLDATE
-
-    afterAll(async function () {
-        const response = await deleteShapeById(shapeId)
-        expect(isEmpty(response.body))
-
-
-        const getDeletedShape = await getShapeById(shapeId)
-        expect(isEmpty(getDeletedShape.body))
-    })
 
     it('successfully rename shape',async function () {
         const response = await createShape(NAME)

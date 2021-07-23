@@ -1,18 +1,9 @@
-import {deleteShapeById, getShapeById, waitWhenAllProcessDone} from "../../controller/shape/shape-controller";
-import {isEmpty} from "../../helper/checkValue";
+import {waitWhenAllProcessDone} from "../../controller/shape/shape-controller";
 import {createGqlMultiShape} from "../../controller/graphql/shape";
 import {LAAirportAndDowntown} from "../../requests/graphql/createShape";
 
 xdescribe('wait when progress LA shape will done', function () {
     let shapeId: number;
-
-    afterAll(async function () {
-        const response = await deleteShapeById(shapeId)
-        expect(isEmpty(response.body))
-
-        const getDeletedShape = await getShapeById(shapeId)
-        expect(isEmpty(getDeletedShape.body))
-    })
 
     it('successfully create LA shape',async function () {
         const response = await createGqlMultiShape(LAAirportAndDowntown, `LA auto-test`)
