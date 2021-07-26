@@ -34,8 +34,14 @@ export const callRestAndCheckSchema = async (
 export const callRestApi = async (
     baseUrl: string,
     getRestBody: any) => {
-    const response = await got(`${baseUrl}`, {...getRestBody})
+    try {
+        const response = await got(`${baseUrl}`, {...getRestBody})
+        console.log('body data', response.body)
 
-    return response.body ? JSON.parse(response.body) : response
+        return response.body ? JSON.parse(response.body) : response
+
+    } catch (error) {
+        console.log(error.response.body);
+    }
 }
 
