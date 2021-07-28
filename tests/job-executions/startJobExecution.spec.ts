@@ -1,7 +1,7 @@
 import { startJobExecution } from "../../controller/job-execution/job-executions-controller";
 import { startJobObj } from "../../requests/executions/startJob";
 
-describe('start job execution', function() {
+xdescribe('start job execution', function() {
     const SHAPE_ID = 2262
 
     it('successfully start job execution',async function () {
