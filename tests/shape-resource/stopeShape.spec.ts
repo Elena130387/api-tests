@@ -25,5 +25,5 @@ describe('stop creating shape', function() {
         expect(name).toEqual(NAME)
 
         await waitWhenProcessStopped(shapeId)
-    }, 20000)
+    }, 35000)
 })
