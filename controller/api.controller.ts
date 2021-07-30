@@ -36,12 +36,9 @@ export const callRestApi = async (
     getRestBody: any) => {
     try {
         const response = await got(`${baseUrl}`, {...getRestBody})
-        console.log('body data', response.body)
-
         return response.body ? JSON.parse(response.body) : response
 
     } catch (error) {
         console.log(error.response.body);
     }
 }
-
