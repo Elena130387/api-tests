@@ -42,3 +42,8 @@ export async function waitWhenProcessStopped (shapeId: number) {
     }
     await waitWhenProcessStopped(shapeId)
 }
+
+export const messages = {
+    toLargeShape: 'Maximum area size limit 50000 km² per 1 month reached. The maximum area size you can create now is',
+    aLotRunningShapes: 'There are already 5 in progress. You cannot create shape at the moment'
+}
