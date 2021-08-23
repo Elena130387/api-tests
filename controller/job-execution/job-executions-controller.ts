@@ -34,21 +34,20 @@ export const getFilteredJobExecutionsById = (
 
 export async function getIdsExecutions(id: number) {
   const response = await getShapeById(id);
-  let arrIdsExecutions: number[] = [];
-  response.polygons.forEach((el: any) => {
-    arrIdsExecutions.push(el.estimatorJobId);
-  });
-  return arrIdsExecutions;
+  return response.polygons.map((el: any) => el.estimatorJobId);
 }
 
-export const parsePath = (str: string) => {
-  let list: any = str.split("."),
-    endArray: any = [];
-  list.forEach((el: any) => endArray.push([el]));
-  return endArray;
-};
+export const parsePath = (str: string) => str.split(".");
 
-export const calcCountFromTile = async (
+let arr = ["test", "data", "path"];
+function getData(obj: [], arr: any) {
+  if (!arr.length) {
+    return obj;
+  }
+  arr.forEach((el: any, idx: any) => getData(obj[el], arr.slice(idx + 1)));
+}
+
+export const calcCountFromTile = (
   obj: [],
   path: string,
   roundTo: number = 18
@@ -59,11 +58,7 @@ export const calcCountFromTile = async (
   return count;
 };
 
-export const calcObjFromTile = async (
-  obj: [],
-  nameObject: string,
-  path: string
-) => {
+export const calcObjFromTile = (obj: [], nameObject: string, path: string) => {
   let count = 0,
     arr = parsePath(path);
   obj.forEach((el: any) => {

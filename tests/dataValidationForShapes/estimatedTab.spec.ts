@@ -23,7 +23,7 @@ describe("data validation for getShape Estimated Tab", function () {
 
   it("successfully calculated obj count", async function () {
     const { small } = summary.objects;
-    const smallVehicle = await getSmallObjOfShape(small, "small-vehicle");
+    const smallVehicle = getSmallObjOfShape(small, "small-vehicle");
 
     let smallVehicleCount: number = 0;
     for (let id of listEstimatorJobId) {
@@ -32,7 +32,7 @@ describe("data validation for getShape Estimated Tab", function () {
         "object_detection"
       );
       const def = response.jobExecution.tiles.default;
-      smallVehicleCount += await calcObjFromTile(
+      smallVehicleCount += calcObjFromTile(
         def,
         "small-vehicle",
         jsonkeys.getObjs
@@ -65,16 +65,16 @@ describe("data validation for getShape Estimated Tab", function () {
       const defForBuildingHeight =
         responseForBuildingHeight.jobExecution.tiles.default;
 
-      numberBuilding += await calcCountFromTile(
+      numberBuilding += calcCountFromTile(
         defForFootprint,
         jsonkeys.buildingCount,
         0
       );
-      sumBuildingArea += await calcCountFromTile(
+      sumBuildingArea += calcCountFromTile(
         defForFootprint,
         jsonkeys.buildingAreaCoverage
       );
-      sumBuildingHeight += await calcCountFromTile(
+      sumBuildingHeight += calcCountFromTile(
         defForBuildingHeight,
         jsonkeys.averageBuildingHeight
       );
@@ -107,19 +107,19 @@ describe("data validation for getShape Estimated Tab", function () {
       );
       const def = response.jobExecution.tiles.default;
       countTile += def.filter((el: any) => el.tile).length;
-      countBuildingHeight += await calcCountFromTile(
+      countBuildingHeight += calcCountFromTile(
         def,
         jsonkeys.averageBuildingHeight
       );
-      countBuilding3lessFloor += await calcCountFromTile(
+      countBuilding3lessFloor += calcCountFromTile(
         def,
         jsonkeys.building3lessAreaCoverage
       );
-      countBuilding3lto8Floor += await calcCountFromTile(
+      countBuilding3lto8Floor += calcCountFromTile(
         def,
         jsonkeys.building3to8AreaCoverage
       );
-      countBuilding8moreFloor += await calcCountFromTile(
+      countBuilding8moreFloor += calcCountFromTile(
         def,
         jsonkeys.building8moreAreaCoverage
       );
@@ -142,7 +142,7 @@ describe("data validation for getShape Estimated Tab", function () {
     for (let id of listEstimatorJobId) {
       const response = await getFilteredJobExecutionsById(id, "population");
       const { population } = response.jobExecution.tiles;
-      count += await calcCountFromTile(population, jsonkeys.population);
+      count += calcCountFromTile(population, jsonkeys.population);
     }
     expect(count).toEqual(populationCount);
   });
