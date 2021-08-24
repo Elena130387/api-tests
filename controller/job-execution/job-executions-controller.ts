@@ -2,6 +2,7 @@ import { callRestApi, getRestBody } from "../api.controller";
 import { executionsQuery } from "../../helper/urls";
 import { startJobObj } from "../../requests/executions/startJob";
 import { getShapeById } from "../shape/shape-controller";
+import { jsonkeys } from "../../helper/jsonKeys";
 
 const { MAIN_URL } = process.env;
 const EXECUTIONS_URL = `${MAIN_URL}/estimator/executions`;
@@ -37,28 +38,16 @@ export async function getIdsExecutions(id: number) {
   return response.polygons.map((el: any) => el.estimatorJobId);
 }
 
-export const parsePath = (str: string) => str.split(".");
+const parsePath = (str: any) => str.split(".");
 
-let arr = ["test", "data", "path"];
-function getData(obj: [], arr: any) {
-  if (!arr.length) {
-    return obj;
-  }
-  arr.forEach((el: any, idx: any) => getData(obj[el], arr.slice(idx + 1)));
-}
-
-export const calcCountFromTile = (
-  obj: [],
-  path: string,
-  roundTo: number = 18
-) => {
+const calcCountFromTile = (obj: [], path: string, roundTo: number = 18) => {
   let count = 0,
     arr = parsePath(path);
   obj.forEach((el: any) => (count += +el[arr[0]][arr[1]].toFixed(roundTo)));
   return count;
 };
 
-export const calcObjFromTile = (obj: [], nameObject: string, path: string) => {
+export const calcObjFromTile = (obj: [], path: string, nameObject: string) => {
   let count = 0,
     arr = parsePath(path);
   obj.forEach((el: any) => {
@@ -67,4 +56,55 @@ export const calcObjFromTile = (obj: [], nameObject: string, path: string) => {
     ).length;
   });
   return count;
+};
+export const calcTypeOfLandUse = (
+  obj: [],
+  path: string,
+  nameObject: string
+) => {
+  let count = 0,
+    arr = parsePath(path),
+    arrayTypesOfLandTile: any[] = [];
+  obj.forEach((el: any) => {
+    arrayTypesOfLandTile.push(el[arr[0]].filter((el: any) => el.order === "0"));
+  });
+  count += arrayTypesOfLandTile.filter(
+    (el: any) => el[0].label === nameObject.toUpperCase()
+  ).length;
+  return count;
+};
+
+export const calcValueFromResponse = async (
+  idShape: number,
+  jsonkey: any,
+  filterByType: string,
+  filterByVersion: string = "V1",
+  parseResponse: string = "default",
+  func: any = calcCountFromTile,
+  roundTo: any = 18
+) => {
+  const listEstimatorJobId = await getIdsExecutions(idShape);
+  let value = 0;
+
+  for (let id of listEstimatorJobId) {
+    const response = await getFilteredJobExecutionsById(
+      id,
+      filterByType,
+      filterByVersion
+    );
+    const def = response.jobExecution.tiles[parseResponse];
+    value += await func(def, jsonkey, roundTo);
+  }
+  return value;
+};
+
+export const caclCountTile = async (idShape: number) => {
+  const listEstimatorJobId = await getIdsExecutions(idShape);
+  let value = 0;
+  for (let id of listEstimatorJobId) {
+    const response = await getFilteredJobExecutionsById(id, "land_use", "V2");
+    const def = response.jobExecution.tiles.default;
+    value += def.filter((el: any) => el.tile).length;
+  }
+  return value;
 };

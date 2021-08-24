@@ -7,6 +7,7 @@ export const jsonkeys = {
   building3to8AreaCoverage: "buildingHeightModel.building3to8AreaCoverage",
   building8moreAreaCoverage: "buildingHeightModel.building8moreAreaCoverage",
   getObjs: "objectDetectionModel",
+  landUseModel: "landUseModel",
   economicExposure: "exposureValues.economicExposure",
   insuranceExposure: "exposureValues.insuranceExposure",
 };

@@ -71,4 +71,4 @@ export const getSmallObjOfShape = (arrSmallObj: [], name: string) => {
   return num[0].count;
 };
 export const getValueByTypeLand = (array: any[], nameLandUse: string) =>
-  array.filter((el: any) => el.name === nameLandUse)[0].value;
+  array.filter((el: any) => el.name === nameLandUse.toUpperCase())[0].value;

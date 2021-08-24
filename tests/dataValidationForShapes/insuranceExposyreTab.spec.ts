@@ -2,12 +2,12 @@ import { getShape } from "../../controller/graphql/shape";
 import {
   getIdsExecutions,
   getFilteredJobExecutionsById,
-  calcCountFromTile,
+  calcValueFromResponse,
 } from "../../controller/job-execution/job-executions-controller";
 import { jsonkeys } from "../../helper/jsonKeys";
 
-describe("data validation for getShape economic Exposure Tab", function () {
-  const idShape = 3120;
+describe("data validation for getShape insurance Exposure Tab", function () {
+  const idShape = 3165;
   let summary: any,
     listEstimatorJobId: any[] = [];
 
@@ -17,17 +17,16 @@ describe("data validation for getShape economic Exposure Tab", function () {
   });
 
   it("successfully calculated value Economic Exposure", async function () {
-    const { economicExposure } = summary;
-    let count = 0;
-    for (let id of listEstimatorJobId) {
-      const response = await getFilteredJobExecutionsById(
-        id,
+    const { insuranceExposure } = summary;
+    let sumInsuranceExposure = 0;
+    insuranceExposure.forEach((el: any) => (sumInsuranceExposure += el.value));
+    expect(
+      await calcValueFromResponse(
+        idShape,
+        jsonkeys.insuranceExposure,
         "exposure_values",
         "V2"
-      );
-      const def = response.jobExecution.tiles.default;
-      count += await calcCountFromTile(def, jsonkeys.economicExposure);
-    }
-    expect(count).toEqual(economicExposure);
+      )
+    ).toEqual(sumInsuranceExposure);
   });
 });
