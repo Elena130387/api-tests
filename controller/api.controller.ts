@@ -34,6 +34,7 @@ export const callRestAndCheckSchema = async (
 export const callRestApi = async (
     baseUrl: string,
     getRestBody: any) => {
+
     console.log('baseUrl', baseUrl)
     try {
         const response = await got(`${baseUrl}`, {...getRestBody})
