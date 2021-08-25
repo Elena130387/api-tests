@@ -40,6 +40,6 @@ export const callRestApi = async (
         return response.body ? JSON.parse(response.body) : response
 
     } catch (error) {
-        console.log(error.response.body || error);
+        console.log(error);
     }
 }
