@@ -12,9 +12,10 @@ import {
   calcObjFromTile,
   calcTypeOfLandUse,
 } from "../../controller/job-execution/job-executions-controller";
+import { lands } from "../../helper/tyleLandUse";
 
 describe("data validation for getShape Estimated Tab", function () {
-  const idShape = 3165;
+  const idShape = 3168;
   let summary: any,
     listEstimatorJobId: any[] = [],
     countTile: number;
@@ -22,7 +23,7 @@ describe("data validation for getShape Estimated Tab", function () {
   beforeAll(async function () {
     summary = (await getShape(idShape)).data.shape.summary;
     listEstimatorJobId = await getIdsExecutions(idShape);
-    countTile = await caclCountTile(idShape);
+    countTile = await caclCountTile(listEstimatorJobId);
   });
 
   it("successfully calculated obj count", async function () {
@@ -31,7 +32,7 @@ describe("data validation for getShape Estimated Tab", function () {
 
     expect(
       (await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.getObjs,
         "object_detection",
         undefined,
@@ -51,7 +52,7 @@ describe("data validation for getShape Estimated Tab", function () {
 
     expect(
       await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.buildingCount,
         "building_footprint",
         undefined,
@@ -62,14 +63,14 @@ describe("data validation for getShape Estimated Tab", function () {
     ).toEqual(buildingCount);
     expect(
       (await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.buildingAreaCoverage,
         "building_footprint"
       )) / countTile
     ).toEqual(averageBuildingAreaCoverage);
     expect(
       (await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.averageBuildingHeight,
         "building_height"
       )) / countTile
@@ -86,7 +87,7 @@ describe("data validation for getShape Estimated Tab", function () {
 
     expect(
       (await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.averageBuildingHeight,
         "building_height",
         "V2"
@@ -94,7 +95,7 @@ describe("data validation for getShape Estimated Tab", function () {
     ).toEqual(averageBuildingHeight);
     expect(
       (await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.building3lessAreaCoverage,
         "building_height",
         "V2"
@@ -102,7 +103,7 @@ describe("data validation for getShape Estimated Tab", function () {
     ).toEqual(building3lessAreaCoverage);
     expect(
       (await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.building3to8AreaCoverage,
         "building_height",
         "V2"
@@ -110,7 +111,7 @@ describe("data validation for getShape Estimated Tab", function () {
     ).toEqual(building3to8AreaCoverage);
     expect(
       (await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.building8moreAreaCoverage,
         "building_height",
         "V2"
@@ -122,7 +123,7 @@ describe("data validation for getShape Estimated Tab", function () {
     const { populationCount } = summary;
     expect(
       await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.population,
         "population",
         undefined,
@@ -133,16 +134,16 @@ describe("data validation for getShape Estimated Tab", function () {
 
   it("successfully calculated land use count", async function () {
     const { landUse } = summary;
-    const commercial = getValueByTypeLand(landUse, "industrial");
+    const commercial = getValueByTypeLand(landUse, lands.industrial);
     expect(
       (await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.landUseModel,
         "land_use",
         "V2",
         undefined,
         calcTypeOfLandUse,
-        "industrial"
+        lands.industrial
       )) / countTile
     ).toEqual(commercial);
   });

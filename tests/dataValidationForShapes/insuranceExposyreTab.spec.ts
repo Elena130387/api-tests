@@ -22,7 +22,7 @@ describe("data validation for getShape insurance Exposure Tab", function () {
     insuranceExposure.forEach((el: any) => (sumInsuranceExposure += el.value));
     expect(
       await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.insuranceExposure,
         "exposure_values",
         "V2"

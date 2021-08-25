@@ -47,6 +47,11 @@ const calcCountFromTile = (obj: [], path: string, roundTo: number = 18) => {
   return count;
 };
 
+export const calcDateOfStats = (obj: any[], path: string) => {
+  let arr = parsePath(path);
+  return obj[0][arr[0]][arr[1]];
+};
+
 export const calcObjFromTile = (obj: [], path: string, nameObject: string) => {
   let count = 0,
     arr = parsePath(path);
@@ -57,6 +62,14 @@ export const calcObjFromTile = (obj: [], path: string, nameObject: string) => {
   });
   return count;
 };
+function landUse(obj: [], nameObject: string) {
+  return obj.map((tile: any) =>
+    tile.landUseModel.filter(
+      (model: any) =>
+        model.order === "0" && model.label === nameObject.toUpperCase()
+    )
+  );
+}
 export const calcTypeOfLandUse = (
   obj: [],
   path: string,
@@ -65,17 +78,12 @@ export const calcTypeOfLandUse = (
   let count = 0,
     arr = parsePath(path),
     arrayTypesOfLandTile: any[] = [];
-  obj.forEach((el: any) => {
-    arrayTypesOfLandTile.push(el[arr[0]].filter((el: any) => el.order === "0"));
-  });
-  count += arrayTypesOfLandTile.filter(
-    (el: any) => el[0].label === nameObject.toUpperCase()
-  ).length;
+  landUse(obj, nameObject).forEach((el: any) => (count += el.length));
   return count;
 };
 
 export const calcValueFromResponse = async (
-  idShape: number,
+  listEstimatorJobId: any[],
   jsonkey: any,
   filterByType: string,
   filterByVersion: string = "V1",
@@ -83,7 +91,6 @@ export const calcValueFromResponse = async (
   func: any = calcCountFromTile,
   roundTo: any = 18
 ) => {
-  const listEstimatorJobId = await getIdsExecutions(idShape);
   let value = 0;
 
   for (let id of listEstimatorJobId) {
@@ -98,8 +105,7 @@ export const calcValueFromResponse = async (
   return value;
 };
 
-export const caclCountTile = async (idShape: number) => {
-  const listEstimatorJobId = await getIdsExecutions(idShape);
+export const caclCountTile = async (listEstimatorJobId: any[]) => {
   let value = 0;
   for (let id of listEstimatorJobId) {
     const response = await getFilteredJobExecutionsById(id, "land_use", "V2");

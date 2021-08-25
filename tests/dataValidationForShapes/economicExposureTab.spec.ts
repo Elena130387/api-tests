@@ -20,7 +20,7 @@ describe("data validation for getShape economic Exposure Tab", function () {
     const { economicExposure } = summary;
     expect(
       await calcValueFromResponse(
-        idShape,
+        listEstimatorJobId,
         jsonkeys.economicExposure,
         "exposure_values",
         "V2"
