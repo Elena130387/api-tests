@@ -4,8 +4,10 @@ import {callRestApi, getRestBody} from "../api.controller";
 import {simpleShapeObject} from "../../requests/shape-resource/createNewShape";
 import { renameShape } from "../../requests/shape-resource/renameShape";
 
-const {MAIN_URL} = process.env
-const CALCULATION_URL = `${MAIN_URL}/calculation-management/shapes`
+const {MAIN_URL, DEMO_URL} = process.env
+const CALCULATION = `/calculation-management/shapes`
+export const CALCULATION_URL = process.env.TEST_ENV ? `${DEMO_URL}${CALCULATION}` : `${MAIN_URL}${CALCULATION}`
+
 
 export const getShapeById = (shapeId: number) => callRestApi(`${CALCULATION_URL}/${shapeId}`, getRestBody('GET', null))
 export const getShapeByCount = (count:number) => callRestApi(CALCULATION_URL, getRestBody('GET', null, getShapesCountQuery(count)))

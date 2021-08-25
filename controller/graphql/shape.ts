@@ -4,8 +4,8 @@ import {LOCAL_TIME} from "../../helper/date";
 import { defaultGraphShapeObj, graphShapeObjects } from "../../requests/graphql/createShape";
 import { getFacade } from "../../requests/graphql/facade";
 
-const {MAIN_URL} = process.env
-export const GRAPH_URL = `${MAIN_URL}/graphql`
+const {MAIN_URL, DEMO_URL} = process.env
+export const GRAPH_URL = process.env.TEST_ENV ? `${DEMO_URL}/graphql` : `${MAIN_URL}/graphql`
 
 export const createGqlObj = (createShapeObj: any) => ({
         operationName: 'createShape',
