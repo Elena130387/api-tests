@@ -1,4 +1,4 @@
-import { getShape } from "../../controller/graphql/shape";
+import { firstCompetedShapeId, getShape } from "../../controller/graphql/shape";
 import {
   getIdsExecutions,
   getFilteredJobExecutionsById,
@@ -7,11 +7,11 @@ import {
 import { jsonkeys } from "../../helper/jsonKeys";
 
 describe("data validation for getShape insurance Exposure Tab", function () {
-  const idShape = 3165;
   let summary: any,
     listEstimatorJobId: any[] = [];
 
   beforeAll(async function () {
+    const idShape = await firstCompetedShapeId();
     summary = (await getShape(idShape)).data.shape.summary;
     listEstimatorJobId = await getIdsExecutions(idShape);
   });

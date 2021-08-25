@@ -1,4 +1,4 @@
-import { getShape } from "../../controller/graphql/shape";
+import { firstCompetedShapeId, getShape } from "../../controller/graphql/shape";
 import {
   getIdsExecutions,
   getFilteredJobExecutionsById,
@@ -12,11 +12,11 @@ See bug 17903
 https://dev.azure.com/Syncretis/EXRO/_workitems/edit/17903/
  */
 describe("data validation for getShape open sourse Tab", function () {
-  const idShape = 3105;
   let summary: any,
     listEstimatorJobId: any[] = [];
 
   beforeAll(async function () {
+    const idShape = await firstCompetedShapeId();
     summary = (await getShape(idShape)).data.shape.summary;
     listEstimatorJobId = await getIdsExecutions(idShape);
   });

@@ -1,4 +1,6 @@
 import {
+  firstCompetedShapeId,
+  getAllShapes,
   getShape,
   getSmallObjOfShape,
   getValueByTypeLand,
@@ -12,15 +14,14 @@ import {
   calcObjFromTile,
   calcTypeOfLandUse,
 } from "../../controller/job-execution/job-executions-controller";
-import { lands } from "../../helper/tyleLandUse";
 
 describe("data validation for getShape Estimated Tab", function () {
-  const idShape = 3168;
   let summary: any,
     listEstimatorJobId: any[] = [],
     countTile: number;
 
   beforeAll(async function () {
+    const idShape = await firstCompetedShapeId();
     summary = (await getShape(idShape)).data.shape.summary;
     listEstimatorJobId = await getIdsExecutions(idShape);
     countTile = await caclCountTile(listEstimatorJobId);
@@ -28,7 +29,8 @@ describe("data validation for getShape Estimated Tab", function () {
 
   it("successfully calculated obj count", async function () {
     const { small } = summary.objects;
-    const smallVehicle = getSmallObjOfShape(small, "small-vehicle");
+    const nameSmallObj = small[0].name;
+    const firstTypeSmallObj = getSmallObjOfShape(small, nameSmallObj);
 
     expect(
       (await calcValueFromResponse(
@@ -38,9 +40,9 @@ describe("data validation for getShape Estimated Tab", function () {
         undefined,
         undefined,
         calcObjFromTile,
-        "small-vehicle"
+        nameSmallObj
       )) || undefined
-    ).toEqual(smallVehicle);
+    ).toEqual(firstTypeSmallObj);
   });
 
   it("successfully calculated buildings count", async function () {
@@ -134,7 +136,8 @@ describe("data validation for getShape Estimated Tab", function () {
 
   it("successfully calculated land use count", async function () {
     const { landUse } = summary;
-    const commercial = getValueByTypeLand(landUse, lands.industrial);
+    const { name } = landUse[0];
+    const firstLandCount = getValueByTypeLand(landUse, name);
     expect(
       (await calcValueFromResponse(
         listEstimatorJobId,
@@ -143,8 +146,8 @@ describe("data validation for getShape Estimated Tab", function () {
         "V2",
         undefined,
         calcTypeOfLandUse,
-        lands.industrial
+        name
       )) / countTile
-    ).toEqual(commercial);
+    ).toEqual(firstLandCount);
   });
 });

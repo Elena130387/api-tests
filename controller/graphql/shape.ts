@@ -72,3 +72,9 @@ export const getSmallObjOfShape = (arrSmallObj: [], name: string) => {
 };
 export const getValueByTypeLand = (array: any[], nameLandUse: string) =>
   array.filter((el: any) => el.name === nameLandUse.toUpperCase())[0].value;
+
+export const firstCompetedShapeId = async () => {
+  const response = await getAllShapes();
+  const { shapes } = response.data;
+  return shapes.filter((el: any) => el.status === "completed")[0].id;
+};
