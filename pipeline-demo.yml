@@ -25,6 +25,12 @@ jobs:
         value: --max-old-space-size=8192
     steps:
       - task: Bash@3
+        displayName: 'check ip'
+        inputs:
+          targetType: 'inline'
+          script: |
+            curl 2ip.ru
+      - task: Bash@3
         displayName: 'install dependency'
         inputs:
           targetType: 'inline'
