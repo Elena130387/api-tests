@@ -12,7 +12,6 @@ resources:
     - container: node
       image: node:15
 
-
 jobs:
   - job: Tests
     timeoutInMinutes: 10
