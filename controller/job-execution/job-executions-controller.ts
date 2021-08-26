@@ -2,10 +2,10 @@ import { callRestApi, getRestBody } from "../api.controller";
 import { executionsQuery } from "../../helper/urls";
 import { startJobObj } from "../../requests/executions/startJob";
 import { getShapeById } from "../shape/shape-controller";
-import { jsonkeys } from "../../helper/jsonKeys";
 
-const { MAIN_URL } = process.env;
-const EXECUTIONS_URL = `${MAIN_URL}/estimator/executions`;
+const {MAIN_URL, DEMO_URL} = process.env
+const ESTIMATOR = '/estimator/executions'
+export const EXECUTIONS_URL = process.env.TEST_ENV ? `${DEMO_URL}${ESTIMATOR}` : `${MAIN_URL}${ESTIMATOR}`
 
 export const findJobExecutions = (limit: number, offset: number) =>
   callRestApi(

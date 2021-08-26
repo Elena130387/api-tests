@@ -11,7 +11,7 @@ describe('stop creating shape', function() {
     const NAME = `new test: ${FULLDATE}`
 
     it('successfully create new shape',async function () {
-        const response = await createShape(NAME)
+        const response = await createShape(NAME, true, false)
         const {status, id} = response
         shapeId = id
 
