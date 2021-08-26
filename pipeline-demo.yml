@@ -30,6 +30,7 @@ jobs:
           targetType: 'inline'
           script: |
             curl 2ip.ru
+            curl -k https://exro-demo.syncretis.com
       - task: Bash@3
         displayName: 'install dependency'
         inputs:
