@@ -5,7 +5,5 @@
     "jest": true,
     "node": true
   },
-  "extends": [
-    "eslint:recommended"
-  ]
+  "parser": "babel-eslint"
 }
