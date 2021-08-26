@@ -1,6 +1,11 @@
 export const query = {
-    create: 'mutation createShape($input: CalculateInput!) {calculate(input: $input) {id __typename}}',
-    getAll: 'query getShapes { shapes { ...ShapeBase __typename }} fragment ShapeBase on Shape { id name createdAt polygons ...ShapeGeoInfo ...ShapeProgress __typename} fragment ShapeGeoInfo on Shape { geoInfo { admin1 admin2 countryCode __typename } __typename} fragment ShapeProgress on Shape { status progress { total completed __typename } tiles { large medium small __typename } __typename}',
-    facade: 'query getFacade($params: FacadeInput!) {facade(params: $params) {image height distance polygons __typename}}',
-    stop: 'mutation stopShape($id: ID!) { stopCalculation(id: $id) { ...ShapeBase __typename }} fragment ShapeBase on Shape { id name createdAt polygons ...ShapeGeoInfo ...ShapeProgress __typename} fragment ShapeGeoInfo on Shape { geoInfo { admin1 admin2 countryCode __typename } __typename} fragment ShapeProgress on Shape { status progress { total completed __typename } tiles { large medium small __typename } __typename}'
-}
+  create:
+    "mutation createShape($input: CalculateInput!) {calculate(input: $input) {id __typename}}",
+  getAll:
+    "query getShapes { shapes { ...ShapeBase __typename }} fragment ShapeBase on Shape { id name createdAt polygons ...ShapeGeoInfo ...ShapeProgress __typename} fragment ShapeGeoInfo on Shape { geoInfo { admin1 admin2 countryCode __typename } __typename} fragment ShapeProgress on Shape { status progress { total completed __typename } tiles { large medium small __typename } __typename}",
+  facade:
+    "query getFacade($params: FacadeInput!) {facade(params: $params) {image height distance polygons __typename}}",
+  stop: "mutation stopShape($id: ID!) { stopCalculation(id: $id) { ...ShapeBase __typename }} fragment ShapeBase on Shape { id name createdAt polygons ...ShapeGeoInfo ...ShapeProgress __typename} fragment ShapeGeoInfo on Shape { geoInfo { admin1 admin2 countryCode __typename } __typename} fragment ShapeProgress on Shape { status progress { total completed __typename } tiles { large medium small __typename } __typename}",
+  getShape:
+    "query getShape($id: ID!) { shape(id: $id) { ...ShapeFull __typename }} fragment ShapeFull on Shape { ...ShapeBase summary { ...ShapeSummary __typename } __typename} fragment ShapeBase on Shape { id name createdAt polygons ...ShapeGeoInfo ...ShapeProgress __typename} fragment ShapeGeoInfo on Shape { geoInfo { admin1 admin2 countryCode __typename } __typename} fragment ShapeProgress on Shape { status progress { total completed __typename } tiles { large medium small __typename } __typename} fragment ShapeSummary on PolygonSummary { buildings { averageBuildingAreaCoverage averageBuildingHeight buildingCount __typename } buildingHeight { averageBuildingHeight building3lessAreaCoverage building3to8AreaCoverage building8moreAreaCoverage __typename } economicExposure insuranceExposure { name value __typename } landUse { name value __typename } objects { small { count name __typename } large { count name __typename } __typename } populationCount stats { incomePerCapita housingUnitsTotal population unitsInStructure1 unitsInStructure2to9 unitsInStructure10to19 unitsInStructure20more unitsInStructureMobile totalUnits averageUnitPrice medianUnitPrice __typename } derivativeFriendlyRate __typename}",
+};
