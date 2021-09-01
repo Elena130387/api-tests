@@ -3,9 +3,11 @@ import { executionsQuery } from "../../helper/urls";
 import { startJobObj } from "../../requests/executions/startJob";
 import { getShapeById } from "../shape/shape-controller";
 
-const {MAIN_URL, DEMO_URL} = process.env
-const ESTIMATOR = '/estimator/executions'
-export const EXECUTIONS_URL = process.env.TEST_ENV ? `${DEMO_URL}${ESTIMATOR}` : `${MAIN_URL}${ESTIMATOR}`
+const { MAIN_URL, DEMO_URL } = process.env;
+const ESTIMATOR = "/estimator/executions";
+export const EXECUTIONS_URL = process.env.TEST_ENV
+  ? `${DEMO_URL}${ESTIMATOR}`
+  : `${MAIN_URL}${ESTIMATOR}`;
 
 export const findJobExecutions = (limit: number, offset: number) =>
   callRestApi(
@@ -34,8 +36,10 @@ export const getFilteredJobExecutionsById = (
   );
 
 export async function getIdsExecutions(id: number) {
+  let jp = require("jsonpath");
   const response = await getShapeById(id);
-  return response.polygons.map((el: any) => el.estimatorJobId);
+
+  return jp.query(response.polygons, "$..estimatorJobId");
 }
 
 const parsePath = (str: any) => str.split(".");
