@@ -1,29 +1,32 @@
-import {FULLDATE} from "../../helper/date";
+import { FULLDATE } from "../../helper/date";
 import {
-    createShape,
-    waitWhenProcessStopped
+  createShape,
+  waitWhenAllProcessDone,
+  waitWhenProcessStarted,
+  waitWhenShapeStatusEqual,
 } from "../../controller/shape/shape-controller";
-import {stopShape} from "../../controller/graphql/shape";
+import { stopShape } from "../../controller/graphql/shape";
 
-describe('stop creating shape', function() {
-    let shapeId: number
-    const STATUS = 'starting'
-    const NAME = `new test: ${FULLDATE}`
+describe("stop creating shape", function () {
+  let shapeId: number;
+  const STATUS = "starting";
+  const NAME = `new test: ${FULLDATE}`;
 
-    it('successfully create new shape',async function () {
-        const response = await createShape(NAME, true, false)
-        const {status, id} = response
-        shapeId = id
+  it("successfully create new shape", async function () {
+    const response = await createShape(NAME, true, false);
+    const { status, id } = response;
+    shapeId = id;
 
-        expect(status).toEqual(STATUS)
-    })
+    expect(status).toEqual(STATUS);
+    await waitWhenProcessStarted(shapeId);
+  });
 
-    it('stop running shape process', async function () {
-        const response = await stopShape(shapeId)
-        const {name} = response.data.stopCalculation
+  it("stop running shape process", async function () {
+    const response = await stopShape(shapeId);
+    const { name } = response.data.stopCalculation;
 
-        expect(name).toEqual(NAME)
+    expect(name).toEqual(NAME);
 
-        await waitWhenProcessStopped(shapeId)
-    }, 35000)
-})
+    await waitWhenShapeStatusEqual(shapeId, "stopped");
+  }, 35000);
+});

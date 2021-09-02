@@ -54,31 +54,31 @@ export async function waitWhenAllProcessDone(shapeId: number) {
   await waitWhenAllProcessDone(shapeId);
 }
 
-export async function waitWhenShapeCompleted(shapeId: number) {
+export async function waitWhenProcessStarted(shapeId: number) {
+  await new Promise((r) => setTimeout(r, 1000));
+  const STATUS = "started";
+  const response = await getShapeById(shapeId);
+  const { total } = response.progress;
+  const { status } = response.polygons[0];
+
+  if (total > 0 && status === STATUS) {
+    return;
+  }
+  await waitWhenProcessStarted(shapeId);
+}
+
+export async function waitWhenShapeStatusEqual(
+  shapeId: number,
+  statusWhait: string = "completed"
+) {
   const STATUS = "completed";
   await new Promise((r) => setTimeout(r, 1000));
 
   const response = await getShapeById(shapeId);
   const { status } = response;
 
-  if (status === "completed") {
+  if (status === statusWhait) {
     return;
   }
-  await waitWhenShapeCompleted(shapeId);
-}
-
-export async function waitWhenProcessStopped(shapeId: number) {
-  const STATUS = "stopped";
-
-  await new Promise((r) => setTimeout(r, 1000));
-
-  const response = await getShapeById(shapeId);
-  const { status, polygons } = response;
-
-  if (status === STATUS && polygons[0].status === STATUS) {
-    [status, polygons[0].status].forEach((el) => expect(el).toEqual(STATUS));
-
-    return;
-  }
-  await waitWhenProcessStopped(shapeId);
+  await waitWhenShapeStatusEqual(shapeId);
 }
