@@ -5,6 +5,7 @@ import { getShapeById } from "../shape/shape-controller";
 
 const { MAIN_URL, DEMO_URL } = process.env;
 const ESTIMATOR = "/estimator/executions";
+const jp = require("jsonpath");
 export const EXECUTIONS_URL = process.env.TEST_ENV
   ? `${DEMO_URL}${ESTIMATOR}`
   : `${MAIN_URL}${ESTIMATOR}`;
@@ -36,7 +37,6 @@ export const getFilteredJobExecutionsById = (
   );
 
 export async function getIdsExecutions(id: number) {
-  let jp = require("jsonpath");
   const response = await getShapeById(id);
 
   return jp.query(response.polygons, "$..estimatorJobId");
@@ -79,9 +79,7 @@ export const calcTypeOfLandUse = (
   path: string,
   nameObject: string
 ) => {
-  let count = 0,
-    arr = parsePath(path),
-    arrayTypesOfLandTile: any[] = [];
+  let count = 0;
   landUse(obj, nameObject).forEach((el: any) => (count += el.length));
   return count;
 };
@@ -114,7 +112,7 @@ export const caclCountTile = async (listEstimatorJobId: any[]) => {
   for (let id of listEstimatorJobId) {
     const response = await getFilteredJobExecutionsById(id, "land_use", "V2");
     const def = response.jobExecution.tiles.default;
-    value += def.filter((el: any) => el.tile).length;
+    value += jp.query(response.jobExecution.tiles.default, "$..tile").length;
   }
   return value;
 };
