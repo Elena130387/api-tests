@@ -1,6 +1,6 @@
 import { callRestApi, getRestBody } from "../api.controller";
 // @ts-ignore
-import * as data from "../../confluence.env.json";
+
 import {
   caclCountTile,
   getIdsExecutions,
@@ -11,17 +11,19 @@ import { rowToTable, updatePage } from "../../helper/rowConfluence";
 import { toJsonFile } from "../../helper/exportToJsonFile";
 const pageId =
   "https://syncretis.atlassian.net/wiki/rest/api/content/121798682";
+const { token_confluence } = process.env;
+
 export const getPageConfluenceBody = () =>
   callRestApi(
     pageId,
     getRestBody("GET", null, "?expand=body.storage,version", {
-      Authorization: data.token,
+      Authorization: token_confluence,
     })
   );
 export const updatePageConfluenceBody = (obj: any) =>
   callRestApi(
     pageId,
-    getRestBody("PUT", obj, undefined, { Authorization: data.token })
+    getRestBody("PUT", obj, undefined, { Authorization: token_confluence })
   );
 
 const min = (a: any, b: any) => (a < b ? a : b);

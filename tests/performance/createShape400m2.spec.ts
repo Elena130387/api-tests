@@ -4,7 +4,7 @@ import {
 } from "../../controller/confluence/confluence-controller";
 import {
   createShape,
-  waitWhenShapeCompleted,
+  waitWhenShapeStatusEqual,
 } from "../../controller/shape/shape-controller";
 import { FULLDATE } from "../../helper/date";
 import { toJsonFile } from "../../helper/exportToJsonFile";
@@ -29,7 +29,7 @@ describe("create shape 400m2 for a while", function () {
       shape01km2
     );
     id = response.id;
-    await waitWhenShapeCompleted(id);
+    await waitWhenShapeStatusEqual(id);
   }, 1000000);
   it("create shape 4m2 without preprocessing", async function () {
     forceProcessing = true;
@@ -40,6 +40,6 @@ describe("create shape 400m2 for a while", function () {
       shape01km2
     );
     id = response.id;
-    await waitWhenShapeCompleted(id);
+    await waitWhenShapeStatusEqual(id);
   }, 1000000);
 });

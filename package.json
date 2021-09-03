@@ -6,7 +6,7 @@
   "scripts": {
     "prepush": "yarn run lint",
     "lint": "eslint .",
-    "test": "jest",
+    "test": "jest --setupFiles dotenv/config",
     "demoTest": "jest --setupFiles ./setEnvVars",
     "test:watch": "jest --watch"
   },
@@ -16,6 +16,7 @@
     "@apidevtools/swagger-parser": "^10.0.2",
     "@types/node": "^15.12.2",
     "ajv": "^8.6.0",
+    "dotenv": "^10.0.0",
     "got": "^11.8.2",
     "jsonpath": "^1.1.1",
     "openapi-typescript": "^4.0.0",
