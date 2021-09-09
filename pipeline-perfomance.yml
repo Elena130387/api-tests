@@ -22,15 +22,16 @@ jobs:
     variables:
       - name: NODE_OPTIONS
         value: --max-old-space-size=8192
+      - group: qa_token
+
     steps:
       - task: Bash@3
-        displayName: 'check ip'
+        displayName: create env file
         inputs:
           targetType: 'inline'
           script: |
-            curl 2ip.ru
-            echo "nameserver 8.8.8.8" > /etc/resolv.conf
-            curl -k https://exro-demo.syncretis.com
+            echo "token_confluence=$(token_confluence)" > ./env
+            cat ./env
       - task: Bash@3
         displayName: 'install dependency'
         inputs:
