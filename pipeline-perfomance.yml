@@ -43,16 +43,3 @@ jobs:
           targetType: 'inline'
           script: |
             yarn jest --testPathPattern tests/performance --setupFiles ./setEnvVars  --setupFiles ./env
-      - task: CopyFiles@2
-         condition: succeededOrFailed()
-         inputs:
-           sourceFolder: '$(Build.SourcesDirectory)/reports'
-          contents: '**/*'
-           targetFolder: '$(Build.ArtifactStagingDirectory)'
-        displayName: Copy Reports
-      - task: PublishBuildArtifacts@1
-        condition: succeededOrFailed()
-        inputs:
-          pathToPublish: '$(Build.ArtifactStagingDirectory)'
-          artifactName: Reports
-        displayName: Publish Reports
