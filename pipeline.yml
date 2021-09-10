@@ -14,7 +14,7 @@ resources:
 
 jobs:
   - job: Tests
-    timeoutInMinutes: 20
+    timeoutInMinutes: 25
     displayName: api_Tests
     workspace:
       clean: all

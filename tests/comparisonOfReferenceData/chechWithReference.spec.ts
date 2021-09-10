@@ -20,7 +20,7 @@ describe("comparison of reference data", function () {
 
     const response = await getShape(id);
     summary = response.data.shape.summary;
-  }, 1000000);
+  }, 1500000);
 
   it("test", function () {
     const objReferenceData = getObjectNumbers(summaryReference);
