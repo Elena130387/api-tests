@@ -30,8 +30,8 @@ jobs:
         inputs:
           targetType: 'inline'
           script: |
-            echo "token_confluence=$(token_confluence)" > ./env
-            cat ./env
+            echo "token_confluence=$(token_confluence)" > ./.env
+            cat ./.env
       - task: Bash@3
         displayName: 'install dependency'
         inputs:
