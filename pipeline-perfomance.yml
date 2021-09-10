@@ -15,7 +15,7 @@ resources:
 jobs:
   - job: Tests
     timeoutInMinutes: 10
-    displayName: perfomance_Еest
+    displayName: perfomance_Test
     workspace:
       clean: all
     container: node
@@ -42,4 +42,4 @@ jobs:
         inputs:
           targetType: 'inline'
           script: |
-            yarn jest --testPathPattern tests/performance --setupFiles ./setEnvVars --setupFiles dotenv/config
+            yarn jest --testPathPattern tests/performance  --setupFiles dotenv/config
