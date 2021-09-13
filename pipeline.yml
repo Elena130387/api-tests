@@ -24,15 +24,20 @@ jobs:
         value: --max-old-space-size=8192
     steps:
       - task: Bash@3
-        displayName: create env file
+          displayName: create env file
+          inputs:
+            targetType: 'inline'
+            script: |
+              echo "token_confluence=$(token_confluence)" > ./.env
+              cat ./.env
+      - task: Bash@3
+        displayName: 'install dependency'
         inputs:
           targetType: 'inline'
-          script: |
-            echo "token_confluence=$(token_confluence)" > ./.env
-            cat ./.env
+          script: 'npm install yarn && yarn install'
       - task: Bash@3
         displayName: 'Run tests'
         inputs:
           targetType: 'inline'
           script: |
-            yarn jest  --testPathPattern tests/performance
+            yarn jest --testPathIgnorePatterns tests/performance
