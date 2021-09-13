@@ -5,7 +5,7 @@ name: $(Date:dd-MM-yyyy_HH-mm)
 # variables:
 # - group: test-credentials
 
-pool: Syncretis-Ubuntu
+pool: Default
 
 resources:
   containers:
@@ -42,4 +42,4 @@ jobs:
         inputs:
           targetType: 'inline'
           script: |
-            yarn jest --testPathPattern tests/performance --setupFiles ./setEnvVars --setupFiles dotenv/config
+            yarn jest --testPathPattern tests/performance
