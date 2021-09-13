@@ -23,19 +23,13 @@ jobs:
       - name: NODE_OPTIONS
         value: --max-old-space-size=8192
     steps:
-      - steps:
-          - task: Bash@3
-            displayName: create env file
-            inputs:
-              targetType: 'inline'
-              script: |
-                echo "token_confluence=$(token_confluence)" > ./.env
-                cat ./.env
       - task: Bash@3
-        displayName: 'install dependency'
+        displayName: create env file
         inputs:
           targetType: 'inline'
-          script: 'npm install yarn && yarn install'
+          script: |
+            echo "token_confluence=$(token_confluence)" > ./.env
+            cat ./.env
       - task: Bash@3
         displayName: 'Run tests'
         inputs:
