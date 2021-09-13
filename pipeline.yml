@@ -24,7 +24,7 @@ jobs:
         value: --max-old-space-size=8192
     steps:
       - task: Bash@3
-          displayName: create env file
+          displayName: 'create env file'
           inputs:
             targetType: 'inline'
             script: |
