@@ -24,13 +24,6 @@ jobs:
         value: --max-old-space-size=8192
     steps:
       - task: Bash@3
-          displayName: 'create env file'
-          inputs:
-            targetType: 'inline'
-            script: |
-              echo "token_confluence=$(token_confluence)" > ./.env
-              cat ./.env
-      - task: Bash@3
         displayName: 'install dependency'
         inputs:
           targetType: 'inline'
