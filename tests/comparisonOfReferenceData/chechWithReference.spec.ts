@@ -6,7 +6,12 @@ import {
 import { FULLDATE } from "../../helper/date";
 import { summaryReference } from "../../helper/compareWithReference/referenceData";
 import { referensShape } from "../../requests/shape-resource/createNewShape";
-import { getObjectNumbers } from "../../helper/jsonProcessing";
+import {
+  getObjectNumbers,
+  keyify,
+  transformToOneLevelObject,
+} from "../../helper/jsonProcessing";
+import { toJsonFile } from "../../helper/exportToJsonFile";
 
 describe("comparison of reference data", function () {
   let summary: any;
@@ -23,13 +28,25 @@ describe("comparison of reference data", function () {
   }, 1500000);
 
   it("test", function () {
-    const objReferenceData = getObjectNumbers(summaryReference);
-    const objReceivedData = getObjectNumbers(summary);
-
-    objReferenceData.forEach((el: any, index: number) => {
-      expect(Math.abs(el - objReceivedData[index])).toBeLessThanOrEqual(
-        (el * percentError) / 100
-      );
-    });
+    const objReferenceData = transformToOneLevelObject(summaryReference);
+    const objReceivedData = transformToOneLevelObject(summary);
+    const inccorectExpObj = Object.entries(objReferenceData).filter(
+      ([key, value]: any) =>
+        Math.abs(value - objReceivedData[key]) >= (value * percentError) / 100
+    );
+    const inccorectActualObj = Object.entries(objReceivedData).filter(
+      ([key, value]: any) =>
+        Math.abs(value - objReferenceData[key]) >= (value * percentError) / 100
+    );
+    if (inccorectExpObj.length)
+      toJsonFile(
+        Object.fromEntries(inccorectExpObj),
+        "expectedResultReferenceData"
+      ),
+        toJsonFile(
+          Object.fromEntries(inccorectActualObj),
+          "actualResultReferenceData"
+        );
+    expect(inccorectExpObj.length).toEqual(0);
   });
 });

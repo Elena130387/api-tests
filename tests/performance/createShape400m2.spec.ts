@@ -17,7 +17,7 @@ describe("create shape 400m2 for a while", function () {
   afterEach(async function () {
     const objReport = await createReport(id, !forceProcessing);
     await sendReportToConfluence(objReport);
-    toJsonFile(objReport, `Preprocessing${!forceProcessing}`);
+    toJsonFile(objReport, `performanceReportPreprocessing${!forceProcessing}`);
   }, 100000);
 
   it("create shape 4m2 with preprocessing", async function () {
