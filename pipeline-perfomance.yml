@@ -5,7 +5,7 @@ name: $(Date:dd-MM-yyyy_HH-mm)
 # variables:
 # - group: test-credentials
 
-pool: Syncretis-Ubuntu
+pool: Default
 
 resources:
   containers:
@@ -14,16 +14,14 @@ resources:
 
 jobs:
   - job: Tests
-    timeoutInMinutes: 10
-    displayName: perfomance_Test
+    timeoutInMinutes: 25
+    displayName: api_Tests
     workspace:
       clean: all
     container: node
     variables:
       - name: NODE_OPTIONS
         value: --max-old-space-size=8192
-      - group: qa_token
-
     steps:
       - task: Bash@3
         displayName: create env file
