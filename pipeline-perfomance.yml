@@ -15,7 +15,7 @@ resources:
 jobs:
   - job: Tests
     timeoutInMinutes: 25
-    displayName: api_Tests
+    displayName: Performance_test
     workspace:
       clean: all
     container: node
@@ -41,3 +41,16 @@ jobs:
           targetType: 'inline'
           script: |
             yarn jest --testPathPattern tests/performance
+      - task: CopyFiles@2
+        condition: succeededOrFailed()
+        inputs:
+          sourceFolder: '$(Build.SourcesDirectory)/reports'
+          contents: '**/*'
+          targetFolder: '$(Build.ArtifactStagingDirectory)'
+        displayName: Copy Reports
+      - task: PublishBuildArtifacts@1
+        condition: succeededOrFailed()
+        inputs:
+          pathToPublish: '$(Build.ArtifactStagingDirectory)'
+          artifactName: Reports
+        displayName: Publish Reports
