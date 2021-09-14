@@ -15,7 +15,7 @@ resources:
 jobs:
   - job: Tests
     timeoutInMinutes: 25
-    displayName: api_Tests
+    displayName: performance_Test
     workspace:
       clean: all
     container: node
