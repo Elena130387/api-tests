@@ -1,6 +1,5 @@
-export const toJsonFile = (jsonData: any, name: string) => {
+export const toJsonFile = (data: any, name: string, typeFile = "json") => {
   const fs = require("fs");
-  let data = JSON.stringify(jsonData);
   if (fs.existsSync(`reports`)) {
     fs.writeFileSync(`reports/${name}.json`, data);
   } else {

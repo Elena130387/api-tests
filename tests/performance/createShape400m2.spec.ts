@@ -6,8 +6,8 @@ import {
   createShape,
   waitWhenShapeStatusEqual,
 } from "../../controller/shape/shape-controller";
-import { FULLDATE } from "../../helper/date";
 import { toJsonFile } from "../../helper/exportToJsonFile";
+import { FULLDATE } from "../../helper/date";
 import { shape01km2 } from "../../requests/shape-resource/createNewShape";
 
 describe("create shape 400m2 for a while", function () {
@@ -17,7 +17,10 @@ describe("create shape 400m2 for a while", function () {
   afterEach(async function () {
     const objReport = await createReport(id, !forceProcessing);
     await sendReportToConfluence(objReport);
-    toJsonFile(objReport, `performanceReportPreprocessing${!forceProcessing}`);
+    toJsonFile(
+      JSON.stringify(objReport),
+      `performanceReportPreprocessing${!forceProcessing}`
+    );
   }, 100000);
 
   it("create shape 4m2 with preprocessing", async function () {

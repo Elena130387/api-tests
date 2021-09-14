@@ -5,7 +5,7 @@ name: $(Date:dd-MM-yyyy_HH-mm)
 # variables:
 # - group: test-credentials
 
-pool: Default
+pool: Syncretis-Ubuntu
 
 resources:
   containers:
@@ -40,7 +40,7 @@ jobs:
         inputs:
           targetType: 'inline'
           script: |
-            yarn jest --testPathPattern tests/performance
+            yarn jest --testPathPattern tests/performance --setupFiles ./setEnvVars
       - task: CopyFiles@2
         condition: succeededOrFailed()
         inputs:
