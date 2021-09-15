@@ -33,8 +33,8 @@ describe("comparison of reference data", function () {
       await waitWhenShapeStatusEqual(id);
       let response = await getShape(id);
       const { summary } = response.data.shape;
-      // @ts-ignore
       const objReferenceData = transformToOneLevelObject(
+        // @ts-ignore
         referenceData[el].data.shape.summary
       );
       const objReceivedData = transformToOneLevelObject(summary);
@@ -44,6 +44,6 @@ describe("comparison of reference data", function () {
       );
       report = reportHTML(objReferenceData, response, percentError);
       expect(inccorectExpObj.length).toEqual(0);
-    }, 1500000);
+    }, 5000000);
   });
 });

@@ -6,7 +6,8 @@
   "scripts": {
     "prepush": "yarn run lint",
     "lint": "eslint .",
-    "test": "jest --testPathIgnorePatterns tests/performance",
+    "test": "jest --testPathIgnorePatterns tests/performance tests/comparisonOfReferenceData",
+    "regression": "jest --testPathPattern tests/comparisonOfReferenceData --setupFiles ./setEnvVars",
     "perfomance": "jest --testPathPattern tests/performance  --setupFiles dotenv/config",
     "demoTest": "jest --setupFiles ./setEnvVars",
     "test:watch": "jest --watch"
