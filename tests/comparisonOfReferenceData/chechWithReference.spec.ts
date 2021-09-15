@@ -3,50 +3,47 @@ import {
   createShape,
   waitWhenShapeStatusEqual,
 } from "../../controller/shape/shape-controller";
-import { FULLDATE } from "../../helper/date";
-import { summaryReference } from "../../helper/compareWithReference/referenceData";
+import { DATE } from "../../helper/date";
+import * as referenceData from "../../helper/compareWithReference/index";
 import { referensShape } from "../../requests/shape-resource/createNewShape";
-import {
-  getObjectNumbers,
-  keyify,
-  transformToOneLevelObject,
-} from "../../helper/jsonProcessing";
+import { transformToOneLevelObject } from "../../helper/jsonProcessing";
 import { toJsonFile } from "../../helper/exportToJsonFile";
+import { reportHTML } from "../../helper/createReports/checkRegefenceDataReportHTML";
 
 describe("comparison of reference data", function () {
-  let summary: any;
-  const percentError = 5;
+  let response: any;
+  const percentError = 0.1;
+  let report: any;
+  afterAll(function () {
+    toJsonFile(report, "htmlResponse", "html");
+  });
 
-  beforeAll(async function () {
-    const NAME = `autotest. Comparison of with reference data : ${FULLDATE}`;
-    const responseCreate = await createShape(NAME, true, false, referensShape);
-    const id = responseCreate.id;
-    await waitWhenShapeStatusEqual(id);
-
-    const response = await getShape(id);
-    summary = response.data.shape.summary;
-  }, 1500000);
-
-  it("test", function () {
-    const objReferenceData = transformToOneLevelObject(summaryReference);
-    const objReceivedData = transformToOneLevelObject(summary);
-    const inccorectExpObj = Object.entries(objReferenceData).filter(
-      ([key, value]: any) =>
-        Math.abs(value - objReceivedData[key]) >= (value * percentError) / 100
-    );
-    const inccorectActualObj = Object.entries(objReceivedData).filter(
-      ([key, value]: any) =>
-        Math.abs(value - objReferenceData[key]) >= (value * percentError) / 100
-    );
-    if (inccorectExpObj.length)
-      toJsonFile(
-        Object.fromEntries(inccorectExpObj),
-        "expectedResultReferenceData"
-      ),
-        toJsonFile(
-          Object.fromEntries(inccorectActualObj),
-          "actualResultReferenceData"
-        );
-    expect(inccorectExpObj.length).toEqual(0);
+  Object.keys(referenceData).forEach((el: any, index: number) => {
+    it("test", async function () {
+      const NAME = `autotest. ${
+        el[0].toUpperCase() + el.slice(1)
+      }. Comparison of with reference data :,${DATE}`;
+      const responseCreate = await createShape(
+        NAME,
+        true,
+        false,
+        referensShape[el]
+      );
+      const { id } = responseCreate;
+      await waitWhenShapeStatusEqual(id);
+      let response = await getShape(id);
+      const { summary } = response.data.shape;
+      // @ts-ignore
+      const objReferenceData = transformToOneLevelObject(
+        referenceData[el].data.shape.summary
+      );
+      const objReceivedData = transformToOneLevelObject(summary);
+      const inccorectExpObj = Object.entries(objReferenceData).filter(
+        ([key, value]: any) =>
+          Math.abs(value - objReceivedData[key]) >= (value * percentError) / 100
+      );
+      report = reportHTML(objReferenceData, response, percentError);
+      expect(inccorectExpObj.length).toEqual(0);
+    }, 1500000);
   });
 });
