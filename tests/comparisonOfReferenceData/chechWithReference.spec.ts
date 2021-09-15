@@ -22,7 +22,7 @@ describe("comparison of reference data", function () {
     it("test", async function () {
       const NAME = `autotest. ${
         el[0].toUpperCase() + el.slice(1)
-      }. Comparison of with reference data :,${DATE}`;
+      }. Comparison of with reference data :${DATE}`;
       const responseCreate = await createShape(
         NAME,
         true,
