@@ -14,9 +14,6 @@ describe("comparison of reference data", function () {
   let response: any;
   const percentError = 0.1;
   let report: any;
-  afterAll(function () {
-    toJsonFile(report, "htmlResponse", "html");
-  });
 
   Object.keys(referenceData).forEach((el: any, index: number) => {
     it("test", async function () {
@@ -42,7 +39,12 @@ describe("comparison of reference data", function () {
         ([key, value]: any) =>
           Math.abs(value - objReceivedData[key]) >= (value * percentError) / 100
       );
-      report = reportHTML(objReferenceData, response, percentError);
+      toJsonFile(
+        reportHTML(objReferenceData, response, percentError),
+        "htmlResponse",
+        "html"
+      );
+
       expect(inccorectExpObj.length).toEqual(0);
     }, 5000000);
   });
