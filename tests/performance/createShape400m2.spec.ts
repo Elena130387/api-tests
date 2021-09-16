@@ -8,7 +8,7 @@ import {
 } from "../../controller/shape/shape-controller";
 import { toJsonFile } from "../../helper/exportToJsonFile";
 import { FULLDATE } from "../../helper/date";
-import { shape01km2 } from "../../requests/shape-resource/createNewShape";
+import { shape400km2 } from "../../requests/shape-resource/createNewShape";
 
 describe("create shape 400m2 for a while", function () {
   const NAME = `perfomance test: ${FULLDATE}`;
@@ -29,7 +29,7 @@ describe("create shape 400m2 for a while", function () {
       NAME,
       forceProcessing,
       false,
-      shape01km2
+      shape400km2
     );
     id = response.id;
     await waitWhenShapeStatusEqual(id);
@@ -40,7 +40,7 @@ describe("create shape 400m2 for a while", function () {
       NAME,
       forceProcessing,
       false,
-      shape01km2
+      shape400km2
     );
     id = response.id;
     await waitWhenShapeStatusEqual(id);
