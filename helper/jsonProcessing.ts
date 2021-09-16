@@ -4,12 +4,14 @@ const getObjectNumbers: any = (obj: object) =>
     : [obj];
 
 const keyify: any = (obj: any, prefix = "") =>
-  Object.keys(obj).reduce((res: any, el) => {
-    if (typeof obj[el] === "object" && obj[el] !== null) {
-      return [...res, ...keyify(obj[el], prefix + el + ".")];
-    }
-    return [...res, prefix + el];
-  }, []);
+  Object.keys(obj).reduce(
+    (res: any, el) =>
+      typeof obj[el] === "object" && obj[el] !== null
+        ? [...res, ...keyify(obj[el], prefix + el + ".")]
+        : [...res, prefix + el],
+    []
+  );
+
 export const transformKeysObj = (
   obj: any,
   keys: any = keyify(obj),
@@ -43,6 +45,15 @@ export const transformToOneLevelObject = (
       .filter(([key, value]: any) => typeof value === "number")
   );
 
-export const createReport = (arr: []) => {
-  let report: any = {};
+export const getListWithErorrsValue = (
+  objReferenceData: any,
+  objReceivedData: any,
+  percentError: number
+) => {
+  objReferenceData = transformToOneLevelObject(objReferenceData);
+  objReceivedData = transformToOneLevelObject(objReceivedData);
+  return Object.entries(objReferenceData).filter(
+    ([key, value]: any) =>
+      Math.abs(value - objReceivedData[key]) > (value * percentError) / 100
+  );
 };

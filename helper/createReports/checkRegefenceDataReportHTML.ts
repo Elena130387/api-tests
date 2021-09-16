@@ -54,7 +54,7 @@ export const reportHTML = (
   let str = `<table>${createStrLink(
     recivedObj
   )}<tr><th>data</th><th>reference values</th><th>fresh values</th><th>deviation %</th></tr>`;
-  Object.entries(referenceObj).forEach(([el, val]: any) => {
+  Object.entries(objReferenceData).forEach(([el, val]: any) => {
     let procentError = calcDeviation(val, objReceivedData[el]);
     let tdDeviation =
       procentError < deviation

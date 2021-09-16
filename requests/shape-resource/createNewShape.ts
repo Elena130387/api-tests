@@ -58,7 +58,7 @@ export const forest = [
   { lat: 40.0697420132864, lon: -121.190293186256 },
   { lat: 40.0697420132864, lon: -121.198475004438 },
 ];
-export const referensShape = {
+export const referensShape: any = {
   arizona: [
     { lat: 33.654394833414266, lon: -112.1687515298017 },
     { lat: 33.64715805549338, lon: -112.16882067564723 },

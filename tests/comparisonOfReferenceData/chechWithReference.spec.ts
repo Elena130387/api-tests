@@ -5,47 +5,41 @@ import {
 } from "../../controller/shape/shape-controller";
 import { DATE } from "../../helper/date";
 import * as referenceData from "../../helper/compareWithReference/index";
-import { referensShape } from "../../requests/shape-resource/createNewShape";
-import { transformToOneLevelObject } from "../../helper/jsonProcessing";
+import {
+  referensShape,
+  shape01km2,
+} from "../../requests/shape-resource/createNewShape";
+import { getListWithErorrsValue } from "../../helper/jsonProcessing";
 import { toJsonFile } from "../../helper/exportToJsonFile";
 import { reportHTML } from "../../helper/createReports/checkRegefenceDataReportHTML";
 
 describe("comparison of reference data", function () {
-  let response: any;
-  const percentError = 0.1;
-  let report: any;
+  let response: any, report: any;
+  const percentError = 5;
 
   Object.keys(referenceData).forEach((el: any, index: number) => {
     it("test", async function () {
-      const NAME = `autotest. ${
+      const NAME = `${
         el[0].toUpperCase() + el.slice(1)
       }. Comparison of with reference data :${DATE}`;
-      const responseCreate = await createShape(
-        NAME,
-        true,
-        false,
-        referensShape[el]
-      );
-      const { id } = responseCreate;
+      const { id } = await createShape(NAME, true, false, referensShape[el]);
+
       await waitWhenShapeStatusEqual(id);
-      let response = await getShape(id);
+      const response = await getShape(id);
       const { summary } = response.data.shape;
-      const objReferenceData = transformToOneLevelObject(
-        // @ts-ignore
-        referenceData[el].data.shape.summary
-      );
-      const objReceivedData = transformToOneLevelObject(summary);
-      const inccorectExpObj = Object.entries(objReferenceData).filter(
-        ([key, value]: any) =>
-          Math.abs(value - objReceivedData[key]) >= (value * percentError) / 100
-      );
+      // @ts-ignore
+      const objReferenceData = referenceData[el].data.shape.summary;
       toJsonFile(
         reportHTML(objReferenceData, response, percentError),
         "htmlResponse",
         "html"
       );
-
-      expect(inccorectExpObj.length).toEqual(0);
+      console.log(
+        getListWithErorrsValue(objReferenceData, summary, percentError)
+      );
+      expect(
+        getListWithErorrsValue(objReferenceData, summary, percentError).length
+      ).toEqual(0);
     }, 5000000);
   });
 });
