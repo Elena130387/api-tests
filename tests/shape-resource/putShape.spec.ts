@@ -1,4 +1,4 @@
-import { FULLDATE } from "../../helper/date";
+import { FULLDATE, LOCAL_TIME } from "../../helper/date";
 import {
   createShape,
   getShapeById,
@@ -10,7 +10,7 @@ describe("put created shape", function () {
   let shapeId = 0;
   const STATUS = "starting";
   const NAME = `autotest, create form:: ${FULLDATE}`;
-  const UPDATE_NAME = FULLDATE;
+  const UPDATE_NAME = `autotest, create form: ${LOCAL_TIME}`;
 
   it("successfully rename shape", async function () {
     const response = await createShape(NAME);
