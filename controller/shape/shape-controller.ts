@@ -82,3 +82,9 @@ export async function waitWhenShapeStatusEqual(
   }
   await waitWhenShapeStatusEqual(shapeId);
 }
+const getAllShapesByName = async (count: number, name: string) =>
+  (await getShapeByCount(count)).filter((el: any) => el.name.includes(name));
+export const getAllidFromSortListShapesByName = async (
+  count: number,
+  name: string
+) => (await getAllShapesByName(count, name)).map((el: any) => el.id);
