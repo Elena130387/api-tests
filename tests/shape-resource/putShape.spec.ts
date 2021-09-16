@@ -9,7 +9,7 @@ import { isEmpty } from "../../helper/checkValue";
 describe("put created shape", function () {
   let shapeId = 0;
   const STATUS = "starting";
-  const NAME = `autotest, create form:: ${FULLDATE}`;
+  const NAME = `autotest, create form: ${FULLDATE}`;
   const UPDATE_NAME = `autotest, create form: ${LOCAL_TIME}`;
 
   it("successfully rename shape", async function () {
