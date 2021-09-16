@@ -7,8 +7,10 @@ import {
 } from "../../requests/graphql/createShape";
 import { getFacade } from "../../requests/graphql/facade";
 
-const {MAIN_URL, DEMO_URL} = process.env
-export const GRAPH_URL = process.env.TEST_ENV ? `${DEMO_URL}/graphql` : `${MAIN_URL}/graphql`
+const { MAIN_URL, DEMO_URL } = process.env;
+export const GRAPH_URL = process.env.TEST_ENV
+  ? `${DEMO_URL}/graphql`
+  : `${MAIN_URL}/graphql`;
 
 export const createGqlObj = (createShapeObj: any) => ({
   operationName: "createShape",
@@ -47,7 +49,7 @@ export const stopShape = (id: number) =>
 
 export const createGqlShape = (
   coordinates: any[] = [],
-  name = `auto test shape: ${LOCAL_TIME}`
+  name = `autotest, create form: ${LOCAL_TIME}`
 ) =>
   callRestApi(
     GRAPH_URL,
@@ -55,7 +57,7 @@ export const createGqlShape = (
   );
 export const createGqlMultiShape = (
   coordinates: any[] = [],
-  name = `auto test shape: ${LOCAL_TIME}`
+  name = `autotest, create form: ${LOCAL_TIME}`
 ) =>
   callRestApi(
     GRAPH_URL,
