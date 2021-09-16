@@ -10,7 +10,7 @@ import { stopShape } from "../../controller/graphql/shape";
 describe("stop creating shape", function () {
   let shapeId: number;
   const STATUS = "starting";
-  const NAME = `new test: ${FULLDATE}`;
+  const NAME = `autotest, create form: ${FULLDATE}`;
 
   it("successfully create new shape", async function () {
     const response = await createShape(NAME, true, false);

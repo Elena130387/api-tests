@@ -5,7 +5,7 @@ import { shapeObject } from "../../requests/shape-resource/createNewShape";
 describe("create new shape", function () {
   let shapeId = 0;
   const STATUS = "starting";
-  const NAME = `new test: ${FULLDATE}`;
+  const NAME = `autotest, create form: ${FULLDATE}`;
 
   it("successfully create new shape", async function () {
     const coordinatesCount = shapeObject("", false).polygons[0].coordinates
