@@ -15,8 +15,9 @@ describe("comparison of reference data", function () {
 
   Object.keys(referenceData).forEach((el: any, index: number) => {
     it(`test ${el}`, async function () {
-      const NAME = `${el[0].toUpperCase() + el.slice(1)}
-      . Comparison of with reference data :${DATE}`;
+      const NAME = `${el[0].toUpperCase() + el.slice(1)}. 
+      Comparison of with reference data: 
+      ${DATE}`;
       const { id } = await createShape(NAME, true, false, referensShape[el]);
 
       await waitWhenShapeStatusEqual(id);
