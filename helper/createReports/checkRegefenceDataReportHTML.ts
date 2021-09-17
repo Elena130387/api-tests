@@ -4,69 +4,92 @@ const URL = process.env.TEST_ENV
   ? `${DEMO_URL}/?showAside=true&shape=`
   : `${MAIN_URL}/?showAside=true&shape=`;
 
-let bodyHTML =
-  "<!DOCTYPE html>\n" +
-  '<html lang="en">\n' +
-  '<head><meta charset="UTF-8">\n' +
-  "<title>Reports</title>\n" +
-  "<style>\n" +
-  "   table {\n" +
-  "       border-collapse: collapse; \n" +
-  "       line-height: 1.1;\n" +
-  "       margin-bottom: 150px;\n" +
-  "   }\n" +
-  "   caption {\n" +
-  "       font-family: annabelle, cursive;\n" +
-  "       font-weight: bold;\n" +
-  "       font-size: 2em;\n" +
-  "       padding: 10px; \n" +
-  "       text-shadow: 1px 1px 0 rgba(0,0,0,.3);\n" +
-  "   }\n" +
-  "   th {\n" +
-  "       padding: 10px; \n" +
-  "       border: 1px solid  grey" +
-  "   }\n" +
-  "   td {border: 1px solid grey;" +
-  "       padding: 5px 7px;; \n" +
-  "       border-collapse: collapse;}\n" +
-  "   .errorColor {color: #FF0000 } \n" +
-  "   .trueColor  {color: #00FF00}\n" +
-  "</style>\n" +
-  "</head><body>\n" +
-  "</body>\n" +
-  "</html>";
+let bodyHTML = `
+  <!DOCTYPE html>
+    <html lang="en">
+        <head><meta charset="UTF-8">
+        <title>Reports</title>
+        <style>
+     table { 
+         border-collapse: collapse;  
+         line-height: 1.1; 
+         margin-bottom: 150px; 
+     } 
+     caption { 
+         font-family: annabelle, cursive; 
+         font-weight: bold; 
+         font-size: 2em; 
+         padding: 10px;  
+         text-shadow: 1px 1px 0 rgba(0,0,0,.3); 
+     } 
+     th { 
+         padding: 10px;  
+         border: 1px solid  grey 
+     } 
+     td {border: 1px solid grey; 
+         padding: 5px 7px;;  
+         border-collapse: collapse;} 
+     .errorColor {color: #FF0000 }  
+     .trueColor  {color: #00FF00} 
+  </style> 
+    </head>
+    <body> 
+    </body> 
+  </html>`;
 
-const createStrLink = (response: any) =>
-  `<caption><a href=${URL + response.data.shape.id}>${
-    response.data.shape.name
-  }</a></caption>`;
-const calcDeviation = (freshData: number, referenceData: number) =>
+const nameOfTableElement = `
+   <tr>
+      <th>data</th>
+      <th>reference values</th>
+      <th>fresh values</th>
+      <th>deviation %</th>
+    </tr>`;
+
+const createStrLink = (response: any) => `
+        <caption>
+            <a href=${URL + response.data.shape.id}>${
+  response.data.shape.name
+}</a>
+        </caption>`;
+
+const calcDeviation = (referenceData: any, freshData: any) =>
   Math.abs((freshData / referenceData - 1) * 100);
+
+const errorClass = (procentError: number, deviation: number) =>
+  procentError < deviation ? `"trueColor"` : `"errorColor"`;
+
+const createTable = (recivedObj: any) =>
+  `<table>${createStrLink(recivedObj)}` + nameOfTableElement;
 
 export const reportHTML = (
   referenceObj: any,
   recivedObj: any,
   deviation: number
 ) => {
-  const summary = recivedObj.data.shape.summary,
+  const { summary } = recivedObj.data.shape,
     objReferenceData = transformToOneLevelObject(referenceObj),
     objReceivedData = transformToOneLevelObject(summary);
-  let str = `<table>${createStrLink(
-    recivedObj
-  )}<tr><th>data</th><th>reference values</th><th>fresh values</th><th>deviation %</th></tr>`;
-  Object.entries(objReferenceData).forEach(([el, val]: any) => {
-    let procentError = calcDeviation(val, objReceivedData[el]);
-    let tdDeviation =
-      procentError < deviation
-        ? `<td class="trueColor">${Math.round(procentError * 10) / 10}</td>`
-        : `<td class="errorColor">${Math.round(procentError * 10) / 10}</td>`;
 
-    str += `<tr><td>${el}</td><td>${val}</td><td>${objReceivedData[el]}</td>${tdDeviation}</tr>`;
+  let table = createTable(recivedObj);
+
+  Object.entries(objReferenceData).forEach(([el, val]: any) => {
+    let procentError = calcDeviation(objReceivedData[el], val);
+    table += `
+        <tr>
+            <td>${el}</td>
+            <td>${val}</td>
+            <td>${objReceivedData[el]}</td>
+            <td class=${errorClass(
+              procentError,
+              deviation
+            )}>${procentError}</td>
+        </tr>`;
   });
-  return (bodyHTML =
-    bodyHTML.substr(0, bodyHTML.indexOf("</body>")) +
-    str +
+  return (
+    bodyHTML.substr(0, bodyHTML.indexOf(`</body>`)) +
+    table +
     `</table>` +
-    bodyHTML.substr(bodyHTML.indexOf("</body>")) +
-    "\n");
+    bodyHTML.substr(bodyHTML.indexOf(`</body>`)) +
+    "\n"
+  );
 };

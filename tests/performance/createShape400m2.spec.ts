@@ -6,7 +6,7 @@ import {
   createShape,
   waitWhenShapeStatusEqual,
 } from "../../controller/shape/shape-controller";
-import { toJsonFile } from "../../helper/exportToJsonFile";
+import { toFile } from "../../helper/exportFile";
 import { FULLDATE } from "../../helper/date";
 import { shape400km2 } from "../../requests/shape-resource/createNewShape";
 
@@ -17,7 +17,7 @@ describe("create shape 400m2 for a while", function () {
   afterEach(async function () {
     const objReport = await createReport(id, !forceProcessing);
     await sendReportToConfluence(objReport);
-    toJsonFile(
+    toFile(
       JSON.stringify(objReport),
       `performanceReportPreprocessing${!forceProcessing}`
     );

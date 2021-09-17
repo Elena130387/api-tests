@@ -7,17 +7,16 @@ import { DATE } from "../../helper/date";
 import * as referenceData from "../../helper/compareWithReference/index";
 import { referensShape } from "../../requests/shape-resource/createNewShape";
 import { getListWithErorrsValue } from "../../helper/jsonProcessing";
-import { toJsonFile } from "../../helper/exportToJsonFile";
+import { toFile } from "../../helper/exportFile";
 import { reportHTML } from "../../helper/createReports/checkRegefenceDataReportHTML";
 
 describe("comparison of reference data", function () {
   const percentError = 5;
 
   Object.keys(referenceData).forEach((el: any, index: number) => {
-    it("test", async function () {
-      const NAME = `${
-        el[0].toUpperCase() + el.slice(1)
-      }. Comparison of with reference data :${DATE}`;
+    it(`test ${el}`, async function () {
+      const NAME = `${el[0].toUpperCase() + el.slice(1)}
+      . Comparison of with reference data :${DATE}`;
       const { id } = await createShape(NAME, true, false, referensShape[el]);
 
       await waitWhenShapeStatusEqual(id);
@@ -25,7 +24,7 @@ describe("comparison of reference data", function () {
       const { summary } = response.data.shape;
       // @ts-ignore
       const objReferenceData = referenceData[el].data.shape.summary;
-      toJsonFile(
+      toFile(
         reportHTML(objReferenceData, response, percentError),
         "htmlResponse",
         "html"
