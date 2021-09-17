@@ -84,11 +84,10 @@ export const reportHTML = (
     }</td>
         </tr>`;
   });
-  return (
+  return (bodyHTML =
     bodyHTML.substr(0, bodyHTML.indexOf(`</body>`)) +
     table +
     `</table>` +
     bodyHTML.substr(bodyHTML.indexOf(`</body>`)) +
-    "\n"
-  );
+    "\n");
 };
