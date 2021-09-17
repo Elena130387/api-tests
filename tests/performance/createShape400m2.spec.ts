@@ -9,6 +9,7 @@ import {
 import { toFile } from "../../helper/exportFile";
 import { FULLDATE } from "../../helper/date";
 import { shape400km2 } from "../../requests/shape-resource/createNewShape";
+import {joplinShape, LAAirportAndDowntown300km2 } from "../../requests/graphql/createShape";
 
 describe("create shape 400m2 for a while", function () {
   const NAME = `perfomance test: ${FULLDATE}`;
@@ -45,4 +46,24 @@ describe("create shape 400m2 for a while", function () {
     id = response.id;
     await waitWhenShapeStatusEqual(id);
   }, 1000000);
+  it('successfully create LA shape',async function () {
+    forceProcessing = true;
+    const response = await createShape(
+        `${NAME}: LA`,
+        forceProcessing,
+        false,
+        LAAirportAndDowntown300km2);
+    id = response.id;
+    await waitWhenShapeStatusEqual(id);
+  }, 50000);
+  it('successfully create joplin shape',async function () {
+    forceProcessing = false;
+    const response = await createShape(
+        `${NAME}: joplin`,
+        forceProcessing,
+        false,
+        joplinShape);
+    id = response.id;
+    await waitWhenShapeStatusEqual(id);
+  }, 60000)
 });
