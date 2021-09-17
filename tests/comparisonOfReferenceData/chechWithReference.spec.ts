@@ -19,7 +19,6 @@ describe("comparison of reference data", function () {
       Comparison of with reference data: 
       ${DATE}`;
       const { id } = await createShape(NAME, true, false, referensShape[el]);
-
       await waitWhenShapeStatusEqual(id);
       const response = await getShape(id);
       const { summary } = response.data.shape;
