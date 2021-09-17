@@ -79,10 +79,9 @@ export const reportHTML = (
             <td>${el}</td>
             <td>${val}</td>
             <td>${objReceivedData[el]}</td>
-            <td class=${errorClass(
-              procentError,
-              deviation
-            )}>${procentError}</td>
+            <td class=${errorClass(procentError, deviation)}>${
+      Math.round(procentError * 100) / 100
+    }</td>
         </tr>`;
   });
   return (
