@@ -1,5 +1,3 @@
-import { createReport } from "../controller/confluence/confluence-controller";
-import { getShapeById } from "../controller/shape/shape-controller";
 import { DATE } from "./date";
 
 export const rowToTable = (obj: any) =>

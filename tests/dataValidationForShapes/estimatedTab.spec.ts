@@ -1,6 +1,5 @@
 import {
   firstCompetedShapeId,
-  getAllShapes,
   getShape,
   getSmallObjOfShape,
   getValueByTypeLand,
@@ -8,7 +7,6 @@ import {
 import { jsonkeys } from "../../helper/jsonKeys";
 import {
   getIdsExecutions,
-  getFilteredJobExecutionsById,
   calcValueFromResponse,
   caclCountTile,
   calcObjFromTile,

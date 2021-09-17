@@ -5,16 +5,12 @@ import {
 } from "../../controller/shape/shape-controller";
 import { DATE } from "../../helper/date";
 import * as referenceData from "../../helper/compareWithReference/index";
-import {
-  referensShape,
-  shape01km2,
-} from "../../requests/shape-resource/createNewShape";
+import { referensShape } from "../../requests/shape-resource/createNewShape";
 import { getListWithErorrsValue } from "../../helper/jsonProcessing";
 import { toJsonFile } from "../../helper/exportToJsonFile";
 import { reportHTML } from "../../helper/createReports/checkRegefenceDataReportHTML";
 
 describe("comparison of reference data", function () {
-  let response: any, report: any;
   const percentError = 5;
 
   Object.keys(referenceData).forEach((el: any, index: number) => {
@@ -33,9 +29,6 @@ describe("comparison of reference data", function () {
         reportHTML(objReferenceData, response, percentError),
         "htmlResponse",
         "html"
-      );
-      console.log(
-        getListWithErorrsValue(objReferenceData, summary, percentError)
       );
       expect(
         getListWithErorrsValue(objReferenceData, summary, percentError).length

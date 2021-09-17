@@ -1,6 +1,4 @@
 import { callRestApi, getRestBody } from "../api.controller";
-// @ts-ignore
-
 import {
   caclCountTile,
   getIdsExecutions,
@@ -8,7 +6,6 @@ import {
 } from "../job-execution/job-executions-controller";
 import { getShapeById } from "../shape/shape-controller";
 import { rowToTable, updatePage } from "../../helper/rowConfluence";
-import { toJsonFile } from "../../helper/exportToJsonFile";
 const pageId =
   "https://syncretis.atlassian.net/wiki/rest/api/content/121798682";
 const { token_confluence } = process.env;

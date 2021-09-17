@@ -111,7 +111,6 @@ export const caclCountTile = async (listEstimatorJobId: any[]) => {
   let value = 0;
   for (let id of listEstimatorJobId) {
     const response = await getFilteredJobExecutionsById(id, "land_use", "V2");
-    const def = response.jobExecution.tiles.default;
     value += jp.query(response.jobExecution.tiles.default, "$..tile").length;
   }
   return value;

@@ -1,7 +1,6 @@
 import { FULLDATE } from "../../helper/date";
 import {
   createShape,
-  waitWhenAllProcessDone,
   waitWhenProcessStarted,
   waitWhenShapeStatusEqual,
 } from "../../controller/shape/shape-controller";

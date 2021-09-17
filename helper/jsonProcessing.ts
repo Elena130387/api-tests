@@ -42,7 +42,7 @@ export const transformToOneLevelObject = (
   Object.fromEntries(
     keys
       .map((_: any, i: number) => [keys[i], values[i]])
-      .filter(([key, value]: any) => typeof value === "number")
+      .filter(([_, value]: any) => typeof value === "number")
   );
 
 export const getListWithErorrsValue = (
