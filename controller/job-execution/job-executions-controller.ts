@@ -3,9 +3,12 @@ import { executionsQuery } from "../../helper/urls";
 import { startJobObj } from "../../requests/executions/startJob";
 import { getShapeById } from "../shape/shape-controller";
 
-const {MAIN_URL, DEMO_URL} = process.env
-const ESTIMATOR = '/estimator/executions'
-export const EXECUTIONS_URL = process.env.TEST_ENV ? `${DEMO_URL}${ESTIMATOR}` : `${MAIN_URL}${ESTIMATOR}`
+const { MAIN_URL, DEMO_URL } = process.env;
+const ESTIMATOR = "/estimator/executions";
+const jp = require("jsonpath");
+export const EXECUTIONS_URL = process.env.TEST_ENV
+  ? `${DEMO_URL}${ESTIMATOR}`
+  : `${MAIN_URL}${ESTIMATOR}`;
 
 export const findJobExecutions = (limit: number, offset: number) =>
   callRestApi(
@@ -35,7 +38,8 @@ export const getFilteredJobExecutionsById = (
 
 export async function getIdsExecutions(id: number) {
   const response = await getShapeById(id);
-  return response.polygons.map((el: any) => el.estimatorJobId);
+
+  return jp.query(response.polygons, "$..estimatorJobId");
 }
 
 const parsePath = (str: any) => str.split(".");
@@ -75,9 +79,7 @@ export const calcTypeOfLandUse = (
   path: string,
   nameObject: string
 ) => {
-  let count = 0,
-    arr = parsePath(path),
-    arrayTypesOfLandTile: any[] = [];
+  let count = 0;
   landUse(obj, nameObject).forEach((el: any) => (count += el.length));
   return count;
 };
@@ -109,8 +111,7 @@ export const caclCountTile = async (listEstimatorJobId: any[]) => {
   let value = 0;
   for (let id of listEstimatorJobId) {
     const response = await getFilteredJobExecutionsById(id, "land_use", "V2");
-    const def = response.jobExecution.tiles.default;
-    value += def.filter((el: any) => el.tile).length;
+    value += jp.query(response.jobExecution.tiles.default, "$..tile").length;
   }
   return value;
 };

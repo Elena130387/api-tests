@@ -14,7 +14,7 @@ resources:
 
 jobs:
   - job: Tests
-    timeoutInMinutes: 10
+    timeoutInMinutes: 25
     displayName: api_Tests
     workspace:
       clean: all
@@ -33,4 +33,4 @@ jobs:
         inputs:
           targetType: 'inline'
           script: |
-            yarn jest --testPathIgnorePatterns tests/performance
+            yarn jest --testPathIgnorePatterns tests/performance tests/comparisonOfReferenceData

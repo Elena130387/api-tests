@@ -7,6 +7,9 @@ module.exports = {
 // process.env
 
 process.env = Object.assign(process.env, {
-  MAIN_URL: 'https://exro-dev.syncretis.com',
-  DEMO_URL: 'https://exro-demo.syncretis.com'
+  MAIN_URL: "https://exro-dev.syncretis.com",
+  DEMO_URL: "https://exro-demo.syncretis.com",
 });
+
+const dotenv = require("dotenv");
+dotenv.config();

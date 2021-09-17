@@ -1,6 +1,9 @@
 import { getShapesCountQuery } from "../../helper/urls";
 import { callRestApi, getRestBody } from "../api.controller";
-import { simpleShapeObject } from "../../requests/shape-resource/createNewShape";
+import {
+  shapeObject,
+  smallShape,
+} from "../../requests/shape-resource/createNewShape";
 import { renameShape } from "../../requests/shape-resource/renameShape";
 
 const { MAIN_URL, DEMO_URL } = process.env;
@@ -21,13 +24,14 @@ export const deleteShapeById = (shapeId: number) =>
 export const createShape = (
   name: string,
   forceProcessing = false,
-  testDataGenerating = true
+  testDataGenerating = true,
+  coordinates: any[] = smallShape
 ) =>
   callRestApi(
     CALCULATION_URL,
     getRestBody(
       "POST",
-      simpleShapeObject(name, forceProcessing, testDataGenerating)
+      shapeObject(name, forceProcessing, testDataGenerating, coordinates)
     )
   );
 export const renameShapeById = (shapeId: number, name: string) =>
@@ -50,20 +54,33 @@ export async function waitWhenAllProcessDone(shapeId: number) {
   await waitWhenAllProcessDone(shapeId);
 }
 
-export async function waitWhenProcessStopped(shapeId: number) {
-  const STATUS = "stopped";
+export async function waitWhenProcessStarted(shapeId: number) {
+  await new Promise((r) => setTimeout(r, 1000));
+  const STATUS = "started";
+  const response = await getShapeById(shapeId);
+  const { total } = response.progress;
+  const { status } = response.polygons[0];
 
+  if (total > 0 && status === STATUS) {
+    return;
+  }
+  await waitWhenProcessStarted(shapeId);
+}
+
+export async function waitWhenShapeStatusEqual(
+  shapeId: number,
+  statusWhait: string = "completed"
+) {
+  const STATUS = "completed";
   await new Promise((r) => setTimeout(r, 1000));
 
   const response = await getShapeById(shapeId);
-  const { status, polygons } = response;
+  const { status } = response;
 
-  if (status === STATUS && polygons[0].status === STATUS) {
-    [status, polygons[0].status].forEach((el) => expect(el).toEqual(STATUS));
-
+  if (status === statusWhait) {
     return;
   }
-  await waitWhenProcessStopped(shapeId);
+  await waitWhenShapeStatusEqual(shapeId);
 }
 const getAllShapesByName = async (count: number, name: string) =>
   (await getShapeByCount(count)).filter((el: any) => el.name.includes(name));
