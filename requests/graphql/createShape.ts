@@ -70,7 +70,7 @@ export const graphShapeObjects = (name: string, coordinates: any[] = []) => ({
     testDataGenerating:false
 })
 
-export const longData = [
+export const joplinShape = [
         [
             -94.464417,
             37.071167
@@ -289,7 +289,7 @@ export const longData = [
         ]
 ]
 
-export const LAAirportAndDowntown =  [
+export const LAAirportAndDowntown300km2 =  [
     [
         [
             -118.50,

@@ -1,14 +1,15 @@
 import {createGqlShape} from "../../controller/graphql/shape";
 import {simpleCoordinates} from "../../requests/graphql/createShape";
-import {messages} from "../../controller/shape/shape-controller";
+import {messages, waitWhenShapeStatusEqual} from "../../controller/shape/shape-controller";
 import { FULLDATE } from "../../helper/date";
 
-describe('create more than 5 shapes', function() {
-    const MAX_COUNT = 5,
-        NAME = 'autotest, create form'
+xdescribe('create more than 5 shapes', function() {
+    const MAX_COUNT = 6,
+        NAME = 'autotest, create form',
+        ALL_ID: number[] = []
 
-    it('create 6 shapes', async function () {
-        [...Array(MAX_COUNT)].map(async (_, i) => {
+    it(`create ${MAX_COUNT} shapes`, async function () {
+        await Promise.all([...Array(MAX_COUNT)].map(async (_, i) => {
             if(i === MAX_COUNT) {
                 const response = await createGqlShape(simpleCoordinates, `${NAME}: ${FULLDATE}`)
                 const {body, status} = response.errors[0].extensions.response
@@ -19,8 +20,12 @@ describe('create more than 5 shapes', function() {
 
             const response = await createGqlShape(simpleCoordinates, NAME)
             const {id} = response.data.calculate
+            ALL_ID.push(id)
 
             expect(id.length).toBeGreaterThan(0)
-        });
-    })
+        }))
+        await Promise.all(ALL_ID.map(async (shapeId) =>  {
+            await waitWhenShapeStatusEqual(shapeId)
+        }))
+    }, 40000)
 })
