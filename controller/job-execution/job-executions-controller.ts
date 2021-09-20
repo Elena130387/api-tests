@@ -88,7 +88,7 @@ export const calcValueFromResponse = async (
   listEstimatorJobId: any[],
   jsonkey: any,
   filterByType: string,
-  filterByVersion: string = "V1",
+  filterByVersion: string = "V2",
   parseResponse: string = "default",
   func: any = calcCountFromTile,
   roundTo: any = 18

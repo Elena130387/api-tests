@@ -74,7 +74,8 @@ describe("data validation for getShape Estimated Tab", function () {
       (await calcValueFromResponse(
         listEstimatorJobId,
         jsonkeys.averageBuildingHeight,
-        "building_height"
+        "building_height",
+        "V1"
       )) / countTile
     ).toEqual(averageBuildingHeight);
   });
@@ -91,32 +92,28 @@ describe("data validation for getShape Estimated Tab", function () {
       (await calcValueFromResponse(
         listEstimatorJobId,
         jsonkeys.averageBuildingHeight,
-        "building_height",
-        "V2"
+        "building_height"
       )) / countTile
     ).toEqual(averageBuildingHeight);
     expect(
       (await calcValueFromResponse(
         listEstimatorJobId,
         jsonkeys.building3lessAreaCoverage,
-        "building_height",
-        "V2"
+        "building_height"
       )) / countTile
     ).toEqual(building3lessAreaCoverage);
     expect(
       (await calcValueFromResponse(
         listEstimatorJobId,
         jsonkeys.building3to8AreaCoverage,
-        "building_height",
-        "V2"
+        "building_height"
       )) / countTile
     ).toEqual(building3to8AreaCoverage);
     expect(
       (await calcValueFromResponse(
         listEstimatorJobId,
         jsonkeys.building8moreAreaCoverage,
-        "building_height",
-        "V2"
+        "building_height"
       )) / countTile
     ).toEqual(building8moreAreaCoverage);
   });
@@ -143,7 +140,7 @@ describe("data validation for getShape Estimated Tab", function () {
         listEstimatorJobId,
         jsonkeys.landUseModel,
         "land_use",
-        "V2",
+        undefined,
         undefined,
         calcTypeOfLandUse,
         name
