@@ -88,12 +88,12 @@ export const calcValueFromResponse = async (
   listEstimatorJobId: any[],
   jsonkey: any,
   filterByType: string,
-  filterByVersion: string = "V1",
+  filterByVersion: string = "V2",
   parseResponse: string = "default",
   func: any = calcCountFromTile,
   roundTo: any = 18
 ) => {
-  let value = 0;
+  let value: number = 0;
 
   for (let id of listEstimatorJobId) {
     const response = await getFilteredJobExecutionsById(
@@ -112,6 +112,24 @@ export const caclCountTile = async (listEstimatorJobId: any[]) => {
   for (let id of listEstimatorJobId) {
     const response = await getFilteredJobExecutionsById(id, "land_use", "V2");
     value += jp.query(response.jobExecution.tiles.default, "$..tile").length;
+  }
+  return value;
+};
+
+export const caclCountTileFilterBuildingHeight = async (
+  listEstimatorJobId: any[],
+  version: string
+) => {
+  let value = 0;
+  for (let id of listEstimatorJobId) {
+    const response = await getFilteredJobExecutionsById(
+      id,
+      "building_height",
+      version
+    );
+    value += response.jobExecution.tiles.default.filter(
+      (el: any) => el.buildingHeightModel.averageBuildingHeight
+    ).length;
   }
   return value;
 };
