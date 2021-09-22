@@ -6,7 +6,7 @@ import {
 } from "../../controller/shape/shape-controller";
 import { stopShape } from "../../controller/graphql/shape";
 
-describe("stop creating shape", function () {
+describe.skip("stop creating shape", function () {
   let shapeId: number;
   const STATUS = "starting";
   const NAME = `autotest, create form: ${FULLDATE}`;
