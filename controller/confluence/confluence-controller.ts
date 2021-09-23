@@ -75,8 +75,8 @@ export const createReport = async (id: number, preprocessing: boolean) => {
   return objReport;
 };
 
-export const sendReportToConfluence = async (obj: any) => {
-  let newRow = rowToTable(obj);
+export const sendReportToConfluence = async (obj: any, color = `#36b37e`) => {
+  let newRow = rowToTable(obj, color);
   const response = await getPageConfluenceBody();
   const { value } = response.body.storage;
   const { number } = response.version;

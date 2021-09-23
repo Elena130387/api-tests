@@ -1,59 +1,48 @@
 import { DATE } from "./date";
 const { MAIN_URL, DEMO_URL } = process.env;
 const URL = process.env.TEST_ENV
-  ? `${DEMO_URL}/?showAside=true&shape=`
-  : `${MAIN_URL}/?showAside=true&shape=`;
-
-export const rowToTable = (obj: any) =>
-  `<tr>
+  ? `${DEMO_URL}/?showAside=true&amp;shape=`
+  : `${MAIN_URL}/?showAside=true&amp;shape=`;
+export const errorRgb = (sec: number, maxSec: number) =>
+  sec > maxSec ? `#FF5630` : `#36b37e`;
+export const rowToTable = (obj: any, color: string) =>
+  `<tr style=\"color: ${color}\">
         <td>
             <p>${DATE}</p>
         </td>
         <td>
-            <p>
-                <a href=\"${URL + obj.Shapeid}\">${obj.geoInfo}, ${Math.round(
+            <p><a href=\"${URL + obj.Shapeid}\">${obj.geoInfo}, ${Math.round(
     obj.areaSize
-  )}km2</a>
+  )}km2</a></p>
+        </td>
+        <td>
+            <p>40</p>
+        </td>
+        <td>
+            <p><span style=\"color: ${color}\">${
+    obj.tiles_per_second_wo_preprocessing
+  }</span></p>
+        </td>
+        <td>
+            <p><span style=\"color:${color};\">${
+    obj.ms_per_tile_wo_preprocessing
+  }</span>
             </p>
         </td>
         <td>
-            <p>N/A</p>
+            <p><span style=\"color: ${color};\">${
+    obj.tiles_per_second
+  }</span></p>
         </td>
         <td>
-            <p>
-                <span style=\"color: rgb(54,179,126);\">${
-                  obj.tiles_per_second_wo_preprocessing
-                }</span>
-            </p>
+            <p><span style=\"color: ${color};\">${obj.ms_per_tile}</span></p>
         </td>
         <td>
-            <p>
-                <span style=\"color: rgb(54,179,126);\">${
-                  obj.ms_per_tile_wo_preprocessing
-                }</span>
-            </p>
-        </td>
-        <td>
-            <p>
-                <span style=\"color: rgb(54,179,126);\">${
-                  obj.tiles_per_second
-                }</span>
-            </p>
-        </td>
-        <td>
-            <p>
-                <span style=\"color: rgb(54,179,126);\">${
-                  obj.ms_per_tile
-                }</span>
-            </p>
-        </td>
-        <td>
-            <p>Using precalculated data: 
-                <strong>${obj.preprocessing}</strong>. 
-                This report is generated automatically. ${Math.round(
-                  obj.areaSize
-                )}km2 in ${obj.seconds}s
-             </p>
+            <p>Using precalculated data: <strong>${
+              obj.preprocessing
+            }</strong>.This report is generated automatically. ${Math.round(
+    obj.areaSize
+  )}km2 in ${obj.seconds}s</p>
         </td>
         <td>
             <p />

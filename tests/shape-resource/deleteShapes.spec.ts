@@ -7,7 +7,7 @@ import {
 describe("delete all shape with name=`autotest, create from`", function () {
   const NAME = `autotest, create form`,
     STATUS = `deleted`,
-    COUNT = 1000;
+    COUNT = 100;
   it(`deleted shapes`, async function () {
     const idsShapeForDeleting = await getAllidFromSortListShapesByName(
       COUNT,
