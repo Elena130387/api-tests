@@ -15,18 +15,19 @@ import {
 
 describe("create shape 400m2 for a while", function () {
   const NAME = `perfomance test: ${FULLDATE}`;
+  const TIME = 1000000;
   let id: any, forceProcessing: boolean;
 
   beforeAll(async function () {
     const response = await createShape(
-      "overclocking scale",
+      "warm up",
       true,
       false,
       overclockingShape
     );
     id = response.id;
     await waitWhenShapeStatusEqual(id);
-  }, 100000);
+  }, TIME);
 
   afterEach(async function () {
     const objReport = await createReport(id, !forceProcessing);
@@ -35,28 +36,36 @@ describe("create shape 400m2 for a while", function () {
       JSON.stringify(objReport),
       `performanceReportPreprocessing${!forceProcessing}`
     );
-  }, 100000);
+  }, TIME);
 
-  it("create shape 4m2 with preprocessing", async function () {
-    forceProcessing = false;
-    const response = await createShape(
-      NAME,
-      forceProcessing,
-      false,
-      shape400km2
-    );
-    id = response.id;
-    await waitWhenShapeStatusEqual(id);
-  }, 1000000);
-  it("create shape 4m2 without preprocessing", async function () {
-    forceProcessing = true;
-    const response = await createShape(
-      NAME,
-      forceProcessing,
-      false,
-      shape400km2
-    );
-    id = response.id;
-    await waitWhenShapeStatusEqual(id);
-  }, 1000000);
+  it(
+    "create shape 4m2 with preprocessing",
+    async function () {
+      forceProcessing = false;
+      const response = await createShape(
+        NAME,
+        forceProcessing,
+        false,
+        shape400km2
+      );
+      id = response.id;
+      await waitWhenShapeStatusEqual(id);
+    },
+    TIME
+  );
+  it(
+    "create shape 4m2 without preprocessing",
+    async function () {
+      forceProcessing = true;
+      const response = await createShape(
+        NAME,
+        forceProcessing,
+        false,
+        shape400km2
+      );
+      id = response.id;
+      await waitWhenShapeStatusEqual(id);
+    },
+    TIME
+  );
 });

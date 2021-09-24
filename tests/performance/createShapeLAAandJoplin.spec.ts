@@ -32,7 +32,7 @@ describe("create shapes LAA and Joplin", function () {
 
   it("successfully create LA shape", async function () {
     maxSec = 50;
-    forceProcessing = true;
+    forceProcessing = false;
     const response = await createShape(
       `${NAME}: LA`,
       forceProcessing,
@@ -44,7 +44,7 @@ describe("create shapes LAA and Joplin", function () {
   }, 100000);
   it.only("successfully create joplin shape", async function () {
     maxSec = 60;
-    forceProcessing = false;
+    forceProcessing = true;
 
     const response = await createShape(
       `${NAME}: joplin`,
