@@ -14,7 +14,7 @@ import {
 } from "../../requests/shape-resource/createNewShape";
 import { errorRgb } from "../../helper/rowConfluence";
 
-describe("create shapes LAA and Joplin", function () {
+describe.skip("create shapes LAA and Joplin", function () {
   const NAME = `performance test: ${FULLDATE}`;
   let id: any, forceProcessing: boolean, maxSec: number;
 
