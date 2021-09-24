@@ -14,7 +14,7 @@ resources:
 
 jobs:
   - job: Tests
-    timeoutInMinutes: 25
+    timeoutInMinutes: 60
     displayName: Performance_test
     workspace:
       clean: all
