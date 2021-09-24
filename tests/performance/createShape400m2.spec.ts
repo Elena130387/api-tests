@@ -28,9 +28,9 @@ describe("create shape 400m2 for a while", function () {
   }, TIME);
 
   it(
-    "create shape 4m2 with preprocessing",
+    "create shape 4m2 without preprocessing",
     async function () {
-      forceProcessing = false;
+      forceProcessing = true;
       const response = await createShape(
         NAME,
         forceProcessing,
@@ -43,9 +43,9 @@ describe("create shape 400m2 for a while", function () {
     TIME
   );
   it(
-    "create shape 4m2 without preprocessing",
+    "create shape 4m2 with preprocessing",
     async function () {
-      forceProcessing = true;
+      forceProcessing = false;
       const response = await createShape(
         NAME,
         forceProcessing,
