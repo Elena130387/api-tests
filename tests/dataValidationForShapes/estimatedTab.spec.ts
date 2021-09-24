@@ -18,14 +18,14 @@ describe("data validation for getShape Estimated Tab", function () {
   let summary: any,
     listEstimatorJobId: any[] = [],
     countTile: number;
-  const timeTest = 10000;
+  const timeTest = 15000;
 
   beforeAll(async function () {
     const idShape = await firstCompetedShapeId();
     summary = (await getShape(idShape)).data.shape.summary;
     listEstimatorJobId = await getIdsExecutions(idShape);
     countTile = await caclCountTile(listEstimatorJobId);
-  });
+  }, timeTest);
 
   it(
     "successfully calculated obj count",
