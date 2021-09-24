@@ -32,6 +32,6 @@ describe("comparison of reference data", function () {
       expect(
         getListWithErorrsValue(objReferenceData, summary, percentError).length
       ).toEqual(0);
-    }, 5000000);
+    }, 500000);
   });
 });
