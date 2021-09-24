@@ -15,19 +15,8 @@ import {
 
 describe("create shape 400m2 for a while", function () {
   const NAME = `perfomance test: ${FULLDATE}`;
-  const TIME = 1000000;
+  const TIME = 3000000;
   let id: any, forceProcessing: boolean;
-
-  beforeAll(async function () {
-    const response = await createShape(
-      "warm up",
-      true,
-      false,
-      overclockingShape
-    );
-    id = response.id;
-    await waitWhenShapeStatusEqual(id);
-  }, TIME);
 
   afterEach(async function () {
     const objReport = await createReport(id, !forceProcessing);
