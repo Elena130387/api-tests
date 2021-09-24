@@ -42,7 +42,7 @@ describe("create shapes LAA and Joplin", function () {
     id = response.id;
     await waitWhenShapeStatusEqual(id);
   }, 100000);
-  it.only("successfully create joplin shape", async function () {
+  it("successfully create joplin shape", async function () {
     maxSec = 60;
     forceProcessing = true;
 
