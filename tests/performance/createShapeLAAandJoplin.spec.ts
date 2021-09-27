@@ -15,7 +15,6 @@ import {
 import { errorRgb } from "../../helper/rowConfluence";
 
 describe("create shapes LAA and Joplin", function () {
-  const NAME = `performance test: ${FULLDATE}`;
   let id: any, forceProcessing: boolean, maxSec: number;
 
   afterEach(async function () {
@@ -31,6 +30,7 @@ describe("create shapes LAA and Joplin", function () {
   }, 100000);
 
   it("successfully create LA shape", async function () {
+    const NAME = `LA airport and downtown.performance test: ${FULLDATE}`;
     maxSec = 50;
     forceProcessing = false;
     const response = await createShape(
@@ -43,6 +43,7 @@ describe("create shapes LAA and Joplin", function () {
     await waitWhenShapeStatusEqual(id);
   }, 100000);
   it("successfully create joplin shape", async function () {
+    const NAME = `Joplin. performance test: ${FULLDATE}`;
     maxSec = 60;
     forceProcessing = true;
 
