@@ -1,9 +1,9 @@
 export const forest: any = {
   data: {
     shape: {
-      id: "163",
-      name: "AOI_Regression_Forest",
-      createdAt: "2021-09-13T09:56:03.747346Z",
+      id: "251",
+      name: "Forest. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:39:45.481336Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const forest: any = {
               coordinates: [
                 [
                   [-121.198475004438, 40.0697420132864],
-                  [-121.180293186256, 40.0697420132864],
-                  [-121.180293186256, 40.0515601951046],
                   [-121.198475004438, 40.0515601951046],
+                  [-121.180293186256, 40.0515601951046],
+                  [-121.180293186256, 40.0697420132864],
+                  [-121.198475004438, 40.0697420132864],
                   [-121.198475004438, 40.0697420132864],
                 ],
               ],
@@ -39,9 +40,9 @@ export const forest: any = {
       tiles: { large: 30, medium: 54, small: 357, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.0027501723345588237,
-          averageBuildingHeight: 2.6643303991474445,
-          buildingCount: 15,
+          averageBuildingAreaCoverage: 0.0001639785552893032,
+          averageBuildingHeight: 2.2490377385879308,
+          buildingCount: 4,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
@@ -51,15 +52,19 @@ export const forest: any = {
           building8moreAreaCoverage: 0.0000133995248490021,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 28969535,
+        economicExposure: 799641,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 22587815,
+            value: 639713,
             __typename: "InsuranceSummary",
           },
-          { name: "COMMERCIAL", value: 440860, __typename: "InsuranceSummary" },
           { name: "AGRI", value: 0, __typename: "InsuranceSummary" },
+          {
+            name: "COMMERCIAL",
+            value: 0,
+            __typename: "InsuranceSummary",
+          },
           { name: "INDUSTRIAL", value: 0, __typename: "InsuranceSummary" },
         ],
         landUse: [
@@ -70,12 +75,12 @@ export const forest: any = {
           },
           {
             name: "CULTIVATED",
-            value: 0.2689075630252101,
+            value: 0.2913165266106443,
             __typename: "LandUseSummary",
           },
           {
             name: "RESIDENTIAL",
-            value: 0.025210084033613446,
+            value: 0.0028011204481792717,
             __typename: "LandUseSummary",
           },
         ],

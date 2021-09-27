@@ -1,9 +1,9 @@
 export const lasVegas_suburb: any = {
   data: {
     shape: {
-      id: "179",
-      name: "AOI_Regression_LasVegas_suburb",
-      createdAt: "2021-09-13T18:31:57.488906Z",
+      id: "259",
+      name: "LasVegas_suburb. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:58:39.261133Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const lasVegas_suburb: any = {
               coordinates: [
                 [
                   [-115.223882044888, 36.2120379310016],
-                  [-115.205700226706, 36.2120379310016],
-                  [-115.205700226706, 36.1938561128198],
                   [-115.223882044888, 36.1938561128198],
+                  [-115.205700226706, 36.1938561128198],
+                  [-115.205700226706, 36.2120379310016],
+                  [-115.223882044888, 36.2120379310016],
                   [-115.223882044888, 36.2120379310016],
                 ],
               ],
@@ -39,36 +40,36 @@ export const lasVegas_suburb: any = {
       tiles: { large: 30, medium: 63, small: 357, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.31490214799298627,
-          averageBuildingHeight: 2.9262293654138354,
-          buildingCount: 1003,
+          averageBuildingAreaCoverage: 0.2981635128416601,
+          averageBuildingHeight: 2.9248638556779802,
+          buildingCount: 1034,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 2.98868382493014,
+          averageBuildingHeight: 2.9886838249301415,
           building3lessAreaCoverage: 0.10642793799648766,
           building3to8AreaCoverage: 0.024685429591758578,
           building8moreAreaCoverage: 0.008648613253895309,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 3262484515,
+        economicExposure: 3072005577,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 1763263433,
+            value: 1674832233,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 254567703,
+            value: 233738603,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 240911719,
+            value: 224169905,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 6139933, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 6150679, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
@@ -78,7 +79,7 @@ export const lasVegas_suburb: any = {
           },
           {
             name: "INDUSTRIAL",
-            value: 0.1568627450980392,
+            value: 0.15966386554621848,
             __typename: "LandUseSummary",
           },
           {
@@ -98,7 +99,7 @@ export const lasVegas_suburb: any = {
           },
           {
             name: "OTHERIMP",
-            value: 0.022408963585434174,
+            value: 0.0196078431372549,
             __typename: "LandUseSummary",
           },
         ],
@@ -114,7 +115,11 @@ export const lasVegas_suburb: any = {
               name: "swimming-pool",
               __typename: "ObjectsSummaryInfo",
             },
-            { count: 6, name: "roundabout", __typename: "ObjectsSummaryInfo" },
+            {
+              count: 6,
+              name: "roundabout",
+              __typename: "ObjectsSummaryInfo",
+            },
             {
               count: 5,
               name: "basketball-court",

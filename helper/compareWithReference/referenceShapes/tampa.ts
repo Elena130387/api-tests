@@ -1,9 +1,9 @@
 export const tampa: any = {
   data: {
     shape: {
-      id: "176",
-      name: "AOI_Regression_Tampa",
-      createdAt: "2021-09-13T16:38:10.249805Z",
+      id: "269",
+      name: "Tampa. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T07:22:32.152314Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const tampa: any = {
               coordinates: [
                 [
                   [-82.8380463227566, 27.8783474001336],
-                  [-82.8198645045748, 27.8783474001336],
-                  [-82.8198645045748, 27.8601655819518],
                   [-82.8380463227566, 27.8601655819518],
+                  [-82.8198645045748, 27.8601655819518],
+                  [-82.8198645045748, 27.8783474001336],
+                  [-82.8380463227566, 27.8783474001336],
                   [-82.8380463227566, 27.8783474001336],
                 ],
               ],
@@ -39,42 +40,50 @@ export const tampa: any = {
       tiles: { large: 36, medium: 63, small: 399, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.20260274021846608,
-          averageBuildingHeight: 2.415590440758579,
-          buildingCount: 1776,
+          averageBuildingAreaCoverage: 0.20145821631104127,
+          averageBuildingHeight: 2.3955711938843964,
+          buildingCount: 1667,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 2.616084466383185,
-          building3lessAreaCoverage: 0.1172313259956532,
-          building3to8AreaCoverage: 0.035272641289503054,
-          building8moreAreaCoverage: 0.002184913271949405,
+          averageBuildingHeight: 2.601098901746598,
+          building3lessAreaCoverage: 0.11857960636454418,
+          building3to8AreaCoverage: 0.03192911171972901,
+          building8moreAreaCoverage: 0.002400218992304981,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 1585685803,
+        economicExposure: 1559978185,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 1203734096,
+            value: 1181323831,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 22844551,
+            value: 22628897,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 12314886, __typename: "InsuranceSummary" },
-          { name: "INDUSTRIAL", value: 757723, __typename: "InsuranceSummary" },
+          {
+            name: "AGRI",
+            value: 11529629,
+            __typename: "InsuranceSummary",
+          },
+          {
+            name: "INDUSTRIAL",
+            value: 2870592,
+            __typename: "InsuranceSummary",
+          },
         ],
         landUse: [
           {
             name: "RESIDENTIAL",
-            value: 0.9223057644110275,
+            value: 0.924812030075188,
             __typename: "LandUseSummary",
           },
           {
             name: "CULTIVATED",
-            value: 0.03759398496240601,
+            value: 0.03508771929824561,
             __typename: "LandUseSummary",
           },
           {
@@ -83,13 +92,8 @@ export const tampa: any = {
             __typename: "LandUseSummary",
           },
           {
-            name: "COMMERCIAL",
-            value: 0.007518796992481203,
-            __typename: "LandUseSummary",
-          },
-          {
             name: "INDUSTRIAL",
-            value: 0.005012531328320802,
+            value: 0.007518796992481203,
             __typename: "LandUseSummary",
           },
           {
@@ -97,16 +101,26 @@ export const tampa: any = {
             value: 0.005012531328320802,
             __typename: "LandUseSummary",
           },
+          {
+            name: "OTHERIMP",
+            value: 0.002506265664160401,
+            __typename: "LandUseSummary",
+          },
+          {
+            name: "COMMERCIAL",
+            value: 0.002506265664160401,
+            __typename: "LandUseSummary",
+          },
         ],
         objects: {
           small: [
             {
-              count: 678,
+              count: 648,
               name: "small-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
             {
-              count: 189,
+              count: 187,
               name: "swimming-pool",
               __typename: "ObjectsSummaryInfo",
             },
@@ -125,7 +139,7 @@ export const tampa: any = {
           ],
           __typename: "ObjectsSummary",
         },
-        populationCount: 9660,
+        populationCount: 9358,
         stats: {
           incomePerCapita: 32120,
           housingUnitsTotal: 506468,

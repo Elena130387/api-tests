@@ -1,9 +1,9 @@
 export const chico_CA: any = {
   data: {
     shape: {
-      id: "164",
-      name: "AOI_Regression_Chico_CA",
-      createdAt: "2021-09-13T09:59:15.552100Z",
+      id: "248",
+      name: "Chico_CA. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:33:02.555226Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const chico_CA: any = {
               coordinates: [
                 [
                   [-121.844865658448, 39.7267173663965],
-                  [-121.826683840266, 39.7267173663965],
-                  [-121.826683840266, 39.7085355482147],
                   [-121.844865658448, 39.7085355482147],
+                  [-121.826683840266, 39.7085355482147],
+                  [-121.826683840266, 39.7267173663965],
+                  [-121.844865658448, 39.7267173663965],
                   [-121.844865658448, 39.7267173663965],
                 ],
               ],
@@ -39,51 +40,51 @@ export const chico_CA: any = {
       tiles: { large: 30, medium: 54, small: 336, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.04099530265444801,
-          averageBuildingHeight: 2.6485267490289908,
-          buildingCount: 494,
+          averageBuildingAreaCoverage: 0.05255826314290365,
+          averageBuildingHeight: 2.649600891183195,
+          buildingCount: 527,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 3.1707759073871102,
+          averageBuildingHeight: 3.170775907387109,
           building3lessAreaCoverage: 0.024174962724958147,
           building3to8AreaCoverage: 0.011299837203252883,
           building8moreAreaCoverage: 0.006524767194475446,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 438665799,
+        economicExposure: 584478193,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 249129526,
+            value: 292244221,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 35477340,
+            value: 52863933,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 24477462,
+            value: 47880717,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 2079402, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 3409372, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
             name: "RESIDENTIAL",
-            value: 0.4583333333333333,
+            value: 0.4523809523809524,
             __typename: "LandUseSummary",
           },
           {
             name: "CULTIVATED",
-            value: 0.31845238095238093,
+            value: 0.32142857142857145,
             __typename: "LandUseSummary",
           },
           {
             name: "NATURE",
-            value: 0.13988095238095238,
+            value: 0.14285714285714285,
             __typename: "LandUseSummary",
           },
           {
@@ -128,7 +129,7 @@ export const chico_CA: any = {
           large: [],
           __typename: "ObjectsSummary",
         },
-        populationCount: 6040,
+        populationCount: 6061,
         stats: {
           incomePerCapita: 26304,
           housingUnitsTotal: 98119,

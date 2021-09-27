@@ -1,9 +1,9 @@
 export const suburb_miami: any = {
   data: {
     shape: {
-      id: "178",
-      name: "AOI_Regression_suburb_miami",
-      createdAt: "2021-09-13T18:27:39.408005Z",
+      id: "268",
+      name: "Suburb_miami. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T07:20:16.035632Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const suburb_miami: any = {
               coordinates: [
                 [
                   [-80.2988835889392, 25.8379674144722],
-                  [-80.2807017707574, 25.8379674144722],
-                  [-80.2807017707574, 25.8197855962904],
                   [-80.2988835889392, 25.8197855962904],
+                  [-80.2807017707574, 25.8197855962904],
+                  [-80.2807017707574, 25.8379674144722],
+                  [-80.2988835889392, 25.8379674144722],
                   [-80.2988835889392, 25.8379674144722],
                 ],
               ],
@@ -39,9 +40,9 @@ export const suburb_miami: any = {
       tiles: { large: 36, medium: 63, small: 420, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.22694963727678572,
-          averageBuildingHeight: 3.4286209197380657,
-          buildingCount: 1619,
+          averageBuildingAreaCoverage: 0.2371251969110398,
+          averageBuildingHeight: 3.4361801323496826,
+          buildingCount: 1454,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
@@ -51,24 +52,24 @@ export const suburb_miami: any = {
           building8moreAreaCoverage: 0.021617925734747023,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 3981162617,
+        economicExposure: 4121108988,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 1599083882,
+            value: 1698918479,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 456697208,
+            value: 457450803,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 455571699,
+            value: 453719584,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 24383575, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 29290373, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
@@ -129,7 +130,11 @@ export const suburb_miami: any = {
               name: "storage-tank",
               __typename: "ObjectsSummaryInfo",
             },
-            { count: 1, name: "roundabout", __typename: "ObjectsSummaryInfo" },
+            {
+              count: 1,
+              name: "roundabout",
+              __typename: "ObjectsSummaryInfo",
+            },
             {
               count: 1,
               name: "large-vehicle",

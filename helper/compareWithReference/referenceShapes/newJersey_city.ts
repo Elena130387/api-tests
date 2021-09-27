@@ -1,9 +1,9 @@
 export const newJersey_city: any = {
   data: {
     shape: {
-      id: "180",
-      name: "AOI_Regression_NewJersey_city",
-      createdAt: "2021-09-13T18:45:14.396628Z",
+      id: "262",
+      name: "NewJersey_city. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T07:05:31.550917Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const newJersey_city: any = {
               coordinates: [
                 [
                   [-74.0579929508205, 40.7299452676791],
-                  [-74.0398111326387, 40.7299452676791],
-                  [-74.0398111326387, 40.7117634494973],
                   [-74.0579929508205, 40.7117634494973],
+                  [-74.0398111326387, 40.7117634494973],
+                  [-74.0398111326387, 40.7299452676791],
+                  [-74.0579929508205, 40.7299452676791],
                   [-74.0579929508205, 40.7299452676791],
                 ],
               ],
@@ -39,36 +40,36 @@ export const newJersey_city: any = {
       tiles: { large: 30, medium: 54, small: 357, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.266224943957075,
-          averageBuildingHeight: 4.6125345971638385,
-          buildingCount: 651,
+          averageBuildingAreaCoverage: 0.2693021117138262,
+          averageBuildingHeight: 4.611841107827756,
+          buildingCount: 639,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 8.023484616108776,
+          averageBuildingHeight: 8.023484616108766,
           building3lessAreaCoverage: 0.0174993734065892,
           building3to8AreaCoverage: 0.09307444596490941,
           building8moreAreaCoverage: 0.11035218225473784,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 7819860034,
+        economicExposure: 7941340486,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 2828112099,
+            value: 2863274636,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 1802918597,
+            value: 1820652944,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 399514437,
+            value: 417825864,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 84320849, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 84978285, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
@@ -82,23 +83,23 @@ export const newJersey_city: any = {
             __typename: "LandUseSummary",
           },
           {
-            name: "INDUSTRIAL",
-            value: 0.13445378151260504,
-            __typename: "LandUseSummary",
-          },
-          {
             name: "RESIDENTIAL",
             value: 0.13445378151260504,
             __typename: "LandUseSummary",
           },
           {
-            name: "CULTIVATED",
-            value: 0.0896358543417367,
+            name: "INDUSTRIAL",
+            value: 0.13165266106442577,
             __typename: "LandUseSummary",
           },
           {
             name: "NATURE",
-            value: 0.08683473389355742,
+            value: 0.0896358543417367,
+            __typename: "LandUseSummary",
+          },
+          {
+            name: "CULTIVATED",
+            value: 0.0896358543417367,
             __typename: "LandUseSummary",
           },
           {

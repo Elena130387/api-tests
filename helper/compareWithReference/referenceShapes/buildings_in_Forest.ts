@@ -1,9 +1,9 @@
 export const buildings_in_Forest: any = {
   data: {
     shape: {
-      id: "170",
-      name: "AOI_Regression_Buildings_in_Forest",
-      createdAt: "2021-09-13T13:52:15.378780Z",
+      id: "246",
+      name: "Buildings_in_Forest. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:26:35.764623Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const buildings_in_Forest: any = {
               coordinates: [
                 [
                   [-121.579075155813, 39.8073764672949],
-                  [-121.560893337631, 39.8073764672949],
-                  [-121.560893337631, 39.7891946491131],
                   [-121.579075155813, 39.7891946491131],
+                  [-121.560893337631, 39.7891946491131],
+                  [-121.560893337631, 39.8073764672949],
+                  [-121.579075155813, 39.8073764672949],
                   [-121.579075155813, 39.8073764672949],
                 ],
               ],
@@ -39,54 +40,54 @@ export const buildings_in_Forest: any = {
       tiles: { large: 30, medium: 54, small: 357, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.002166171033843225,
-          averageBuildingHeight: 3.478061314658571,
-          buildingCount: 33,
+          averageBuildingAreaCoverage: 0.0006108858338257178,
+          averageBuildingHeight: 3.1099891607215255,
+          buildingCount: 16,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 4.746804625249566,
-          building3lessAreaCoverage: 0.00006379199629070379,
-          building3to8AreaCoverage: 0.00018688810973608192,
+          averageBuildingHeight: 5.466500552499068,
+          building3lessAreaCoverage: 0.0000448360496542367,
+          building3to8AreaCoverage: 0.0002028307660955007,
           building8moreAreaCoverage: 0.000006667706144957983,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 21260361,
+        economicExposure: 3504778,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 13881514,
-            __typename: "InsuranceSummary",
-          },
-          {
-            name: "INDUSTRIAL",
-            value: 1563387,
+            value: 2803822,
             __typename: "InsuranceSummary",
           },
           { name: "AGRI", value: 0, __typename: "InsuranceSummary" },
-          { name: "COMMERCIAL", value: 0, __typename: "InsuranceSummary" },
+          {
+            name: "COMMERCIAL",
+            value: 0,
+            __typename: "InsuranceSummary",
+          },
+          { name: "INDUSTRIAL", value: 0, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
             name: "NATURE",
-            value: 0.7450980392156863,
+            value: 0.7535014005602241,
             __typename: "LandUseSummary",
           },
           {
             name: "CULTIVATED",
-            value: 0.22128851540616246,
+            value: 0.23809523809523808,
             __typename: "LandUseSummary",
           },
           {
             name: "RESIDENTIAL",
-            value: 0.03361344537815126,
+            value: 0.008403361344537815,
             __typename: "LandUseSummary",
           },
         ],
         objects: {
           small: [
             {
-              count: 32,
+              count: 29,
               name: "small-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
@@ -101,7 +102,7 @@ export const buildings_in_Forest: any = {
           ],
           __typename: "ObjectsSummary",
         },
-        populationCount: 1403,
+        populationCount: 1429,
         stats: {
           incomePerCapita: 26304,
           housingUnitsTotal: 98119,

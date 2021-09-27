@@ -1,9 +1,9 @@
 export const coastal: any = {
   data: {
     shape: {
-      id: "169",
-      name: "AOI_Regression_Coastal",
-      createdAt: "2021-09-13T13:34:36.472055Z",
+      id: "249",
+      name: "Coastal. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:35:20.982605Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const coastal: any = {
               coordinates: [
                 [
                   [-82.261, 26.7236],
-                  [-82.2428181818182, 26.7236],
-                  [-82.2428181818182, 26.7054181818182],
                   [-82.261, 26.7054181818182],
+                  [-82.2428181818182, 26.7054181818182],
+                  [-82.2428181818182, 26.7236],
+                  [-82.261, 26.7236],
                   [-82.261, 26.7236],
                 ],
               ],
@@ -39,61 +40,61 @@ export const coastal: any = {
       tiles: { large: 30, medium: 63, small: 399, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.002330827832520755,
-          averageBuildingHeight: 3.2349448999250083,
-          buildingCount: 22,
+          averageBuildingAreaCoverage: 0.004423786823014568,
+          averageBuildingHeight: 3.415552369382084,
+          buildingCount: 31,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 3.849225887986115,
-          building3lessAreaCoverage: 0.0008136873555960213,
-          building3to8AreaCoverage: 0.0028595123673441415,
-          building8moreAreaCoverage: 0.00017960627276198307,
+          averageBuildingHeight: 4.4371088399137815,
+          building3lessAreaCoverage: 0.0007355577664865288,
+          building3to8AreaCoverage: 0.002697325589364035,
+          building8moreAreaCoverage: 0.00045724739705709584,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 28071788,
+        economicExposure: 55600830,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 7898148,
-            __typename: "InsuranceSummary",
-          },
-          {
-            name: "INDUSTRIAL",
-            value: 3674159,
+            value: 33982014,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 2186606,
+            value: 4144184,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 1610810, __typename: "InsuranceSummary" },
+          {
+            name: "INDUSTRIAL",
+            value: 2486535,
+            __typename: "InsuranceSummary",
+          },
+          { name: "AGRI", value: 0, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
             name: "NATURE",
-            value: 0.9298245614035088,
+            value: 0.9348370927318296,
             __typename: "LandUseSummary",
           },
           {
             name: "CULTIVATED",
-            value: 0.045112781954887216,
+            value: 0.040100250626566414,
             __typename: "LandUseSummary",
           },
           {
             name: "RESIDENTIAL",
-            value: 0.015037593984962405,
+            value: 0.020050125313283207,
             __typename: "LandUseSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 0.005012531328320802,
+            value: 0.002506265664160401,
             __typename: "LandUseSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 0.005012531328320802,
+            value: 0.002506265664160401,
             __typename: "LandUseSummary",
           },
         ],
@@ -109,7 +110,11 @@ export const coastal: any = {
               name: "storage-tank",
               __typename: "ObjectsSummaryInfo",
             },
-            { count: 2, name: "ship", __typename: "ObjectsSummaryInfo" },
+            {
+              count: 2,
+              name: "ship",
+              __typename: "ObjectsSummaryInfo",
+            },
             { count: 2, name: "roundabout", __typename: "ObjectsSummaryInfo" },
             {
               count: 1,
@@ -119,14 +124,14 @@ export const coastal: any = {
           ],
           large: [
             {
-              count: 6,
+              count: 5,
               name: "soccer-ball-field",
               __typename: "ObjectsSummaryInfo",
             },
           ],
           __typename: "ObjectsSummary",
         },
-        populationCount: 156,
+        populationCount: 179,
         stats: {
           incomePerCapita: 30233,
           housingUnitsTotal: 383224,

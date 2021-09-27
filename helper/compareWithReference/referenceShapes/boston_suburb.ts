@@ -1,9 +1,9 @@
 export const boston_suburb: any = {
   data: {
     shape: {
-      id: "200",
-      name: "AOI_Regression_Boston_suburb",
-      createdAt: "2021-09-14T12:00:46.097086Z",
+      id: "245",
+      name: "Boston_suburb. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:24:23.261758Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const boston_suburb: any = {
               coordinates: [
                 [
                   [-71.1227827774183, 42.3995849703306],
-                  [-71.1046009592365, 42.3995849703306],
-                  [-71.1046009592365, 42.3814031521488],
                   [-71.1227827774183, 42.3814031521488],
+                  [-71.1046009592365, 42.3814031521488],
+                  [-71.1046009592365, 42.3995849703306],
+                  [-71.1227827774183, 42.3995849703306],
                   [-71.1227827774183, 42.3995849703306],
                 ],
               ],
@@ -39,9 +40,9 @@ export const boston_suburb: any = {
       tiles: { large: 30, medium: 54, small: 336, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.32388323829287574,
-          averageBuildingHeight: 3.241705878803967,
-          buildingCount: 2197,
+          averageBuildingAreaCoverage: 0.29150703975132536,
+          averageBuildingHeight: 3.2417058788039648,
+          buildingCount: 1696,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
@@ -51,24 +52,24 @@ export const boston_suburb: any = {
           building8moreAreaCoverage: 0.018593084244501023,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 8002656234,
+        economicExposure: 7208350087,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 5460195584,
+            value: 4931379163,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 532840988,
+            value: 479339495,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 79737326,
+            value: 65194906,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 27000037, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 24671913, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {

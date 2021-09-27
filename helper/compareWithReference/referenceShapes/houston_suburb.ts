@@ -1,9 +1,9 @@
 export const houston_suburb: any = {
   data: {
     shape: {
-      id: "174",
-      name: "AOI_Regression_Houston_suburb",
-      createdAt: "2021-09-13T15:57:49.518173Z",
+      id: "253",
+      name: "Houston_suburb. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:44:11.251943Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const houston_suburb: any = {
               coordinates: [
                 [
                   [-95.3940884500424, 29.7971473159188],
-                  [-95.3759066318606, 29.7971473159188],
-                  [-95.3759066318606, 29.778965497737],
                   [-95.3940884500424, 29.778965497737],
+                  [-95.3759066318606, 29.778965497737],
+                  [-95.3759066318606, 29.7971473159188],
+                  [-95.3940884500424, 29.7971473159188],
                   [-95.3940884500424, 29.7971473159188],
                 ],
               ],
@@ -39,36 +40,36 @@ export const houston_suburb: any = {
       tiles: { large: 30, medium: 63, small: 399, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.24385342323092887,
-          averageBuildingHeight: 3.2244691542457264,
-          buildingCount: 1600,
+          averageBuildingAreaCoverage: 0.2767628452234101,
+          averageBuildingHeight: 3.2822293289614186,
+          buildingCount: 1134,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 3.122548207328381,
+          averageBuildingHeight: 3.1225482073283795,
           building3lessAreaCoverage: 0.10712685262350212,
           building3to8AreaCoverage: 0.037375505107984805,
           building8moreAreaCoverage: 0.007305326915922619,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 2268484251,
+        economicExposure: 2593341288,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 1575977859,
+            value: 1764798804,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 63939270,
+            value: 73926317,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 40540955,
+            value: 61495351,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 27178228, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 33118163, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
@@ -78,7 +79,7 @@ export const houston_suburb: any = {
           },
           {
             name: "CULTIVATED",
-            value: 0.06766917293233082,
+            value: 0.06265664160401002,
             __typename: "LandUseSummary",
           },
           {
@@ -88,7 +89,7 @@ export const houston_suburb: any = {
           },
           {
             name: "INDUSTRIAL",
-            value: 0.03007518796992481,
+            value: 0.03508771929824561,
             __typename: "LandUseSummary",
           },
           {
@@ -141,7 +142,11 @@ export const houston_suburb: any = {
               name: "baseball-diamond",
               __typename: "ObjectsSummaryInfo",
             },
-            { count: 1, name: "bridge", __typename: "ObjectsSummaryInfo" },
+            {
+              count: 1,
+              name: "bridge",
+              __typename: "ObjectsSummaryInfo",
+            },
             {
               count: 1,
               name: "ground-track-field",
@@ -150,7 +155,7 @@ export const houston_suburb: any = {
           ],
           __typename: "ObjectsSummary",
         },
-        populationCount: 13633,
+        populationCount: 13629,
         stats: {
           incomePerCapita: 30856,
           housingUnitsTotal: 1714340,

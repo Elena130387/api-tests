@@ -1,9 +1,9 @@
 export const joplin_MO: any = {
   data: {
     shape: {
-      id: "198",
-      name: "AOI_Regression_Joplin_MO",
-      createdAt: "2021-09-14T10:59:36.398164Z",
+      id: "254",
+      name: "Joplin_MO. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:46:28.906102Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const joplin_MO: any = {
               coordinates: [
                 [
                   [-94.5226601095418, 37.093396516623],
-                  [-94.50447829136, 37.093396516623],
-                  [-94.50447829136, 37.0752146984412],
                   [-94.5226601095418, 37.0752146984412],
+                  [-94.50447829136, 37.0752146984412],
+                  [-94.50447829136, 37.093396516623],
+                  [-94.5226601095418, 37.093396516623],
                   [-94.5226601095418, 37.093396516623],
                 ],
               ],
@@ -39,9 +40,9 @@ export const joplin_MO: any = {
       tiles: { large: 36, medium: 54, small: 378, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.14623942703166337,
-          averageBuildingHeight: 6.887509952311536,
-          buildingCount: 1171,
+          averageBuildingAreaCoverage: 0.12921889370711392,
+          averageBuildingHeight: 6.934664094358342,
+          buildingCount: 941,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
@@ -51,39 +52,39 @@ export const joplin_MO: any = {
           building8moreAreaCoverage: 0.02039670187329489,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 2222837497,
+        economicExposure: 1968400866,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 991059499,
+            value: 875072364,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 183820865,
+            value: 160787420,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 143006944,
+            value: 132938205,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 96038302, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 82270770, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
             name: "RESIDENTIAL",
-            value: 0.4365079365079365,
+            value: 0.42857142857142855,
             __typename: "LandUseSummary",
           },
           {
             name: "CULTIVATED",
-            value: 0.291005291005291,
+            value: 0.29894179894179895,
             __typename: "LandUseSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 0.10846560846560846,
+            value: 0.1111111111111111,
             __typename: "LandUseSummary",
           },
           {
@@ -93,7 +94,7 @@ export const joplin_MO: any = {
           },
           {
             name: "COMMERCIAL",
-            value: 0.04497354497354497,
+            value: 0.042328042328042326,
             __typename: "LandUseSummary",
           },
           {
@@ -137,7 +138,7 @@ export const joplin_MO: any = {
           ],
           __typename: "ObjectsSummary",
         },
-        populationCount: 5647,
+        populationCount: 5539,
         stats: {
           incomePerCapita: 23390,
           housingUnitsTotal: 51995,

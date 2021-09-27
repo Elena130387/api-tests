@@ -1,9 +1,9 @@
 export const snow2: any = {
   data: {
     shape: {
-      id: "162",
-      name: "AOI_Regression_Snow2",
-      createdAt: "2021-09-13T09:40:23.805981Z",
+      id: "267",
+      name: "Snow2. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T07:16:58.962633Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const snow2: any = {
               coordinates: [
                 [
                   [-121.444534839123, 40.4730909034857],
-                  [-121.426353020941, 40.4730909034857],
-                  [-121.426353020941, 40.4549090853039],
                   [-121.444534839123, 40.4549090853039],
+                  [-121.426353020941, 40.4549090853039],
+                  [-121.426353020941, 40.4730909034857],
+                  [-121.444534839123, 40.4730909034857],
                   [-121.444534839123, 40.4730909034857],
                 ],
               ],
@@ -39,39 +40,43 @@ export const snow2: any = {
       tiles: { large: 30, medium: 54, small: 336, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.011294342222667876,
-          averageBuildingHeight: 3.1874723627554786,
-          buildingCount: 108,
+          averageBuildingAreaCoverage: 0.012905597686767578,
+          averageBuildingHeight: 3.5420124937107875,
+          buildingCount: 132,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 7.827263978263614,
+          averageBuildingHeight: 7.827263978263609,
           building3lessAreaCoverage: 0.0018128894624255952,
           building3to8AreaCoverage: 0.01676895504906064,
           building8moreAreaCoverage: 0.022230670565650576,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 125523433,
+        economicExposure: 152056988,
         insuranceExposure: [
           {
             name: "INDUSTRIAL",
-            value: 35393211,
+            value: 33223272,
             __typename: "InsuranceSummary",
           },
           {
             name: "RESIDENTIAL",
-            value: 13878966,
+            value: 24692650,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 5586774,
+            value: 15405486,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 3114121, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 3737156, __typename: "InsuranceSummary" },
         ],
         landUse: [
-          { name: "CULTIVATED", value: 0.5625, __typename: "LandUseSummary" },
+          {
+            name: "CULTIVATED",
+            value: 0.5505952380952381,
+            __typename: "LandUseSummary",
+          },
           {
             name: "OTHERIMP",
             value: 0.15178571428571427,
@@ -79,22 +84,22 @@ export const snow2: any = {
           },
           {
             name: "INDUSTRIAL",
-            value: 0.15178571428571427,
+            value: 0.13690476190476192,
             __typename: "LandUseSummary",
           },
           {
             name: "RESIDENTIAL",
-            value: 0.044642857142857144,
+            value: 0.05654761904761905,
+            __typename: "LandUseSummary",
+          },
+          {
+            name: "COMMERCIAL",
+            value: 0.047619047619047616,
             __typename: "LandUseSummary",
           },
           {
             name: "RIGHTOFWAY",
             value: 0.041666666666666664,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "COMMERCIAL",
-            value: 0.03273809523809524,
             __typename: "LandUseSummary",
           },
           {
@@ -114,7 +119,7 @@ export const snow2: any = {
           large: [],
           __typename: "ObjectsSummary",
         },
-        populationCount: 9113,
+        populationCount: 8971,
         stats: {
           incomePerCapita: 32056,
           housingUnitsTotal: 15740,

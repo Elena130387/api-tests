@@ -1,9 +1,9 @@
 export const la_suburb: any = {
   data: {
     shape: {
-      id: "182",
-      name: "AOI_Regression_LA_suburb",
-      createdAt: "2021-09-13T19:01:18.654137Z",
+      id: "258",
+      name: "La_suburb. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:56:29.499592Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const la_suburb: any = {
               coordinates: [
                 [
                   [-118.208390492354, 33.9317554909191],
-                  [-118.190208674172, 33.9317554909191],
-                  [-118.190208674172, 33.9135736727373],
                   [-118.208390492354, 33.9135736727373],
+                  [-118.190208674172, 33.9135736727373],
+                  [-118.190208674172, 33.9317554909191],
+                  [-118.208390492354, 33.9317554909191],
                   [-118.208390492354, 33.9317554909191],
                 ],
               ],
@@ -39,83 +40,83 @@ export const la_suburb: any = {
       tiles: { large: 36, medium: 63, small: 378, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.32031760644660423,
-          averageBuildingHeight: 3.0723505894960157,
-          buildingCount: 912,
+          averageBuildingAreaCoverage: 0.2825574117993552,
+          averageBuildingHeight: 2.768846953041011,
+          buildingCount: 1152,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 3.762284955967801,
-          building3lessAreaCoverage: 0.11890879636088376,
-          building3to8AreaCoverage: 0.01566940388351521,
-          building8moreAreaCoverage: 0.02577249839823082,
+          averageBuildingHeight: 3.0276571052847348,
+          building3lessAreaCoverage: 0.14875434189246445,
+          building3to8AreaCoverage: 0.021151487158719826,
+          building8moreAreaCoverage: 0.015677840621383103,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 8414394731,
+        economicExposure: 6903917913,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 4724667866,
+            value: 3843538530,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 711084597,
+            value: 607879010,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 380780421,
+            value: 258086058,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 111440356, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 132344374, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
             name: "RESIDENTIAL",
-            value: 0.6904761904761905,
+            value: 0.6798941798941799,
             __typename: "LandUseSummary",
           },
           {
             name: "RIGHTOFWAY",
-            value: 0.1164021164021164,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "COMMERCIAL",
-            value: 0.06084656084656084,
+            value: 0.12698412698412698,
             __typename: "LandUseSummary",
           },
           {
             name: "CULTIVATED",
-            value: 0.05026455026455026,
+            value: 0.06613756613756613,
+            __typename: "LandUseSummary",
+          },
+          {
+            name: "COMMERCIAL",
+            value: 0.0582010582010582,
             __typename: "LandUseSummary",
           },
           {
             name: "OTHERIMP",
-            value: 0.047619047619047616,
+            value: 0.03968253968253968,
             __typename: "LandUseSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 0.031746031746031744,
+            value: 0.023809523809523808,
             __typename: "LandUseSummary",
           },
           {
             name: "NATURE",
-            value: 0.0026455026455026454,
+            value: 0.005291005291005291,
             __typename: "LandUseSummary",
           },
         ],
         objects: {
           small: [
             {
-              count: 1555,
+              count: 2529,
               name: "small-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
             {
-              count: 16,
+              count: 31,
               name: "swimming-pool",
               __typename: "ObjectsSummaryInfo",
             },
@@ -124,19 +125,15 @@ export const la_suburb: any = {
               name: "tennis-court",
               __typename: "ObjectsSummaryInfo",
             },
+            { count: 2, name: "roundabout", __typename: "ObjectsSummaryInfo" },
+            {
+              count: 2,
+              name: "large-vehicle",
+              __typename: "ObjectsSummaryInfo",
+            },
             {
               count: 2,
               name: "basketball-court",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 1,
-              name: "storage-tank",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 1,
-              name: "large-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
           ],
@@ -159,7 +156,7 @@ export const la_suburb: any = {
           ],
           __typename: "ObjectsSummary",
         },
-        populationCount: 23327,
+        populationCount: 27746,
         stats: {
           incomePerCapita: 30798,
           housingUnitsTotal: 3506903,

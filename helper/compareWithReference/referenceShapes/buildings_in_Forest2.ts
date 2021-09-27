@@ -1,9 +1,9 @@
 export const buildings_in_Forest2: any = {
   data: {
     shape: {
-      id: "171",
-      name: "AOI_Regression_Buildings_in_Forest",
-      createdAt: "2021-09-13T13:57:14.549506Z",
+      id: "247",
+      name: "Buildings_in_Forest2. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:29:51.453960Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const buildings_in_Forest2: any = {
               coordinates: [
                 [
                   [-121.729383817304, 40.0296968985677],
-                  [-121.711201999122, 40.0296968985677],
-                  [-121.711201999122, 40.0115150803859],
                   [-121.729383817304, 40.0115150803859],
+                  [-121.711201999122, 40.0115150803859],
+                  [-121.711201999122, 40.0296968985677],
+                  [-121.729383817304, 40.0296968985677],
                   [-121.729383817304, 40.0296968985677],
                 ],
               ],
@@ -39,32 +40,36 @@ export const buildings_in_Forest2: any = {
       tiles: { large: 30, medium: 63, small: 357, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.00047015876663165267,
-          averageBuildingHeight: 8.632573332435042,
-          buildingCount: 11,
+          averageBuildingAreaCoverage: 0.0005200810793067227,
+          averageBuildingHeight: 3.4428651696165176,
+          buildingCount: 13,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 2.5754205598066844,
+          averageBuildingHeight: 2.575420559806685,
           building3lessAreaCoverage: 0.0016184788124234068,
           building3to8AreaCoverage: 0.0003359711804643733,
           building8moreAreaCoverage: 0.000031863941865808826,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 6096218,
+        economicExposure: 4634078,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 4876975,
+            value: 3707263,
             __typename: "InsuranceSummary",
           },
           { name: "AGRI", value: 0, __typename: "InsuranceSummary" },
-          { name: "INDUSTRIAL", value: 0, __typename: "InsuranceSummary" },
+          {
+            name: "INDUSTRIAL",
+            value: 0,
+            __typename: "InsuranceSummary",
+          },
         ],
         landUse: [
           {
             name: "NATURE",
-            value: 0.8795518207282913,
+            value: 0.8739495798319328,
             __typename: "LandUseSummary",
           },
           {
@@ -74,7 +79,7 @@ export const buildings_in_Forest2: any = {
           },
           {
             name: "RESIDENTIAL",
-            value: 0.0056022408963585435,
+            value: 0.011204481792717087,
             __typename: "LandUseSummary",
           },
         ],

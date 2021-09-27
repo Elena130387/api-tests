@@ -1,9 +1,9 @@
 export const houston_downtown: any = {
   data: {
     shape: {
-      id: "173",
-      name: "AOI_Regression_Houston_downtown",
-      createdAt: "2021-09-13T15:47:24.837821Z",
+      id: "252",
+      name: "Houston_downtown. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:41:59.255603Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const houston_downtown: any = {
               coordinates: [
                 [
                   [-95.3774680204502, 29.7681706508483],
-                  [-95.3592862022684, 29.7681706508483],
-                  [-95.3592862022684, 29.7499888326665],
                   [-95.3774680204502, 29.7499888326665],
+                  [-95.3592862022684, 29.7499888326665],
+                  [-95.3592862022684, 29.7681706508483],
+                  [-95.3774680204502, 29.7681706508483],
                   [-95.3774680204502, 29.7681706508483],
                 ],
               ],
@@ -39,36 +40,36 @@ export const houston_downtown: any = {
       tiles: { large: 30, medium: 63, small: 378, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.2057418217734685,
-          averageBuildingHeight: 10.575846360941506,
-          buildingCount: 623,
+          averageBuildingAreaCoverage: 0.20289670348798156,
+          averageBuildingHeight: 10.574372169616783,
+          buildingCount: 576,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 10.064302217915413,
+          averageBuildingHeight: 10.064302217915424,
           building3lessAreaCoverage: 0.014419616214812749,
           building3to8AreaCoverage: 0.022541853485914764,
           building8moreAreaCoverage: 0.15600759516317378,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 6707179552,
+        economicExposure: 6570804713,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 1360687556,
+            value: 1392748051,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 1301569857,
+            value: 1279363426,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 1001370971,
+            value: 946134837,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 100082876, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 99678060, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
@@ -88,22 +89,22 @@ export const houston_downtown: any = {
           },
           {
             name: "INDUSTRIAL",
-            value: 0.15608465608465608,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "CULTIVATED",
-            value: 0.12698412698412698,
+            value: 0.15343915343915343,
             __typename: "LandUseSummary",
           },
           {
             name: "NATURE",
-            value: 0.12433862433862433,
+            value: 0.12698412698412698,
+            __typename: "LandUseSummary",
+          },
+          {
+            name: "CULTIVATED",
+            value: 0.11904761904761904,
             __typename: "LandUseSummary",
           },
           {
             name: "RESIDENTIAL",
-            value: 0.07671957671957672,
+            value: 0.08465608465608465,
             __typename: "LandUseSummary",
           },
         ],
@@ -119,7 +120,11 @@ export const houston_downtown: any = {
               name: "large-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
-            { count: 8, name: "roundabout", __typename: "ObjectsSummaryInfo" },
+            {
+              count: 8,
+              name: "roundabout",
+              __typename: "ObjectsSummaryInfo",
+            },
             {
               count: 7,
               name: "storage-tank",

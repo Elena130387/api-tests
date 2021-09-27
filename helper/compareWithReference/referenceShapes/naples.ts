@@ -1,9 +1,9 @@
 export const naples: any = {
   data: {
     shape: {
-      id: "175",
-      name: "AOI_Regression_Naples",
-      createdAt: "2021-09-13T16:16:03.170584Z",
+      id: "261",
+      name: "Naples. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T07:03:11.993234Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const naples: any = {
               coordinates: [
                 [
                   [-81.7810379440707, 26.1694239478754],
-                  [-81.7628561258889, 26.1694239478754],
-                  [-81.7628561258889, 26.1512421296936],
                   [-81.7810379440707, 26.1512421296936],
+                  [-81.7628561258889, 26.1512421296936],
+                  [-81.7628561258889, 26.1694239478754],
+                  [-81.7810379440707, 26.1694239478754],
                   [-81.7810379440707, 26.1694239478754],
                 ],
               ],
@@ -39,61 +40,61 @@ export const naples: any = {
       tiles: { large: 36, medium: 63, small: 399, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.10512657452346687,
-          averageBuildingHeight: 3.191544729904996,
-          buildingCount: 580,
+          averageBuildingAreaCoverage: 0.12836335834703946,
+          averageBuildingHeight: 3.215324771772431,
+          buildingCount: 660,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 4.831776056183651,
-          building3lessAreaCoverage: 0.031282850375450345,
-          building3to8AreaCoverage: 0.04647385446648849,
-          building8moreAreaCoverage: 0.013505959570557252,
+          averageBuildingHeight: 4.865213963857471,
+          building3lessAreaCoverage: 0.031048346880384554,
+          building3to8AreaCoverage: 0.04656877254782464,
+          building8moreAreaCoverage: 0.013881081028988487,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 2116656868,
+        economicExposure: 2607875520,
         insuranceExposure: [
           {
-            name: "INDUSTRIAL",
-            value: 424975195,
+            name: "RESIDENTIAL",
+            value: 531202036,
             __typename: "InsuranceSummary",
           },
           {
-            name: "RESIDENTIAL",
-            value: 368775894,
+            name: "INDUSTRIAL",
+            value: 524307047,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 294686908,
+            value: 324038471,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 30631251, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 27912373, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
-            name: "CULTIVATED",
-            value: 0.3107769423558897,
+            name: "INDUSTRIAL",
+            value: 0.3333333333333333,
             __typename: "LandUseSummary",
           },
           {
-            name: "INDUSTRIAL",
-            value: 0.3057644110275689,
+            name: "CULTIVATED",
+            value: 0.2932330827067669,
             __typename: "LandUseSummary",
           },
           {
             name: "RESIDENTIAL",
-            value: 0.19298245614035087,
+            value: 0.20300751879699247,
             __typename: "LandUseSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 0.08771929824561403,
+            value: 0.08270676691729323,
             __typename: "LandUseSummary",
           },
           {
             name: "NATURE",
-            value: 0.07017543859649122,
+            value: 0.05263157894736842,
             __typename: "LandUseSummary",
           },
           {
@@ -103,20 +104,20 @@ export const naples: any = {
           },
           {
             name: "OTHERIMP",
-            value: 0.010025062656641603,
+            value: 0.012531328320802004,
             __typename: "LandUseSummary",
           },
         ],
         objects: {
           small: [
             {
-              count: 1952,
+              count: 1950,
               name: "small-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
             { count: 46, name: "plane", __typename: "ObjectsSummaryInfo" },
             {
-              count: 11,
+              count: 13,
               name: "large-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
@@ -137,12 +138,16 @@ export const naples: any = {
               name: "storage-tank",
               __typename: "ObjectsSummaryInfo",
             },
-            { count: 1, name: "helicopter", __typename: "ObjectsSummaryInfo" },
+            {
+              count: 1,
+              name: "helicopter",
+              __typename: "ObjectsSummaryInfo",
+            },
           ],
           large: [],
           __typename: "ObjectsSummary",
         },
-        populationCount: 3952,
+        populationCount: 3956,
         stats: {
           incomePerCapita: 41239,
           housingUnitsTotal: 207403,

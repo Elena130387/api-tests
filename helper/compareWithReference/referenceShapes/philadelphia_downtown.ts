@@ -1,9 +1,9 @@
 export const philadelphia_downtown: any = {
   data: {
     shape: {
-      id: "196",
-      name: "AOI_Regression_Philadelphia_downtown",
-      createdAt: "2021-09-14T10:01:29.168936Z",
+      id: "263",
+      name: "Philadelphia_downtown. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T07:07:49.422873Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -39,66 +39,66 @@ export const philadelphia_downtown: any = {
       tiles: { large: 30, medium: 54, small: 336, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.34851330802554176,
-          averageBuildingHeight: 7.202841596442464,
-          buildingCount: 663,
+          averageBuildingAreaCoverage: 0.3534264337448847,
+          averageBuildingHeight: 7.300782155375528,
+          buildingCount: 661,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 7.966829698804356,
-          building3lessAreaCoverage: 0.015197140829903739,
-          building3to8AreaCoverage: 0.1418361890883673,
-          building8moreAreaCoverage: 0.1276737167721703,
+          averageBuildingHeight: 7.918713042468883,
+          building3lessAreaCoverage: 0.013718695867629279,
+          building3to8AreaCoverage: 0.145615782056536,
+          building8moreAreaCoverage: 0.12259313038417272,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 5855240941,
+        economicExposure: 6022508151,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 2315809603,
+            value: 2500659760,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 1210580248,
+            value: 1168601829,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 322190210,
+            value: 294044851,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 41210902, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 64170486, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
             name: "RIGHTOFWAY",
-            value: 0.39285714285714285,
+            value: 0.41369047619047616,
             __typename: "LandUseSummary",
           },
           {
             name: "RESIDENTIAL",
-            value: 0.20238095238095238,
+            value: 0.22321428571428573,
             __typename: "LandUseSummary",
           },
           {
             name: "OTHERIMP",
-            value: 0.13392857142857142,
+            value: 0.11904761904761904,
             __typename: "LandUseSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 0.12202380952380952,
+            value: 0.10714285714285714,
             __typename: "LandUseSummary",
           },
           {
             name: "CULTIVATED",
-            value: 0.05952380952380952,
+            value: 0.05654761904761905,
             __typename: "LandUseSummary",
           },
           {
             name: "NATURE",
-            value: 0.05357142857142857,
+            value: 0.044642857142857144,
             __typename: "LandUseSummary",
           },
           {
@@ -110,30 +110,33 @@ export const philadelphia_downtown: any = {
         objects: {
           small: [
             {
-              count: 2547,
+              count: 2647,
               name: "small-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
             {
-              count: 11,
+              count: 10,
               name: "tennis-court",
               __typename: "ObjectsSummaryInfo",
             },
-            { count: 6, name: "roundabout", __typename: "ObjectsSummaryInfo" },
-            { count: 1, name: "harbor", __typename: "ObjectsSummaryInfo" },
+            {
+              count: 6,
+              name: "roundabout",
+              __typename: "ObjectsSummaryInfo",
+            },
+            {
+              count: 3,
+              name: "swimming-pool",
+              __typename: "ObjectsSummaryInfo",
+            },
+            {
+              count: 1,
+              name: "harbor",
+              __typename: "ObjectsSummaryInfo",
+            },
             {
               count: 1,
               name: "storage-tank",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 1,
-              name: "large-vehicle",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 1,
-              name: "swimming-pool",
               __typename: "ObjectsSummaryInfo",
             },
             {
@@ -144,12 +147,12 @@ export const philadelphia_downtown: any = {
           ],
           large: [
             {
-              count: 3,
+              count: 4,
               name: "baseball-diamond",
               __typename: "ObjectsSummaryInfo",
             },
             {
-              count: 3,
+              count: 4,
               name: "soccer-ball-field",
               __typename: "ObjectsSummaryInfo",
             },
@@ -161,7 +164,7 @@ export const philadelphia_downtown: any = {
           ],
           __typename: "ObjectsSummary",
         },
-        populationCount: 23912,
+        populationCount: 22795,
         stats: {
           incomePerCapita: 24811,
           housingUnitsTotal: 679876,

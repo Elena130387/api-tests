@@ -1,9 +1,9 @@
 export const la_industrial: any = {
   data: {
     shape: {
-      id: "192",
-      name: "AOI_Regression_LA_industrial",
-      createdAt: "2021-09-14T09:23:52.231769Z",
+      id: "257",
+      name: "La_industrial. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:54:12.857001Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -18,6 +18,7 @@ export const la_industrial: any = {
                   [-118.425078620419, 33.9254994304161],
                   [-118.425078620419, 33.9073176122343],
                   [-118.406896802237, 33.9073176122343],
+                  [-118.406896802237, 33.9254994304161],
                   [-118.406896802237, 33.9254994304161],
                 ],
               ],
@@ -39,41 +40,41 @@ export const la_industrial: any = {
       tiles: { large: 36, medium: 54, small: 378, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.2894219292534722,
-          averageBuildingHeight: 4.35302166257929,
-          buildingCount: 1231,
+          averageBuildingAreaCoverage: 0.3167246662119709,
+          averageBuildingHeight: 4.132411292062324,
+          buildingCount: 885,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 6.086906459567626,
-          building3lessAreaCoverage: 0.0851089840843564,
-          building3to8AreaCoverage: 0.041031125992063495,
-          building8moreAreaCoverage: 0.04351879301525298,
+          averageBuildingHeight: 6.1004920171328205,
+          building3lessAreaCoverage: 0.09523928606951679,
+          building3to8AreaCoverage: 0.03414862496512277,
+          building8moreAreaCoverage: 0.04751837190496858,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 10303794228,
+        economicExposure: 10721501870,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 2525108058,
+            value: 2658248677,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 2298957466,
+            value: 2432266109,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 768182364,
+            value: 697363528,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 35913467, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 46725963, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
             name: "INDUSTRIAL",
-            value: 0.41534391534391535,
+            value: 0.4576719576719577,
             __typename: "LandUseSummary",
           },
           {
@@ -82,46 +83,50 @@ export const la_industrial: any = {
             __typename: "LandUseSummary",
           },
           {
-            name: "COMMERCIAL",
-            value: 0.10317460317460317,
-            __typename: "LandUseSummary",
-          },
-          {
             name: "RIGHTOFWAY",
-            value: 0.09523809523809523,
+            value: 0.08465608465608465,
             __typename: "LandUseSummary",
           },
           {
             name: "OTHERIMP",
-            value: 0.06878306878306878,
+            value: 0.07936507936507936,
+            __typename: "LandUseSummary",
+          },
+          {
+            name: "COMMERCIAL",
+            value: 0.07142857142857142,
             __typename: "LandUseSummary",
           },
           {
             name: "CULTIVATED",
-            value: 0.05291005291005291,
+            value: 0.03968253968253968,
             __typename: "LandUseSummary",
           },
           {
             name: "NATURE",
-            value: 0.0026455026455026454,
+            value: 0.005291005291005291,
             __typename: "LandUseSummary",
           },
         ],
         objects: {
           small: [
             {
-              count: 1778,
+              count: 1628,
               name: "small-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
             {
-              count: 43,
+              count: 45,
               name: "storage-tank",
               __typename: "ObjectsSummaryInfo",
             },
-            { count: 26, name: "roundabout", __typename: "ObjectsSummaryInfo" },
             {
-              count: 12,
+              count: 30,
+              name: "roundabout",
+              __typename: "ObjectsSummaryInfo",
+            },
+            {
+              count: 13,
               name: "large-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
@@ -136,19 +141,19 @@ export const la_industrial: any = {
               __typename: "ObjectsSummaryInfo",
             },
             {
-              count: 3,
+              count: 2,
               name: "basketball-court",
               __typename: "ObjectsSummaryInfo",
             },
           ],
           large: [
             {
-              count: 8,
+              count: 7,
               name: "baseball-diamond",
               __typename: "ObjectsSummaryInfo",
             },
             {
-              count: 3,
+              count: 4,
               name: "soccer-ball-field",
               __typename: "ObjectsSummaryInfo",
             },
@@ -160,7 +165,7 @@ export const la_industrial: any = {
           ],
           __typename: "ObjectsSummary",
         },
-        populationCount: 15486,
+        populationCount: 14508,
         stats: {
           incomePerCapita: 30798,
           housingUnitsTotal: 3506903,
