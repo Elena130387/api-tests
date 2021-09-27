@@ -1,9 +1,9 @@
 export const la_beverlyHills: any = {
   data: {
     shape: {
-      id: "193",
-      name: "AOI_Regression_LA_BeverlyHills",
-      createdAt: "2021-09-14T09:25:13.584928Z",
+      id: "255",
+      name: "La_beverlyHills. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:49:37.335332Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -18,6 +18,7 @@ export const la_beverlyHills: any = {
                   [-118.417234748847, 34.0920029021877],
                   [-118.417234748847, 34.0738210840059],
                   [-118.399052930665, 34.0738210840059],
+                  [-118.399052930665, 34.0920029021877],
                   [-118.399052930665, 34.0920029021877],
                 ],
               ],
@@ -39,89 +40,83 @@ export const la_beverlyHills: any = {
       tiles: { large: 36, medium: 54, small: 378, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.1887267783836082,
-          averageBuildingHeight: 3.194419592706521,
-          buildingCount: 918,
+          averageBuildingAreaCoverage: 0.12070794080300305,
+          averageBuildingHeight: 3.144995318830231,
+          buildingCount: 913,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 4.032779659346549,
-          building3lessAreaCoverage: 0.06632993587110408,
-          building3to8AreaCoverage: 0.05906162564716642,
-          building8moreAreaCoverage: 0.017324215520626653,
+          averageBuildingHeight: 3.450940865193416,
+          building3lessAreaCoverage: 0.08164657108367436,
+          building3to8AreaCoverage: 0.04024925433769428,
+          building8moreAreaCoverage: 0.0123433511723917,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 5535734671,
+        economicExposure: 3558419788,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 4095253001,
-            __typename: "InsuranceSummary",
-          },
-          {
-            name: "INDUSTRIAL",
-            value: 96279776,
+            value: 2634429017,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 74106445,
+            value: 84563914,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 15737473, __typename: "InsuranceSummary" },
+          {
+            name: "AGRI",
+            value: 37333099,
+            __typename: "InsuranceSummary",
+          },
         ],
         landUse: [
           {
             name: "RESIDENTIAL",
-            value: 0.8888888888888888,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "CULTIVATED",
-            value: 0.031746031746031744,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "RIGHTOFWAY",
-            value: 0.031746031746031744,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "OTHERIMP",
-            value: 0.023809523809523808,
+            value: 0.8042328042328042,
             __typename: "LandUseSummary",
           },
           {
             name: "NATURE",
-            value: 0.021164021164021163,
+            value: 0.07407407407407407,
+            __typename: "LandUseSummary",
+          },
+          {
+            name: "RIGHTOFWAY",
+            value: 0.05291005291005291,
+            __typename: "LandUseSummary",
+          },
+          {
+            name: "CULTIVATED",
+            value: 0.042328042328042326,
+            __typename: "LandUseSummary",
+          },
+          {
+            name: "OTHERIMP",
+            value: 0.018518518518518517,
             __typename: "LandUseSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 0.0026455026455026454,
+            value: 0.007936507936507936,
             __typename: "LandUseSummary",
           },
         ],
         objects: {
           small: [
             {
-              count: 267,
+              count: 290,
               name: "small-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
             {
-              count: 254,
+              count: 76,
               name: "swimming-pool",
               __typename: "ObjectsSummaryInfo",
             },
             {
-              count: 48,
+              count: 19,
               name: "tennis-court",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 1,
-              name: "basketball-court",
               __typename: "ObjectsSummaryInfo",
             },
           ],
@@ -139,7 +134,7 @@ export const la_beverlyHills: any = {
           ],
           __typename: "ObjectsSummary",
         },
-        populationCount: 28210,
+        populationCount: 24501,
         stats: {
           incomePerCapita: 30798,
           housingUnitsTotal: 3506903,

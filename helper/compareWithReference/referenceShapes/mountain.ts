@@ -1,9 +1,9 @@
 export const mountain = {
   data: {
     shape: {
-      id: 4509,
-      name: "snow_ser",
-      createdAt: "2021-09-21T09:50:48.564060Z",
+      id: "235",
+      name: "Mountain. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T05:51:08.716891Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -18,6 +18,7 @@ export const mountain = {
                   [-122.24129901279076, 41.349365076599746],
                   [-122.2232855663219, 41.349142283406444],
                   [-122.22339147070119, 41.36772961525337],
+                  [-122.24151093535436, 41.36771080218045],
                   [-122.24151093535436, 41.36771080218045],
                 ],
               ],
@@ -35,73 +36,60 @@ export const mountain = {
       ],
       __typename: "Shape",
       status: "completed",
-      progress: {
-        total: 1428,
-        completed: 1428,
-        __typename: "Progress",
-      },
-      tiles: {
-        large: 30,
-        medium: 54,
-        small: 336,
-        __typename: "ShapeTiles",
-      },
+      progress: { total: 1428, completed: 1428, __typename: "Progress" },
+      tiles: { large: 30, medium: 54, small: 336, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.03404730842227027,
-          averageBuildingHeight: 5.118147330574056,
-          buildingCount: 347,
+          averageBuildingAreaCoverage: 0.04631435303460984,
+          averageBuildingHeight: 5.114385517157175,
+          buildingCount: 324,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 3.0225831860148293,
-          building3lessAreaCoverage: 0.0014565558660598029,
-          building3to8AreaCoverage: 0.0004177320571172805,
-          building8moreAreaCoverage: 0,
+          averageBuildingHeight: 5.386035855654542,
+          building3lessAreaCoverage: 0.021039417811802456,
+          building3to8AreaCoverage: 0.035132408142089844,
+          building8moreAreaCoverage: 0.025952452705019995,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 478330082,
+        economicExposure: 687412332,
         insuranceExposure: [
           {
-            name: "RESIDENTIAL",
-            value: 145752239,
+            name: "COMMERCIAL",
+            value: 185810621,
             __typename: "InsuranceSummary",
           },
           {
-            name: "COMMERCIAL",
-            value: 129292225,
+            name: "RESIDENTIAL",
+            value: 181838432,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 26080385,
+            value: 50345787,
             __typename: "InsuranceSummary",
           },
-          {
-            name: "AGRI",
-            value: 4635535,
-            __typename: "InsuranceSummary",
-          },
+          { name: "AGRI", value: 7369638, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
             name: "OTHERIMP",
-            value: 0.6279761904761905,
+            value: 0.6190476190476191,
             __typename: "LandUseSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 0.15178571428571427,
+            value: 0.14285714285714285,
             __typename: "LandUseSummary",
           },
           {
             name: "CULTIVATED",
-            value: 0.06547619047619048,
+            value: 0.06845238095238096,
             __typename: "LandUseSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 0.044642857142857144,
+            value: 0.05952380952380952,
             __typename: "LandUseSummary",
           },
           {
@@ -111,12 +99,12 @@ export const mountain = {
           },
           {
             name: "RIGHTOFWAY",
-            value: 0.03571428571428571,
+            value: 0.03869047619047619,
             __typename: "LandUseSummary",
           },
           {
             name: "RESIDENTIAL",
-            value: 0.03571428571428571,
+            value: 0.03273809523809524,
             __typename: "LandUseSummary",
           },
         ],

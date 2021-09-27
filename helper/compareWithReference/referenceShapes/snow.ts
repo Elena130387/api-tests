@@ -1,9 +1,9 @@
 export const snow: any = {
   data: {
     shape: {
-      id: "161",
-      name: "AOI_Regression_Snow",
-      createdAt: "2021-09-13T09:31:16.580399Z",
+      id: "266",
+      name: "Snow. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T07:13:39.954789Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const snow: any = {
               coordinates: [
                 [
                   [-121.283496196492, 40.498498431138],
-                  [-121.26531437831, 40.498498431138],
-                  [-121.26531437831, 40.4803166129562],
                   [-121.283496196492, 40.4803166129562],
+                  [-121.26531437831, 40.4803166129562],
+                  [-121.26531437831, 40.498498431138],
+                  [-121.283496196492, 40.498498431138],
                   [-121.283496196492, 40.498498431138],
                 ],
               ],
@@ -39,61 +40,53 @@ export const snow: any = {
       tiles: { large: 30, medium: 54, small: 336, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.09506168819609143,
-          averageBuildingHeight: 2.174003979730456,
-          buildingCount: 527,
+          averageBuildingAreaCoverage: 0.019074757893880207,
+          averageBuildingHeight: 2.2342805926277736,
+          buildingCount: 234,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 4.487094234252867,
+          averageBuildingHeight: 4.487094234252868,
           building3lessAreaCoverage: 0.016659305209205263,
           building3to8AreaCoverage: 0.007085096268426804,
           building8moreAreaCoverage: 0.009920006706601097,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 800078732,
+        economicExposure: 144532853,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 550918380,
+            value: 99340944,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 23061426, __typename: "InsuranceSummary" },
-          {
-            name: "COMMERCIAL",
-            value: 10533812,
-            __typename: "InsuranceSummary",
-          },
+          { name: "AGRI", value: 4643658, __typename: "InsuranceSummary" },
           {
             name: "INDUSTRIAL",
-            value: 6801192,
+            value: 1185251,
+            __typename: "InsuranceSummary",
+          },
+          {
+            name: "COMMERCIAL",
+            value: 1148814,
             __typename: "InsuranceSummary",
           },
         ],
         landUse: [
           {
             name: "RESIDENTIAL",
-            value: 0.6517857142857143,
+            value: 0.36904761904761907,
             __typename: "LandUseSummary",
           },
-          {
-            name: "CULTIVATED",
-            value: 0.15773809523809523,
-            __typename: "LandUseSummary",
-          },
+          { name: "CULTIVATED", value: 0.3125, __typename: "LandUseSummary" },
           {
             name: "OTHERIMP",
-            value: 0.13392857142857142,
+            value: 0.23511904761904762,
             __typename: "LandUseSummary",
           },
-          {
-            name: "NATURE",
-            value: 0.03273809523809524,
-            __typename: "LandUseSummary",
-          },
+          { name: "NATURE", value: 0.0625, __typename: "LandUseSummary" },
           {
             name: "COMMERCIAL",
-            value: 0.01488095238095238,
+            value: 0.011904761904761904,
             __typename: "LandUseSummary",
           },
           {
@@ -113,7 +106,7 @@ export const snow: any = {
           large: [],
           __typename: "ObjectsSummary",
         },
-        populationCount: 20745,
+        populationCount: 19256,
         stats: {
           incomePerCapita: 32056,
           housingUnitsTotal: 15740,

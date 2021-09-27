@@ -1,9 +1,9 @@
 export const agri1: any = {
   data: {
     shape: {
-      id: "165",
-      name: "AOI_Regression_Agri1",
-      createdAt: "2021-09-13T10:06:42.342390Z",
+      id: "236",
+      name: "Agri1. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T05:52:28.902123Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const agri1: any = {
               coordinates: [
                 [
                   [-82.0411, 27.4305],
-                  [-82.0229181818182, 27.4305],
-                  [-82.0229181818182, 27.4123181818182],
                   [-82.0411, 27.4123181818182],
+                  [-82.0229181818182, 27.4123181818182],
+                  [-82.0229181818182, 27.4305],
+                  [-82.0411, 27.4305],
                   [-82.0411, 27.4305],
                 ],
               ],
@@ -39,33 +40,37 @@ export const agri1: any = {
       tiles: { large: 36, medium: 63, small: 399, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.007839441896978775,
-          averageBuildingHeight: 2.8047892877624006,
-          buildingCount: 61,
+          averageBuildingAreaCoverage: 0.008767015653146538,
+          averageBuildingHeight: 2.821596484591914,
+          buildingCount: 57,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 8.112508908808568,
-          building3lessAreaCoverage: 0.000247888397752193,
+          averageBuildingHeight: 8.308622623391704,
+          building3lessAreaCoverage: 0.00024352874373433583,
           building3to8AreaCoverage: 0.000024207552572838347,
-          building8moreAreaCoverage: 0.0025464968573778194,
+          building8moreAreaCoverage: 0.0027547085793096023,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 31659570,
+        economicExposure: 37192984,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 18818330,
+            value: 20587193,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 1873343, __typename: "InsuranceSummary" },
-          { name: "COMMERCIAL", value: 539742, __typename: "InsuranceSummary" },
-          { name: "INDUSTRIAL", value: 397047, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 2306080, __typename: "InsuranceSummary" },
+          {
+            name: "COMMERCIAL",
+            value: 1047698,
+            __typename: "InsuranceSummary",
+          },
+          { name: "INDUSTRIAL", value: 810359, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
             name: "CULTIVATED",
-            value: 0.7719298245614035,
+            value: 0.7744360902255639,
             __typename: "LandUseSummary",
           },
           {
@@ -75,7 +80,7 @@ export const agri1: any = {
           },
           {
             name: "RESIDENTIAL",
-            value: 0.05012531328320802,
+            value: 0.047619047619047616,
             __typename: "LandUseSummary",
           },
           {
@@ -101,7 +106,7 @@ export const agri1: any = {
           ],
           __typename: "ObjectsSummary",
         },
-        populationCount: 522,
+        populationCount: 471,
         stats: {
           incomePerCapita: 18643,
           housingUnitsTotal: 9724,

@@ -1,9 +1,9 @@
 export const menloPark: any = {
   data: {
     shape: {
-      id: "195",
-      name: "AOI_Regression_MenloPark",
-      createdAt: "2021-09-14T09:59:44.576135Z",
+      id: "260",
+      name: "MenloPark. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:59:57.653261Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const menloPark: any = {
               coordinates: [
                 [
                   [-122.168519433018, 37.48247363411],
-                  [-122.150337614836, 37.48247363411],
-                  [-122.150337614836, 37.4642918159282],
                   [-122.168519433018, 37.4642918159282],
+                  [-122.150337614836, 37.4642918159282],
+                  [-122.150337614836, 37.48247363411],
+                  [-122.168519433018, 37.48247363411],
                   [-122.168519433018, 37.48247363411],
                 ],
               ],
@@ -39,113 +40,116 @@ export const menloPark: any = {
       tiles: { large: 30, medium: 54, small: 357, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.20878299745191045,
-          averageBuildingHeight: 2.82204307688923,
-          buildingCount: 998,
+          averageBuildingAreaCoverage: 0.24007774801815257,
+          averageBuildingHeight: 2.7779782806039046,
+          buildingCount: 810,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
-          averageBuildingHeight: 4.223293558607159,
-          building3lessAreaCoverage: 0.09953846650965073,
-          building3to8AreaCoverage: 0.03975136807652749,
-          building8moreAreaCoverage: 0.03592688296021534,
+          averageBuildingHeight: 4.524606817457212,
+          building3lessAreaCoverage: 0.09524668632101278,
+          building3to8AreaCoverage: 0.026888166155133928,
+          building8moreAreaCoverage: 0.0384475323332458,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 9451749236,
+        economicExposure: 10583003567,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 4730335149,
+            value: 5105803357,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 881226769,
+            value: 940375905,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 583593777,
+            value: 758614789,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 183340372, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 221075769, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
             name: "RESIDENTIAL",
-            value: 0.5630252100840336,
+            value: 0.5518207282913166,
             __typename: "LandUseSummary",
           },
           {
             name: "RIGHTOFWAY",
-            value: 0.13165266106442577,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "OTHERIMP",
-            value: 0.08403361344537816,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "CULTIVATED",
-            value: 0.08403361344537816,
+            value: 0.12885154061624648,
             __typename: "LandUseSummary",
           },
           {
             name: "INDUSTRIAL",
+            value: 0.09523809523809523,
+            __typename: "LandUseSummary",
+          },
+          {
+            name: "OTHERIMP",
+            value: 0.08123249299719888,
+            __typename: "LandUseSummary",
+          },
+          {
+            name: "CULTIVATED",
             value: 0.0784313725490196,
             __typename: "LandUseSummary",
           },
           {
-            name: "COMMERCIAL",
-            value: 0.04201680672268908,
+            name: "NATURE",
+            value: 0.03361344537815126,
             __typename: "LandUseSummary",
           },
           {
-            name: "NATURE",
-            value: 0.01680672268907563,
+            name: "COMMERCIAL",
+            value: 0.03081232492997199,
             __typename: "LandUseSummary",
           },
         ],
         objects: {
           small: [
             {
-              count: 2094,
+              count: 1506,
               name: "small-vehicle",
               __typename: "ObjectsSummaryInfo",
             },
             {
-              count: 16,
+              count: 3,
+              name: "basketball-court",
+              __typename: "ObjectsSummaryInfo",
+            },
+            {
+              count: 2,
+              name: "storage-tank",
+              __typename: "ObjectsSummaryInfo",
+            },
+            {
+              count: 2,
               name: "swimming-pool",
               __typename: "ObjectsSummaryInfo",
             },
             {
-              count: 5,
-              name: "basketball-court",
+              count: 1,
+              name: "roundabout",
               __typename: "ObjectsSummaryInfo",
             },
-            { count: 4, name: "roundabout", __typename: "ObjectsSummaryInfo" },
             {
-              count: 3,
+              count: 1,
               name: "tennis-court",
               __typename: "ObjectsSummaryInfo",
             },
-            {
-              count: 2,
-              name: "large-vehicle",
-              __typename: "ObjectsSummaryInfo",
-            },
-            { count: 1, name: "ship", __typename: "ObjectsSummaryInfo" },
           ],
           large: [
             {
-              count: 2,
-              name: "baseball-diamond",
+              count: 3,
+              name: "soccer-ball-field",
               __typename: "ObjectsSummaryInfo",
             },
             {
               count: 2,
-              name: "soccer-ball-field",
+              name: "baseball-diamond",
               __typename: "ObjectsSummaryInfo",
             },
             {
@@ -156,7 +160,7 @@ export const menloPark: any = {
           ],
           __typename: "ObjectsSummary",
         },
-        populationCount: 13679,
+        populationCount: 13623,
         stats: {
           incomePerCapita: 53516,
           housingUnitsTotal: 275109,

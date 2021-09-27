@@ -1,9 +1,9 @@
 export const arizona: any = {
   data: {
     shape: {
-      id: "3735",
-      name: "reference data Arizona for test/ Ser",
-      createdAt: "2021-09-07T04:12:26.765063Z",
+      id: "234",
+      name: "Arizona. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T05:50:53.406398Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -18,6 +18,7 @@ export const arizona: any = {
                   [-112.16882067564723, 33.64715805549338],
                   [-112.15187994350453, 33.64733082385902],
                   [-112.15210424196599, 33.65447544049098],
+                  [-112.1687515298017, 33.654394833414266],
                   [-112.1687515298017, 33.654394833414266],
                 ],
               ],
@@ -39,9 +40,9 @@ export const arizona: any = {
       tiles: { large: 11, medium: 24, small: 139, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.24977891222178508,
-          averageBuildingHeight: 2.388449533966287,
-          buildingCount: 475,
+          averageBuildingAreaCoverage: 0.2792678942783273,
+          averageBuildingHeight: 2.3970264635669496,
+          buildingCount: 487,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
@@ -51,24 +52,24 @@ export const arizona: any = {
           building8moreAreaCoverage: 0.0032366745763545415,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 906188742,
+        economicExposure: 1015256189,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 663968842,
+            value: 740357559,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 35975802,
+            value: 42085285,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 6041748,
+            value: 5995564,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 349095, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 1403455, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {

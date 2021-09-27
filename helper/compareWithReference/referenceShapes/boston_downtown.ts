@@ -1,9 +1,9 @@
 export const boston_downtown: any = {
   data: {
     shape: {
-      id: "199",
-      name: "AOI_Regression_Boston_downtown",
-      createdAt: "2021-09-14T11:18:03.370936Z",
+      id: "244",
+      name: "Boston_downtown. Comparison of with reference data: 2021-09-24",
+      createdAt: "2021-09-24T06:22:08.158437Z",
       polygons: {
         type: "FeatureCollection",
         features: [
@@ -15,9 +15,10 @@ export const boston_downtown: any = {
               coordinates: [
                 [
                   [-71.0764299794136, 42.3611875410542],
-                  [-71.0582481612318, 42.3611875410542],
-                  [-71.0582481612318, 42.3430057228724],
                   [-71.0764299794136, 42.3430057228724],
+                  [-71.0582481612318, 42.3430057228724],
+                  [-71.0582481612318, 42.3611875410542],
+                  [-71.0764299794136, 42.3611875410542],
                   [-71.0764299794136, 42.3611875410542],
                 ],
               ],
@@ -39,9 +40,9 @@ export const boston_downtown: any = {
       tiles: { large: 24, medium: 54, small: 336, __typename: "ShapeTiles" },
       summary: {
         buildings: {
-          averageBuildingAreaCoverage: 0.3260849316914876,
-          averageBuildingHeight: 9.894667831948222,
-          buildingCount: 535,
+          averageBuildingAreaCoverage: 0.31966304779052734,
+          averageBuildingHeight: 9.947897371492457,
+          buildingCount: 516,
           __typename: "BuildingsSummary",
         },
         buildingHeight: {
@@ -51,24 +52,24 @@ export const boston_downtown: any = {
           building8moreAreaCoverage: 0.22801567259288968,
           __typename: "BuildingHeightSummary",
         },
-        economicExposure: 23552037414,
+        economicExposure: 22940890520,
         insuranceExposure: [
           {
             name: "RESIDENTIAL",
-            value: 9647395401,
+            value: 9428634960,
             __typename: "InsuranceSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 5015709792,
+            value: 4891672772,
             __typename: "InsuranceSummary",
           },
           {
             name: "INDUSTRIAL",
-            value: 1061056651,
+            value: 972777264,
             __typename: "InsuranceSummary",
           },
-          { name: "AGRI", value: 144190564, __typename: "InsuranceSummary" },
+          { name: "AGRI", value: 171109711, __typename: "InsuranceSummary" },
         ],
         landUse: [
           {
@@ -88,12 +89,12 @@ export const boston_downtown: any = {
           },
           {
             name: "RESIDENTIAL",
-            value: 0.13095238095238096,
+            value: 0.12797619047619047,
             __typename: "LandUseSummary",
           },
           {
             name: "COMMERCIAL",
-            value: 0.11904761904761904,
+            value: 0.12202380952380952,
             __typename: "LandUseSummary",
           },
           {
@@ -121,7 +122,11 @@ export const boston_downtown: any = {
               __typename: "ObjectsSummaryInfo",
             },
             { count: 6, name: "roundabout", __typename: "ObjectsSummaryInfo" },
-            { count: 1, name: "harbor", __typename: "ObjectsSummaryInfo" },
+            {
+              count: 1,
+              name: "harbor",
+              __typename: "ObjectsSummaryInfo",
+            },
           ],
           large: [
             { count: 2, name: "bridge", __typename: "ObjectsSummaryInfo" },
