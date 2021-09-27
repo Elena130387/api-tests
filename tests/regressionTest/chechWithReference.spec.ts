@@ -20,7 +20,7 @@ describe("comparison of reference data", function () {
         const NAME = `${
           el[0].toUpperCase() + el.slice(1)
         }. Comparison of with reference data: ${DATE}`;
-        const { id } = await createShape(NAME, false, true, referensShape[el]);
+        const { id } = await createShape(NAME, true, false, referensShape[el]);
         await waitWhenShapeStatusEqual(id);
         const response = await getShape(id);
         const { summary } = response.data.shape;
