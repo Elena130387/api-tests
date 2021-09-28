@@ -1,0 +1,76 @@
+export const naples: any = {
+  jobSummaryDescriptor: {
+    ids: [518],
+    stats: {
+      incomePerCapita: 41239,
+      housingUnitsTotal: 207403,
+      population: 356774,
+      unitsInStructure1: 95685,
+      unitsInStructure2to9: 43154,
+      unitsInStructure10to19: 21295,
+      unitsInStructure20more: 36904,
+      unitsInStructureMobile: 10365,
+      totalUnits: 99624,
+      averageUnitPrice: 486639,
+      medianUnitPrice: 316197,
+    },
+    objectCount: {
+      small: {
+        ship: 10,
+        plane: 46,
+        helicopter: 1,
+        roundabout: 4,
+        "storage-tank": 2,
+        "tennis-court": 3,
+        "large-vehicle": 13,
+        "small-vehicle": 1950,
+        "swimming-pool": 5,
+      },
+      large: {},
+    },
+    buildingCount: 660,
+    averageBuildingAreaCoverage: 0.12836335834703946,
+    buildingHeight: {
+      V1: { averageBuildingHeight: 3.21532477177243 },
+      V2: {
+        averageBuildingHeight: 4.86521396385747,
+        buildingCount: 1002,
+        building3lessAreaCoverage: 0.031048346880384554,
+        building3to8AreaCoverage: 0.04656877254782464,
+        building8moreAreaCoverage: 0.013881081028988487,
+      },
+    },
+    buildingDamage: {
+      V2: {
+        buildingNoDamageRate: 0,
+        buildingMinorDamageRate: 0,
+        buildingMajorDamageRate: 0,
+        buildingDestroyedRate: 0,
+      },
+    },
+    populationCount: 3956,
+    landUse: {
+      V2: {
+        NATURE: 0.05263157894736842,
+        OTHERIMP: 0.012531328320802004,
+        COMMERCIAL: 0.08270676691729323,
+        CULTIVATED: 0.2932330827067669,
+        INDUSTRIAL: 0.3333333333333333,
+        RIGHTOFWAY: 0.022556390977443608,
+        RESIDENTIAL: 0.20300751879699247,
+      },
+    },
+    economicExposureValue: { V2: 2607875520 },
+    insuranceExposureValue: {
+      V2: {
+        AGRI: 27912373,
+        COMMERCIAL: 324038471,
+        INDUSTRIAL: 524307047,
+        RESIDENTIAL: 531202036,
+      },
+    },
+    derivativeFriendlyRate: 1,
+    averageBuildingHeight: 3.21532477177243,
+  },
+  links: [],
+};
