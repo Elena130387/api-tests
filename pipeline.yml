@@ -29,6 +29,11 @@ jobs:
           targetType: 'inline'
           script: 'npm install yarn && yarn install'
       - task: Bash@3
+        displayName: 'waiting for the end of the deployment'
+        inputs:
+          targetType: 'inline'
+          script: sleep 1m
+      - task: Bash@3
         displayName: 'Run tests'
         inputs:
           targetType: 'inline'

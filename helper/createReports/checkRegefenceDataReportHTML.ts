@@ -68,7 +68,6 @@ export const reportHTML = (
 ) => {
   const objReferenceData = transformToOneLevelObject(referenceObj),
     objReceivedData = transformToOneLevelObject(recivedObj);
-  console.log(objReceivedData);
   let table = createTable(id, name);
 
   Object.entries(objReferenceData).forEach(([el, val]: any) => {
