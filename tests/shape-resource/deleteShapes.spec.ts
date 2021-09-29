@@ -19,5 +19,5 @@ describe("delete all shape with name=`autotest, create from`", function () {
       const { status } = response;
       expect(status).toEqual(STATUS);
     }
-  }, 10000);
+  }, 20000);
 });

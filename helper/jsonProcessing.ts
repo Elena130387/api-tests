@@ -1,27 +1,11 @@
 const flatten = require("flat");
 
-export const transformToOneLevelObject = (obj: any) => {
-  obj = Object.entries(flatten(obj));
-  return Object.fromEntries(
-    obj
-      .map(([el, val]: any, index: any) =>
-        el.includes("insuranceExposure") && el.includes("value")
-          ? ["insuranceExposure_" + obj[index - 1][1], val]
-          : [el, val]
-      )
-      .map(([el, val]: any, index: number) =>
-        el.includes("landUse") && el.includes("value")
-          ? ["landUse_" + obj[index - 1][1], val]
-          : [el, val]
-      )
-      .map(([el, val]: any, index: number) =>
-        el.includes("objects") && el.includes("count")
-          ? ["objects_" + obj[index + 1][1], val]
-          : [el, val]
-      )
-      .filter(([_, val]: any) => typeof val === "number")
+export const transformToOneLevelObject = (obj: any) =>
+  Object.fromEntries(
+    Object.entries(flatten(obj))
+      .map(([key, _]: any) => [key.replace("jobSummaryDescriptor.", ""), _])
+      .filter(([el, val]: any) => typeof val === "number" && el !== "ids.0")
   );
-};
 
 export const getListWithErorrsValue = (
   objReferenceData: any,

@@ -45,11 +45,9 @@ const nameOfTableElement = `
       <th>deviation %</th>
     </tr>`;
 
-const createStrLink = (response: any) => `
+const createStrLink = (id: number, name: string) => `
         <caption>
-            <a href=${URL + response.data.shape.id}>${
-  response.data.shape.name
-}</a>
+            <a href=${URL + id}>${name}</a>
         </caption>`;
 
 const calcDeviation = (referenceData: any, freshData: any) =>
@@ -58,19 +56,19 @@ const calcDeviation = (referenceData: any, freshData: any) =>
 const errorClass = (procentError: number, deviation: number) =>
   procentError < deviation ? `"trueColor"` : `"errorColor"`;
 
-const createTable = (recivedObj: any) =>
-  `<table>${createStrLink(recivedObj)}` + nameOfTableElement;
+const createTable = (id: number, name: string) =>
+  `<table>${createStrLink(id, name)}` + nameOfTableElement;
 
 export const reportHTML = (
   referenceObj: any,
   recivedObj: any,
-  deviation: number
+  deviation: number,
+  id: number,
+  name: string
 ) => {
-  const { summary } = recivedObj.data.shape,
-    objReferenceData = transformToOneLevelObject(referenceObj),
-    objReceivedData = transformToOneLevelObject(summary);
-
-  let table = createTable(recivedObj);
+  const objReferenceData = transformToOneLevelObject(referenceObj),
+    objReceivedData = transformToOneLevelObject(recivedObj);
+  let table = createTable(id, name);
 
   Object.entries(objReferenceData).forEach(([el, val]: any) => {
     let procentError = calcDeviation(objReceivedData[el], val);

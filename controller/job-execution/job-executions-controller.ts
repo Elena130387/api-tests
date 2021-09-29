@@ -36,11 +36,17 @@ export const getFilteredJobExecutionsById = (
     getRestBody("GET", null, `?type=${type.toUpperCase()}&version=${version}`)
   );
 
-export async function getIdsExecutions(id: number) {
+export const getIdsExecutions = async (id: number) => {
   const response = await getShapeById(id);
 
   return jp.query(response.polygons, "$..estimatorJobId");
-}
+};
+
+export const getSummaryDataAboutJobs = async (id: number) =>
+  callRestApi(
+    `${EXECUTIONS_URL}/v2/summary`,
+    getRestBody("GET", null, `?ids=${id}`)
+  );
 
 const parsePath = (str: any) => str.split(".");
 

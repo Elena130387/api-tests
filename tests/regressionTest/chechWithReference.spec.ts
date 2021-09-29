@@ -1,4 +1,3 @@
-import { getShape } from "../../controller/graphql/shape";
 import {
   createShape,
   waitWhenShapeStatusEqual,
@@ -9,10 +8,14 @@ import { referensShape } from "../../requests/shape-resource/createNewShape";
 import { getListWithErorrsValue } from "../../helper/jsonProcessing";
 import { toFile, toFileReferenceData } from "../../helper/exportFile";
 import { reportHTML } from "../../helper/createReports/checkRegefenceDataReportHTML";
+import {
+  getIdsExecutions,
+  getSummaryDataAboutJobs,
+} from "../../controller/job-execution/job-executions-controller";
+import { receivedIds } from "../../helper/createReports/checkReferenceDataReportIds";
 
 describe("comparison of reference data", function () {
   const percentError = 5;
-
   Object.keys(referenceData).forEach((el: any) => {
     it.concurrent(
       `test ${el}`,
@@ -22,21 +25,23 @@ describe("comparison of reference data", function () {
         }. Comparison of with reference data: ${DATE}`;
         const { id } = await createShape(NAME, true, false, referensShape[el]);
         await waitWhenShapeStatusEqual(id);
-        const response = await getShape(id);
-        const { summary } = response.data.shape;
+        const idExecutions = await getIdsExecutions(id);
+        const response = await getSummaryDataAboutJobs(idExecutions[0]);
         // @ts-ignore
-        const objReferenceData = referenceData[el].data.shape.summary;
+        const objReferenceData = referenceData[el];
         toFile(
-          reportHTML(objReferenceData, response, percentError),
+          reportHTML(objReferenceData, response, percentError, id, NAME),
           "htmlResponse",
           "html"
         );
+        toFile(JSON.stringify(receivedIds(id, NAME)), "ids");
         toFileReferenceData(
           `export const ${el}: any =${JSON.stringify(response)}`,
           el
         );
         expect(
-          getListWithErorrsValue(objReferenceData, summary, percentError).length
+          getListWithErorrsValue(objReferenceData, response, percentError)
+            .length
         ).toEqual(0);
       },
       1000000

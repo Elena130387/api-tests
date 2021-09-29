@@ -1,162 +1,73 @@
 export const downtown_miami: any = {
-  data: {
-    shape: {
-      id: "250",
-      name: "Downtown_miami. Comparison of with reference data: 2021-09-24",
-      createdAt: "2021-09-24T06:37:32.903275Z",
-      polygons: {
-        type: "FeatureCollection",
-        features: [
-          {
-            type: "Feature",
-            properties: {},
-            geometry: {
-              type: "Polygon",
-              coordinates: [
-                [
-                  [-80.2063619852491, 25.7734555071326],
-                  [-80.2063619852491, 25.7552736889508],
-                  [-80.1881801670673, 25.7552736889508],
-                  [-80.1881801670673, 25.7734555071326],
-                  [-80.2063619852491, 25.7734555071326],
-                  [-80.2063619852491, 25.7734555071326],
-                ],
-              ],
-            },
-          },
-        ],
+  jobSummaryDescriptor: {
+    ids: [507],
+    stats: {
+      incomePerCapita: 25481,
+      housingUnitsTotal: 1008908,
+      population: 2702602,
+      unitsInStructure1: 503457,
+      unitsInStructure2to9: 107620,
+      unitsInStructure10to19: 69799,
+      unitsInStructure20more: 314661,
+      unitsInStructureMobile: 13371,
+      totalUnits: 448011,
+      averageUnitPrice: 346603,
+      medianUnitPrice: 242809,
+    },
+    objectCount: {
+      small: {
+        ship: 34,
+        harbor: 1,
+        roundabout: 5,
+        "tennis-court": 3,
+        "small-vehicle": 2155,
+        "swimming-pool": 14,
       },
-      geoInfo: [
-        {
-          admin1: "Florida",
-          admin2: "Miami-Dade County",
-          countryCode: "US",
-          __typename: "GeoInfo",
-        },
-      ],
-      __typename: "Shape",
-      status: "completed",
-      progress: { total: 1779, completed: 1779, __typename: "Progress" },
-      tiles: { large: 36, medium: 63, small: 420, __typename: "ShapeTiles" },
-      summary: {
-        buildings: {
-          averageBuildingAreaCoverage: 0.20302256629580542,
-          averageBuildingHeight: 8.739560420979668,
-          buildingCount: 879,
-          __typename: "BuildingsSummary",
-        },
-        buildingHeight: {
-          averageBuildingHeight: 8.042556842063329,
-          building3lessAreaCoverage: 0.03680018470400856,
-          building3to8AreaCoverage: 0.05253014337448847,
-          building8moreAreaCoverage: 0.1276253473191034,
-          __typename: "BuildingHeightSummary",
-        },
-        economicExposure: 9628753283,
-        insuranceExposure: [
-          {
-            name: "RESIDENTIAL",
-            value: 3936307836,
-            __typename: "InsuranceSummary",
-          },
-          {
-            name: "COMMERCIAL",
-            value: 1369115093,
-            __typename: "InsuranceSummary",
-          },
-          {
-            name: "INDUSTRIAL",
-            value: 879744815,
-            __typename: "InsuranceSummary",
-          },
-          { name: "AGRI", value: 68144387, __typename: "InsuranceSummary" },
-        ],
-        landUse: [
-          {
-            name: "RESIDENTIAL",
-            value: 0.3238095238095238,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "NATURE",
-            value: 0.18571428571428572,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "OTHERIMP",
-            value: 0.1595238095238095,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "COMMERCIAL",
-            value: 0.09761904761904762,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "RIGHTOFWAY",
-            value: 0.09285714285714286,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "INDUSTRIAL",
-            value: 0.09047619047619047,
-            __typename: "LandUseSummary",
-          },
-          { name: "CULTIVATED", value: 0.05, __typename: "LandUseSummary" },
-        ],
-        objects: {
-          small: [
-            {
-              count: 2155,
-              name: "small-vehicle",
-              __typename: "ObjectsSummaryInfo",
-            },
-            { count: 34, name: "ship", __typename: "ObjectsSummaryInfo" },
-            {
-              count: 14,
-              name: "swimming-pool",
-              __typename: "ObjectsSummaryInfo",
-            },
-            { count: 5, name: "roundabout", __typename: "ObjectsSummaryInfo" },
-            {
-              count: 3,
-              name: "tennis-court",
-              __typename: "ObjectsSummaryInfo",
-            },
-            { count: 1, name: "harbor", __typename: "ObjectsSummaryInfo" },
-          ],
-          large: [
-            {
-              count: 2,
-              name: "baseball-diamond",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 1,
-              name: "soccer-ball-field",
-              __typename: "ObjectsSummaryInfo",
-            },
-          ],
-          __typename: "ObjectsSummary",
-        },
-        populationCount: 32634,
-        stats: {
-          incomePerCapita: 25481,
-          housingUnitsTotal: 1008908,
-          population: 2702602,
-          unitsInStructure1: 503457,
-          unitsInStructure2to9: 107620,
-          unitsInStructure10to19: 69799,
-          unitsInStructure20more: 314661,
-          unitsInStructureMobile: 13371,
-          totalUnits: 448011,
-          averageUnitPrice: 346603,
-          medianUnitPrice: 242809,
-          __typename: "StatsSummary",
-        },
-        derivativeFriendlyRate: 1,
-        __typename: "PolygonSummary",
+      large: { "baseball-diamond": 2, "soccer-ball-field": 1 },
+    },
+    buildingCount: 879,
+    averageBuildingAreaCoverage: 0.20302256629580542,
+    buildingHeight: {
+      V1: { averageBuildingHeight: 8.739560420979668 },
+      V2: {
+        averageBuildingHeight: 8.042556842063329,
+        buildingCount: 2158,
+        building3lessAreaCoverage: 0.03680018470400856,
+        building3to8AreaCoverage: 0.05253014337448847,
+        building8moreAreaCoverage: 0.1276253473191034,
       },
     },
+    buildingDamage: {
+      V2: {
+        buildingNoDamageRate: 0,
+        buildingMinorDamageRate: 0,
+        buildingMajorDamageRate: 0,
+        buildingDestroyedRate: 0,
+      },
+    },
+    populationCount: 32634,
+    landUse: {
+      V2: {
+        NATURE: 0.18571428571428572,
+        OTHERIMP: 0.1595238095238095,
+        COMMERCIAL: 0.09761904761904762,
+        CULTIVATED: 0.05,
+        INDUSTRIAL: 0.09047619047619047,
+        RIGHTOFWAY: 0.09285714285714286,
+        RESIDENTIAL: 0.3238095238095238,
+      },
+    },
+    economicExposureValue: { V2: 9628753283 },
+    insuranceExposureValue: {
+      V2: {
+        AGRI: 68144387,
+        COMMERCIAL: 1369115093,
+        INDUSTRIAL: 879744815,
+        RESIDENTIAL: 3936307836,
+      },
+    },
+    derivativeFriendlyRate: 1,
+    averageBuildingHeight: 8.739560420979668,
   },
+  links: [],
 };

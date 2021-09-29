@@ -1,188 +1,78 @@
 export const la_industrial: any = {
-  data: {
-    shape: {
-      id: "257",
-      name: "La_industrial. Comparison of with reference data: 2021-09-24",
-      createdAt: "2021-09-24T06:54:12.857001Z",
-      polygons: {
-        type: "FeatureCollection",
-        features: [
-          {
-            type: "Feature",
-            properties: {},
-            geometry: {
-              type: "Polygon",
-              coordinates: [
-                [
-                  [-118.406896802237, 33.9254994304161],
-                  [-118.425078620419, 33.9254994304161],
-                  [-118.425078620419, 33.9073176122343],
-                  [-118.406896802237, 33.9073176122343],
-                  [-118.406896802237, 33.9254994304161],
-                  [-118.406896802237, 33.9254994304161],
-                ],
-              ],
-            },
-          },
-        ],
+  jobSummaryDescriptor: {
+    ids: [514],
+    stats: {
+      incomePerCapita: 30798,
+      housingUnitsTotal: 3506903,
+      population: 10105722,
+      unitsInStructure1: 1957238,
+      unitsInStructure2to9: 560403,
+      unitsInStructure10to19: 269963,
+      unitsInStructure20more: 662186,
+      unitsInStructureMobile: 57113,
+      totalUnits: 1512364,
+      averageUnitPrice: 644984,
+      medianUnitPrice: 495829,
+    },
+    objectCount: {
+      small: {
+        roundabout: 30,
+        "storage-tank": 45,
+        "tennis-court": 9,
+        "large-vehicle": 13,
+        "small-vehicle": 1628,
+        "swimming-pool": 7,
+        "basketball-court": 2,
       },
-      geoInfo: [
-        {
-          admin1: "California",
-          admin2: "Los Angeles County",
-          countryCode: "US",
-          __typename: "GeoInfo",
-        },
-      ],
-      __typename: "Shape",
-      status: "completed",
-      progress: { total: 1602, completed: 1602, __typename: "Progress" },
-      tiles: { large: 36, medium: 54, small: 378, __typename: "ShapeTiles" },
-      summary: {
-        buildings: {
-          averageBuildingAreaCoverage: 0.3167246662119709,
-          averageBuildingHeight: 4.132411292062324,
-          buildingCount: 885,
-          __typename: "BuildingsSummary",
-        },
-        buildingHeight: {
-          averageBuildingHeight: 6.1004920171328205,
-          building3lessAreaCoverage: 0.09523928606951679,
-          building3to8AreaCoverage: 0.03414862496512277,
-          building8moreAreaCoverage: 0.04751837190496858,
-          __typename: "BuildingHeightSummary",
-        },
-        economicExposure: 10721501870,
-        insuranceExposure: [
-          {
-            name: "RESIDENTIAL",
-            value: 2658248677,
-            __typename: "InsuranceSummary",
-          },
-          {
-            name: "INDUSTRIAL",
-            value: 2432266109,
-            __typename: "InsuranceSummary",
-          },
-          {
-            name: "COMMERCIAL",
-            value: 697363528,
-            __typename: "InsuranceSummary",
-          },
-          { name: "AGRI", value: 46725963, __typename: "InsuranceSummary" },
-        ],
-        landUse: [
-          {
-            name: "INDUSTRIAL",
-            value: 0.4576719576719577,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "RESIDENTIAL",
-            value: 0.2619047619047619,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "RIGHTOFWAY",
-            value: 0.08465608465608465,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "OTHERIMP",
-            value: 0.07936507936507936,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "COMMERCIAL",
-            value: 0.07142857142857142,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "CULTIVATED",
-            value: 0.03968253968253968,
-            __typename: "LandUseSummary",
-          },
-          {
-            name: "NATURE",
-            value: 0.005291005291005291,
-            __typename: "LandUseSummary",
-          },
-        ],
-        objects: {
-          small: [
-            {
-              count: 1628,
-              name: "small-vehicle",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 45,
-              name: "storage-tank",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 30,
-              name: "roundabout",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 13,
-              name: "large-vehicle",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 9,
-              name: "tennis-court",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 7,
-              name: "swimming-pool",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 2,
-              name: "basketball-court",
-              __typename: "ObjectsSummaryInfo",
-            },
-          ],
-          large: [
-            {
-              count: 7,
-              name: "baseball-diamond",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 4,
-              name: "soccer-ball-field",
-              __typename: "ObjectsSummaryInfo",
-            },
-            {
-              count: 1,
-              name: "ground-track-field",
-              __typename: "ObjectsSummaryInfo",
-            },
-          ],
-          __typename: "ObjectsSummary",
-        },
-        populationCount: 14508,
-        stats: {
-          incomePerCapita: 30798,
-          housingUnitsTotal: 3506903,
-          population: 10105722,
-          unitsInStructure1: 1957238,
-          unitsInStructure2to9: 560403,
-          unitsInStructure10to19: 269963,
-          unitsInStructure20more: 662186,
-          unitsInStructureMobile: 57113,
-          totalUnits: 1512364,
-          averageUnitPrice: 644984,
-          medianUnitPrice: 495829,
-          __typename: "StatsSummary",
-        },
-        derivativeFriendlyRate: 1,
-        __typename: "PolygonSummary",
+      large: {
+        "baseball-diamond": 7,
+        "soccer-ball-field": 4,
+        "ground-track-field": 1,
       },
     },
+    buildingCount: 885,
+    averageBuildingAreaCoverage: 0.3167246662119709,
+    buildingHeight: {
+      V1: { averageBuildingHeight: 4.132411292062322 },
+      V2: {
+        averageBuildingHeight: 6.100492017132821,
+        buildingCount: 2912,
+        building3lessAreaCoverage: 0.09523928606951679,
+        building3to8AreaCoverage: 0.03414862496512277,
+        building8moreAreaCoverage: 0.04751837190496858,
+      },
+    },
+    buildingDamage: {
+      V2: {
+        buildingNoDamageRate: 0,
+        buildingMinorDamageRate: 0,
+        buildingMajorDamageRate: 0,
+        buildingDestroyedRate: 0,
+      },
+    },
+    populationCount: 14508,
+    landUse: {
+      V2: {
+        NATURE: 0.005291005291005291,
+        OTHERIMP: 0.07936507936507936,
+        COMMERCIAL: 0.07142857142857142,
+        CULTIVATED: 0.03968253968253968,
+        INDUSTRIAL: 0.4576719576719577,
+        RIGHTOFWAY: 0.08465608465608465,
+        RESIDENTIAL: 0.2619047619047619,
+      },
+    },
+    economicExposureValue: { V2: 10721501870 },
+    insuranceExposureValue: {
+      V2: {
+        AGRI: 46725963,
+        COMMERCIAL: 697363528,
+        INDUSTRIAL: 2432266109,
+        RESIDENTIAL: 2658248677,
+      },
+    },
+    derivativeFriendlyRate: 1,
+    averageBuildingHeight: 4.132411292062322,
   },
+  links: [],
 };
