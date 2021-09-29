@@ -5,7 +5,7 @@ import {
 } from "../../controller/shape/shape-controller";
 
 describe("delete all shape with name=`autotest, create from`", function () {
-  const NAME = `Comparison`,
+  const NAME = `autotest, create form`,
     STATUS = `deleted`,
     COUNT = 100;
   it(`deleted shapes`, async function () {
@@ -19,5 +19,5 @@ describe("delete all shape with name=`autotest, create from`", function () {
       const { status } = response;
       expect(status).toEqual(STATUS);
     }
-  }, 50000);
+  }, 20000);
 });

@@ -23,7 +23,7 @@ describe("comparison of reference data", function () {
         const NAME = `${
           el[0].toUpperCase() + el.slice(1)
         }. Comparison of with reference data: ${DATE}`;
-        const { id } = await createShape(NAME, false, true, referensShape[el]);
+        const { id } = await createShape(NAME, true, false, referensShape[el]);
         await waitWhenShapeStatusEqual(id);
         const idExecutions = await getIdsExecutions(id);
         const response = await getSummaryDataAboutJobs(idExecutions[0]);
@@ -34,7 +34,7 @@ describe("comparison of reference data", function () {
           "htmlResponse",
           "html"
         );
-        toFile(JSON.stringify(receivedIds(id, el)), "ids");
+        toFile(JSON.stringify(receivedIds(id, NAME)), "ids");
         toFileReferenceData(
           `export const ${el}: any =${JSON.stringify(response)}`,
           el
