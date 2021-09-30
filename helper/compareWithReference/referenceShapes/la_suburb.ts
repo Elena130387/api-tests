@@ -1,6 +1,6 @@
 export const la_suburb: any = {
   jobSummaryDescriptor: {
-    ids: [515],
+    ids: [737],
     stats: {
       incomePerCapita: 30798,
       housingUnitsTotal: 3506903,
@@ -32,13 +32,13 @@ export const la_suburb: any = {
     buildingCount: 1152,
     averageBuildingAreaCoverage: 0.2825574117993552,
     buildingHeight: {
-      V1: { averageBuildingHeight: 2.768846953041012 },
+      V1: { averageBuildingHeight: 2.7688469530410114 },
       V2: {
-        averageBuildingHeight: 3.0276571052847334,
-        buildingCount: 4470,
-        building3lessAreaCoverage: 0.14875434189246445,
-        building3to8AreaCoverage: 0.021151487158719826,
-        building8moreAreaCoverage: 0.015677840621383103,
+        averageBuildingHeight: 2.5418772751764864,
+        buildingCount: 3655,
+        building3lessAreaCoverage: 0.08213927253844246,
+        building3to8AreaCoverage: 0.011507226045800265,
+        building8moreAreaCoverage: 0.003497895740327381,
       },
     },
     buildingDamage: {
@@ -71,7 +71,7 @@ export const la_suburb: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 2.768846953041012,
+    averageBuildingHeight: 2.7688469530410114,
   },
   links: [],
 };

@@ -1,6 +1,6 @@
 export const boston_downtown: any = {
   jobSummaryDescriptor: {
-    ids: [501],
+    ids: [722],
     stats: {
       incomePerCapita: 38031,
       housingUnitsTotal: 328662,
@@ -29,11 +29,11 @@ export const boston_downtown: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 9.947897371492457 },
       V2: {
-        averageBuildingHeight: 10.375128952468367,
-        buildingCount: 1391,
-        building3lessAreaCoverage: 0.004876659030006046,
-        building3to8AreaCoverage: 0.0669003895350865,
-        building8moreAreaCoverage: 0.22801567259288968,
+        averageBuildingHeight: 10.749770873616749,
+        buildingCount: 1022,
+        building3lessAreaCoverage: 0.0015153657822381881,
+        building3to8AreaCoverage: 0.026418436141241165,
+        building8moreAreaCoverage: 0.08361673355102539,
       },
     },
     buildingDamage: {

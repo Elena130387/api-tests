@@ -1,6 +1,6 @@
 export const chico_CA: any = {
   jobSummaryDescriptor: {
-    ids: [505],
+    ids: [727],
     stats: {
       incomePerCapita: 26304,
       housingUnitsTotal: 98119,
@@ -21,13 +21,13 @@ export const chico_CA: any = {
     buildingCount: 527,
     averageBuildingAreaCoverage: 0.05255826314290365,
     buildingHeight: {
-      V1: { averageBuildingHeight: 2.649600891183194 },
+      V1: { averageBuildingHeight: 2.649600891183195 },
       V2: {
-        averageBuildingHeight: 3.1707759073871102,
-        buildingCount: 822,
-        building3lessAreaCoverage: 0.024174962724958147,
-        building3to8AreaCoverage: 0.011299837203252883,
-        building8moreAreaCoverage: 0.006524767194475446,
+        averageBuildingHeight: 2.3562651849522913,
+        buildingCount: 656,
+        building3lessAreaCoverage: 0.020926952362060547,
+        building3to8AreaCoverage: 0.003060227348690941,
+        building8moreAreaCoverage: 0.0016298975263323104,
       },
     },
     buildingDamage: {
@@ -60,7 +60,7 @@ export const chico_CA: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 2.649600891183194,
+    averageBuildingHeight: 2.649600891183195,
   },
   links: [],
 };

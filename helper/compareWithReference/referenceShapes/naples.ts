@@ -1,6 +1,6 @@
 export const naples: any = {
   jobSummaryDescriptor: {
-    ids: [518],
+    ids: [740],
     stats: {
       incomePerCapita: 41239,
       housingUnitsTotal: 207403,
@@ -31,13 +31,13 @@ export const naples: any = {
     buildingCount: 660,
     averageBuildingAreaCoverage: 0.12836335834703946,
     buildingHeight: {
-      V1: { averageBuildingHeight: 3.21532477177243 },
+      V1: { averageBuildingHeight: 3.215324771772433 },
       V2: {
-        averageBuildingHeight: 4.86521396385747,
-        buildingCount: 1002,
-        building3lessAreaCoverage: 0.031048346880384554,
-        building3to8AreaCoverage: 0.04656877254782464,
-        building8moreAreaCoverage: 0.013881081028988487,
+        averageBuildingHeight: 3.607955116100364,
+        buildingCount: 824,
+        building3lessAreaCoverage: 0.02590953855586231,
+        building3to8AreaCoverage: 0.031002302815143327,
+        building8moreAreaCoverage: 0.005559591422403665,
       },
     },
     buildingDamage: {
@@ -70,7 +70,7 @@ export const naples: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 3.21532477177243,
+    averageBuildingHeight: 3.215324771772433,
   },
   links: [],
 };

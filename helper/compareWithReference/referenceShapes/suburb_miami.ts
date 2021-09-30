@@ -1,6 +1,6 @@
 export const suburb_miami: any = {
   jobSummaryDescriptor: {
-    ids: [525],
+    ids: [747],
     stats: {
       incomePerCapita: 25481,
       housingUnitsTotal: 1008908,
@@ -34,11 +34,11 @@ export const suburb_miami: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 3.4361801323496826 },
       V2: {
-        averageBuildingHeight: 3.768305270640936,
-        buildingCount: 3058,
-        building3lessAreaCoverage: 0.09487791515531994,
-        building3to8AreaCoverage: 0.0505987803141276,
-        building8moreAreaCoverage: 0.021617925734747023,
+        averageBuildingHeight: 3.2934324185157373,
+        buildingCount: 2816,
+        building3lessAreaCoverage: 0.05788412548246838,
+        building3to8AreaCoverage: 0.036816369919549854,
+        building8moreAreaCoverage: 0.007123438517252604,
       },
     },
     buildingDamage: {

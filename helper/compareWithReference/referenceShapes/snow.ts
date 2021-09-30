@@ -1,6 +1,6 @@
 export const snow: any = {
   jobSummaryDescriptor: {
-    ids: [523],
+    ids: [745],
     stats: {
       incomePerCapita: 32056,
       housingUnitsTotal: 15740,
@@ -20,11 +20,11 @@ export const snow: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 2.234280592627773 },
       V2: {
-        averageBuildingHeight: 4.487094234252866,
-        buildingCount: 790,
-        building3lessAreaCoverage: 0.016659305209205263,
-        building3to8AreaCoverage: 0.007085096268426804,
-        building8moreAreaCoverage: 0.009920006706601097,
+        averageBuildingHeight: 3.155109581463183,
+        buildingCount: 498,
+        building3lessAreaCoverage: 0.010542279198056176,
+        building3to8AreaCoverage: 0.016874722072056363,
+        building8moreAreaCoverage: 0.00036914008004324775,
       },
     },
     buildingDamage: {

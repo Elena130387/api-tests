@@ -1,6 +1,6 @@
 export const menloPark: any = {
   jobSummaryDescriptor: {
-    ids: [517],
+    ids: [738],
     stats: {
       incomePerCapita: 53516,
       housingUnitsTotal: 275109,
@@ -32,13 +32,13 @@ export const menloPark: any = {
     buildingCount: 810,
     averageBuildingAreaCoverage: 0.24007774801815257,
     buildingHeight: {
-      V1: { averageBuildingHeight: 2.777978280603903 },
+      V1: { averageBuildingHeight: 2.7779782806039055 },
       V2: {
-        averageBuildingHeight: 4.524606817457216,
-        buildingCount: 2623,
-        building3lessAreaCoverage: 0.09524668632101278,
-        building3to8AreaCoverage: 0.026888166155133928,
-        building8moreAreaCoverage: 0.0384475323332458,
+        averageBuildingHeight: 3.686480152020821,
+        buildingCount: 2327,
+        building3lessAreaCoverage: 0.059137125309108016,
+        building3to8AreaCoverage: 0.022616602793461133,
+        building8moreAreaCoverage: 0.012677788400516457,
       },
     },
     buildingDamage: {
@@ -71,7 +71,7 @@ export const menloPark: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 2.777978280603903,
+    averageBuildingHeight: 2.7779782806039055,
   },
   links: [],
 };

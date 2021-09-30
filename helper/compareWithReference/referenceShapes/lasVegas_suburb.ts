@@ -1,6 +1,6 @@
 export const lasVegas_suburb: any = {
   jobSummaryDescriptor: {
-    ids: [516],
+    ids: [739],
     stats: {
       incomePerCapita: 27719,
       housingUnitsTotal: 877617,
@@ -28,13 +28,13 @@ export const lasVegas_suburb: any = {
     buildingCount: 1034,
     averageBuildingAreaCoverage: 0.2981635128416601,
     buildingHeight: {
-      V1: { averageBuildingHeight: 2.9248638556779802 },
+      V1: { averageBuildingHeight: 2.924863855677981 },
       V2: {
-        averageBuildingHeight: 2.9886838249301415,
-        buildingCount: 2548,
-        building3lessAreaCoverage: 0.10642793799648766,
-        building3to8AreaCoverage: 0.024685429591758578,
-        building8moreAreaCoverage: 0.008648613253895309,
+        averageBuildingHeight: 2.2035573037237586,
+        buildingCount: 2266,
+        building3lessAreaCoverage: 0.09110266421021533,
+        building3to8AreaCoverage: 0.005447003019957983,
+        building8moreAreaCoverage: 0.0008799662443102241,
       },
     },
     buildingDamage: {
@@ -66,7 +66,7 @@ export const lasVegas_suburb: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 2.9248638556779802,
+    averageBuildingHeight: 2.924863855677981,
   },
   links: [],
 };

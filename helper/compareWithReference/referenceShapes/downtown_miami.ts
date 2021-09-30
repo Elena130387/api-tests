@@ -1,6 +1,6 @@
 export const downtown_miami: any = {
   jobSummaryDescriptor: {
-    ids: [507],
+    ids: [729],
     stats: {
       incomePerCapita: 25481,
       housingUnitsTotal: 1008908,
@@ -30,11 +30,11 @@ export const downtown_miami: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 8.739560420979668 },
       V2: {
-        averageBuildingHeight: 8.042556842063329,
-        buildingCount: 2158,
-        building3lessAreaCoverage: 0.03680018470400856,
-        building3to8AreaCoverage: 0.05253014337448847,
-        building8moreAreaCoverage: 0.1276253473191034,
+        averageBuildingHeight: 7.764748604838756,
+        buildingCount: 1707,
+        building3lessAreaCoverage: 0.016899708339146207,
+        building3to8AreaCoverage: 0.035026295979817705,
+        building8moreAreaCoverage: 0.055779647827148435,
       },
     },
     buildingDamage: {

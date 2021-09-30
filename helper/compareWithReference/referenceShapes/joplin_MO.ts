@@ -1,6 +1,6 @@
 export const joplin_MO: any = {
   jobSummaryDescriptor: {
-    ids: [511],
+    ids: [733],
     stats: {
       incomePerCapita: 23390,
       housingUnitsTotal: 51995,
@@ -29,11 +29,11 @@ export const joplin_MO: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 6.934664094358342 },
       V2: {
-        averageBuildingHeight: 5.788240953037772,
-        buildingCount: 780,
-        building3lessAreaCoverage: 0.009232233441065229,
-        building3to8AreaCoverage: 0.023246199996383103,
-        building8moreAreaCoverage: 0.02039670187329489,
+        averageBuildingHeight: 4.167870962826542,
+        buildingCount: 718,
+        building3lessAreaCoverage: 0.01707353541459987,
+        building3to8AreaCoverage: 0.008331056625124008,
+        building8moreAreaCoverage: 0.009086225398633846,
       },
     },
     buildingDamage: {

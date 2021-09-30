@@ -1,6 +1,6 @@
 export const coastal: any = {
   jobSummaryDescriptor: {
-    ids: [506],
+    ids: [728],
     stats: {
       incomePerCapita: 30233,
       housingUnitsTotal: 383224,
@@ -29,11 +29,11 @@ export const coastal: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 3.4155523693820844 },
       V2: {
-        averageBuildingHeight: 4.4371088399137815,
-        buildingCount: 50,
-        building3lessAreaCoverage: 0.0007355577664865288,
-        building3to8AreaCoverage: 0.002697325589364035,
-        building8moreAreaCoverage: 0.00045724739705709584,
+        averageBuildingHeight: 3.86385744356176,
+        buildingCount: 34,
+        building3lessAreaCoverage: 0.0004787397265135495,
+        building3to8AreaCoverage: 0.000812463593064693,
+        building8moreAreaCoverage: 0.00005547086099036654,
       },
     },
     buildingDamage: {

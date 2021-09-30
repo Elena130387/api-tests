@@ -1,6 +1,6 @@
 export const la_industrial: any = {
   jobSummaryDescriptor: {
-    ids: [514],
+    ids: [736],
     stats: {
       incomePerCapita: 30798,
       housingUnitsTotal: 3506903,
@@ -33,13 +33,13 @@ export const la_industrial: any = {
     buildingCount: 885,
     averageBuildingAreaCoverage: 0.3167246662119709,
     buildingHeight: {
-      V1: { averageBuildingHeight: 4.132411292062322 },
+      V1: { averageBuildingHeight: 4.13241129206232 },
       V2: {
-        averageBuildingHeight: 6.100492017132821,
-        buildingCount: 2912,
-        building3lessAreaCoverage: 0.09523928606951679,
-        building3to8AreaCoverage: 0.03414862496512277,
-        building8moreAreaCoverage: 0.04751837190496858,
+        averageBuildingHeight: 3.8373436704309487,
+        buildingCount: 2397,
+        building3lessAreaCoverage: 0.05560448056175595,
+        building3to8AreaCoverage: 0.030566059092365244,
+        building8moreAreaCoverage: 0.006006392221602183,
       },
     },
     buildingDamage: {
@@ -72,7 +72,7 @@ export const la_industrial: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 4.132411292062322,
+    averageBuildingHeight: 4.13241129206232,
   },
   links: [],
 };
