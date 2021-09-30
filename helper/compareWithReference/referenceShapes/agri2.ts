@@ -1,6 +1,6 @@
 export const agri2: any = {
   jobSummaryDescriptor: {
-    ids: [500],
+    ids: [721],
     stats: {
       incomePerCapita: 25693,
       housingUnitsTotal: 16751,
@@ -23,10 +23,10 @@ export const agri2: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 2.8908148336101003 },
       V2: {
-        averageBuildingHeight: 2.7339003116057783,
-        buildingCount: 32,
-        building3lessAreaCoverage: 0.0006031282141762955,
-        building3to8AreaCoverage: 0.00039106523957239145,
+        averageBuildingHeight: 1.9446491980949518,
+        buildingCount: 8,
+        building3lessAreaCoverage: 0.00016331605884541315,
+        building3to8AreaCoverage: 0,
         building8moreAreaCoverage: 0,
       },
     },
@@ -41,23 +41,24 @@ export const agri2: any = {
     populationCount: 15,
     landUse: {
       V2: {
-        NATURE: 0.07282913165266107,
-        OTHERIMP: 0.0028011204481792717,
-        COMMERCIAL: 0.0028011204481792717,
-        CULTIVATED: 0.865546218487395,
-        INDUSTRIAL: 0.056022408963585436,
+        NATURE: 0.0702247191011236,
+        OTHERIMP: 0.0028089887640449437,
+        COMMERCIAL: 0.0028089887640449437,
+        CULTIVATED: 0.8679775280898876,
+        INDUSTRIAL: 0.056179775280898875,
       },
     },
     economicExposureValue: { V2: 16659426 },
     insuranceExposureValue: {
       V2: {
         AGRI: 545587,
+        NONE: 0,
         COMMERCIAL: 1143222,
         INDUSTRIAL: 5174173,
         RESIDENTIAL: 0,
       },
     },
-    derivativeFriendlyRate: 1,
+    derivativeFriendlyRate: 0.9971988795518207,
     averageBuildingHeight: 2.8908148336101003,
   },
   links: [],

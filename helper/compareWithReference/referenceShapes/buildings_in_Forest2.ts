@@ -1,6 +1,6 @@
 export const buildings_in_Forest2: any = {
   jobSummaryDescriptor: {
-    ids: [504],
+    ids: [726],
     stats: {
       incomePerCapita: 26304,
       housingUnitsTotal: 98119,
@@ -23,11 +23,11 @@ export const buildings_in_Forest2: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 3.4428651696165176 },
       V2: {
-        averageBuildingHeight: 2.575420559806686,
-        buildingCount: 85,
-        building3lessAreaCoverage: 0.0016184788124234068,
-        building3to8AreaCoverage: 0.0003359711804643733,
-        building8moreAreaCoverage: 0.000031863941865808826,
+        averageBuildingHeight: 1.9446491980949518,
+        buildingCount: 10,
+        building3lessAreaCoverage: 0.00017628816663384103,
+        building3to8AreaCoverage: 0,
+        building8moreAreaCoverage: 0,
       },
     },
     buildingDamage: {

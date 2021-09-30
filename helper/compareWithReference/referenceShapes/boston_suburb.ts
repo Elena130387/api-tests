@@ -1,6 +1,6 @@
 export const boston_suburb: any = {
   jobSummaryDescriptor: {
-    ids: [502],
+    ids: [724],
     stats: {
       incomePerCapita: 47616,
       housingUnitsTotal: 626351,
@@ -29,11 +29,11 @@ export const boston_suburb: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 3.2417058788039648 },
       V2: {
-        averageBuildingHeight: 3.546710547591445,
-        buildingCount: 4598,
-        building3lessAreaCoverage: 0.12201972234816778,
-        building3to8AreaCoverage: 0.10302625383649554,
-        building8moreAreaCoverage: 0.018593084244501023,
+        averageBuildingHeight: 4.098386845779532,
+        buildingCount: 3603,
+        building3lessAreaCoverage: 0.02366715385800316,
+        building3to8AreaCoverage: 0.11938862573532831,
+        building8moreAreaCoverage: 0.008508477892194475,
       },
     },
     buildingDamage: {

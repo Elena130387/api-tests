@@ -1,6 +1,6 @@
 export const la_beverlyHills: any = {
   jobSummaryDescriptor: {
-    ids: [512],
+    ids: [734],
     stats: {
       incomePerCapita: 30798,
       housingUnitsTotal: 3506903,
@@ -23,11 +23,11 @@ export const la_beverlyHills: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 3.1449953188302286 },
       V2: {
-        averageBuildingHeight: 3.4509408651934184,
-        buildingCount: 2323,
-        building3lessAreaCoverage: 0.08164657108367436,
-        building3to8AreaCoverage: 0.04024925433769428,
-        building8moreAreaCoverage: 0.0123433511723917,
+        averageBuildingHeight: 2.972555299585508,
+        buildingCount: 1643,
+        building3lessAreaCoverage: 0.04452522721870866,
+        building3to8AreaCoverage: 0.020396136732959244,
+        building8moreAreaCoverage: 0.0026900074469349373,
       },
     },
     buildingDamage: {

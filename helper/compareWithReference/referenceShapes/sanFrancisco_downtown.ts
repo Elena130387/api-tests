@@ -1,6 +1,6 @@
 export const sanFrancisco_downtown: any = {
   jobSummaryDescriptor: {
-    ids: [522],
+    ids: [744],
     stats: {
       incomePerCapita: 59508,
       housingUnitsTotal: 390376,
@@ -29,13 +29,13 @@ export const sanFrancisco_downtown: any = {
     buildingCount: 473,
     averageBuildingAreaCoverage: 0.5192644348999366,
     buildingHeight: {
-      V1: { averageBuildingHeight: 7.441218556759651 },
+      V1: { averageBuildingHeight: 7.441218556759653 },
       V2: {
-        averageBuildingHeight: 9.902925628635236,
-        buildingCount: 1540,
-        building3lessAreaCoverage: 0.012780795912114847,
-        building3to8AreaCoverage: 0.13894738803724616,
-        building8moreAreaCoverage: 0.26372585777475055,
+        averageBuildingHeight: 9.316669977281949,
+        buildingCount: 1597,
+        building3lessAreaCoverage: 0.006750560942150298,
+        building3to8AreaCoverage: 0.11539273302094276,
+        building8moreAreaCoverage: 0.14046715487952993,
       },
     },
     buildingDamage: {
@@ -67,7 +67,7 @@ export const sanFrancisco_downtown: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 7.441218556759651,
+    averageBuildingHeight: 7.441218556759653,
   },
   links: [],
 };

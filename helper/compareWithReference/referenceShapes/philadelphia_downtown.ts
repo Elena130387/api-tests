@@ -1,6 +1,6 @@
 export const philadelphia_downtown: any = {
   jobSummaryDescriptor: {
-    ids: [520],
+    ids: [742],
     stats: {
       incomePerCapita: 24811,
       housingUnitsTotal: 679876,
@@ -33,13 +33,13 @@ export const philadelphia_downtown: any = {
     buildingCount: 661,
     averageBuildingAreaCoverage: 0.3534264337448847,
     buildingHeight: {
-      V1: { averageBuildingHeight: 7.300782155375528 },
+      V1: { averageBuildingHeight: 7.300782155375531 },
       V2: {
-        averageBuildingHeight: 7.91871304246888,
-        buildingCount: 1992,
-        building3lessAreaCoverage: 0.013718695867629279,
-        building3to8AreaCoverage: 0.145615782056536,
-        building8moreAreaCoverage: 0.12259313038417272,
+        averageBuildingHeight: 7.506799621925282,
+        buildingCount: 2181,
+        building3lessAreaCoverage: 0.004756019228980655,
+        building3to8AreaCoverage: 0.0674418948945545,
+        building8moreAreaCoverage: 0.061882336934407554,
       },
     },
     buildingDamage: {
@@ -72,7 +72,7 @@ export const philadelphia_downtown: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 7.300782155375528,
+    averageBuildingHeight: 7.300782155375531,
   },
   links: [],
 };

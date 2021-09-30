@@ -1,6 +1,6 @@
 export const arizona: any = {
   jobSummaryDescriptor: {
-    ids: [499],
+    ids: [720],
     stats: {
       incomePerCapita: 30186,
       housingUnitsTotal: 1699628,
@@ -26,13 +26,13 @@ export const arizona: any = {
     buildingCount: 487,
     averageBuildingAreaCoverage: 0.2792678942783273,
     buildingHeight: {
-      V1: { averageBuildingHeight: 2.3970264635669496 },
+      V1: { averageBuildingHeight: 2.397026463566949 },
       V2: {
-        averageBuildingHeight: 2.620121581451196,
-        buildingCount: 1080,
-        building3lessAreaCoverage: 0.14229896600297887,
-        building3to8AreaCoverage: 0.028814247186235386,
-        building8moreAreaCoverage: 0.0032366745763545415,
+        averageBuildingHeight: 2.1499674735919885,
+        buildingCount: 940,
+        building3lessAreaCoverage: 0.09453462010664905,
+        building3to8AreaCoverage: 0.004024697722290917,
+        building8moreAreaCoverage: 0.0019032320530294514,
       },
     },
     buildingDamage: {
@@ -43,7 +43,7 @@ export const arizona: any = {
         buildingDestroyedRate: 0,
       },
     },
-    populationCount: 7155,
+    populationCount: 7077,
     landUse: {
       V2: {
         OTHERIMP: 0.02877697841726619,
@@ -64,7 +64,7 @@ export const arizona: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 2.3970264635669496,
+    averageBuildingHeight: 2.397026463566949,
   },
   links: [],
 };

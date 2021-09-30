@@ -1,6 +1,6 @@
 export const newJersey_city: any = {
   jobSummaryDescriptor: {
-    ids: [519],
+    ids: [741],
     stats: {
       incomePerCapita: 35910,
       housingUnitsTotal: 277742,
@@ -34,13 +34,13 @@ export const newJersey_city: any = {
     buildingCount: 639,
     averageBuildingAreaCoverage: 0.2693021117138262,
     buildingHeight: {
-      V1: { averageBuildingHeight: 4.611841107827755 },
+      V1: { averageBuildingHeight: 4.611841107827753 },
       V2: {
-        averageBuildingHeight: 8.023484616108767,
-        buildingCount: 1671,
-        building3lessAreaCoverage: 0.0174993734065892,
-        building3to8AreaCoverage: 0.09307444596490941,
-        building8moreAreaCoverage: 0.11035218225473784,
+        averageBuildingHeight: 7.521667899936496,
+        buildingCount: 1585,
+        building3lessAreaCoverage: 0.009111612784762342,
+        building3to8AreaCoverage: 0.05411499621821385,
+        building8moreAreaCoverage: 0.046314335670791754,
       },
     },
     buildingDamage: {
@@ -73,7 +73,7 @@ export const newJersey_city: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 4.611841107827755,
+    averageBuildingHeight: 4.611841107827753,
   },
   links: [],
 };

@@ -1,6 +1,6 @@
 export const houston_downtown: any = {
   jobSummaryDescriptor: {
-    ids: [509],
+    ids: [731],
     stats: {
       incomePerCapita: 30856,
       housingUnitsTotal: 1714340,
@@ -31,11 +31,11 @@ export const houston_downtown: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 10.574372169616783 },
       V2: {
-        averageBuildingHeight: 10.064302217915424,
-        buildingCount: 1072,
-        building3lessAreaCoverage: 0.014419616214812749,
-        building3to8AreaCoverage: 0.022541853485914764,
-        building8moreAreaCoverage: 0.15600759516317378,
+        averageBuildingHeight: 8.960642563296584,
+        buildingCount: 747,
+        building3lessAreaCoverage: 0.008027757917131697,
+        building3to8AreaCoverage: 0.03205700021572214,
+        building8moreAreaCoverage: 0.06793901150819485,
       },
     },
     buildingDamage: {

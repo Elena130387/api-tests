@@ -1,6 +1,6 @@
 export const tampa: any = {
   jobSummaryDescriptor: {
-    ids: [526],
+    ids: [748],
     stats: {
       incomePerCapita: 32120,
       housingUnitsTotal: 506468,
@@ -21,13 +21,13 @@ export const tampa: any = {
     buildingCount: 1667,
     averageBuildingAreaCoverage: 0.20145821631104127,
     buildingHeight: {
-      V1: { averageBuildingHeight: 2.3955711938843978 },
+      V1: { averageBuildingHeight: 2.395571193884394 },
       V2: {
-        averageBuildingHeight: 2.6010989017465977,
-        buildingCount: 2668,
-        building3lessAreaCoverage: 0.11857960636454418,
-        building3to8AreaCoverage: 0.03192911171972901,
-        building8moreAreaCoverage: 0.002400218992304981,
+        averageBuildingHeight: 2.38482690708216,
+        buildingCount: 2556,
+        building3lessAreaCoverage: 0.10079632904894072,
+        building3to8AreaCoverage: 0.009131754251351034,
+        building8moreAreaCoverage: 0.0012919490498707706,
       },
     },
     buildingDamage: {
@@ -60,7 +60,7 @@ export const tampa: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 2.3955711938843978,
+    averageBuildingHeight: 2.395571193884394,
   },
   links: [],
 };

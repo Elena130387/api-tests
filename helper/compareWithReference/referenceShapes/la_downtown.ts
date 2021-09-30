@@ -1,6 +1,6 @@
 export const la_downtown: any = {
   jobSummaryDescriptor: {
-    ids: [513],
+    ids: [735],
     stats: {
       incomePerCapita: 30798,
       housingUnitsTotal: 3506903,
@@ -34,13 +34,13 @@ export const la_downtown: any = {
     buildingCount: 616,
     averageBuildingAreaCoverage: 0.34875338922732724,
     buildingHeight: {
-      V1: { averageBuildingHeight: 9.030960680979565 },
+      V1: { averageBuildingHeight: 9.030960680979568 },
       V2: {
-        averageBuildingHeight: 11.209344888497847,
-        buildingCount: 1179,
-        building3lessAreaCoverage: 0.012462414130962714,
-        building3to8AreaCoverage: 0.043792966812375995,
-        building8moreAreaCoverage: 0.2639928343434813,
+        averageBuildingHeight: 10.767062935866845,
+        buildingCount: 856,
+        building3lessAreaCoverage: 0.007935720776754713,
+        building3to8AreaCoverage: 0.033291589646112354,
+        building8moreAreaCoverage: 0.12373701226774347,
       },
     },
     buildingDamage: {
@@ -73,7 +73,7 @@ export const la_downtown: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 9.030960680979565,
+    averageBuildingHeight: 9.030960680979568,
   },
   links: [],
 };

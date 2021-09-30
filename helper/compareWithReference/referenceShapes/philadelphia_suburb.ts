@@ -1,6 +1,6 @@
 export const philadelphia_suburb: any = {
   jobSummaryDescriptor: {
-    ids: [521],
+    ids: [743],
     stats: {
       incomePerCapita: 24811,
       housingUnitsTotal: 679876,
@@ -31,13 +31,13 @@ export const philadelphia_suburb: any = {
     buildingCount: 1289,
     averageBuildingAreaCoverage: 0.2727034539401698,
     buildingHeight: {
-      V1: { averageBuildingHeight: 4.425037163205395 },
+      V1: { averageBuildingHeight: 4.4250371632053955 },
       V2: {
-        averageBuildingHeight: 4.454902958572721,
-        buildingCount: 4596,
-        building3lessAreaCoverage: 0.07157660732750132,
-        building3to8AreaCoverage: 0.13287652707567402,
-        building8moreAreaCoverage: 0.029000375785079656,
+        averageBuildingHeight: 3.9907295293658542,
+        buildingCount: 2996,
+        building3lessAreaCoverage: 0.027001474417892156,
+        building3to8AreaCoverage: 0.03850309655112045,
+        building8moreAreaCoverage: 0.012636136607963498,
       },
     },
     buildingDamage: {
@@ -70,7 +70,7 @@ export const philadelphia_suburb: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 4.425037163205395,
+    averageBuildingHeight: 4.4250371632053955,
   },
   links: [],
 };

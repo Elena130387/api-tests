@@ -1,6 +1,6 @@
 export const mountain: any = {
   jobSummaryDescriptor: {
-    ids: [497],
+    ids: [718],
     stats: {
       incomePerCapita: 24605,
       housingUnitsTotal: 24055,
@@ -20,11 +20,11 @@ export const mountain: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 5.114385517157175 },
       V2: {
-        averageBuildingHeight: 5.386035855654542,
-        buildingCount: 1055,
-        building3lessAreaCoverage: 0.021039417811802456,
-        building3to8AreaCoverage: 0.035132408142089844,
-        building8moreAreaCoverage: 0.025952452705019995,
+        averageBuildingHeight: 3.7062116375365988,
+        buildingCount: 412,
+        building3lessAreaCoverage: 0.0028010777064732145,
+        building3to8AreaCoverage: 0.03628703526088169,
+        building8moreAreaCoverage: 0.0015506971450079056,
       },
     },
     buildingDamage: {

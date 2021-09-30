@@ -1,6 +1,6 @@
 export const houston_suburb: any = {
   jobSummaryDescriptor: {
-    ids: [510],
+    ids: [732],
     stats: {
       incomePerCapita: 30856,
       housingUnitsTotal: 1714340,
@@ -29,11 +29,11 @@ export const houston_suburb: any = {
     buildingHeight: {
       V1: { averageBuildingHeight: 3.2822293289614186 },
       V2: {
-        averageBuildingHeight: 3.1225482073283795,
-        buildingCount: 4330,
-        building3lessAreaCoverage: 0.10712685262350212,
-        building3to8AreaCoverage: 0.037375505107984805,
-        building8moreAreaCoverage: 0.007305326915922619,
+        averageBuildingHeight: 2.9361226287123263,
+        buildingCount: 3443,
+        building3lessAreaCoverage: 0.05110204787481399,
+        building3to8AreaCoverage: 0.028178929685052475,
+        building8moreAreaCoverage: 0.0024738359570802004,
       },
     },
     buildingDamage: {

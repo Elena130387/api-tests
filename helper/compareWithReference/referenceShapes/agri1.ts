@@ -1,6 +1,6 @@
 export const agri1: any = {
   jobSummaryDescriptor: {
-    ids: [498],
+    ids: [719],
     stats: {
       incomePerCapita: 18643,
       housingUnitsTotal: 9724,
@@ -21,13 +21,13 @@ export const agri1: any = {
     buildingCount: 57,
     averageBuildingAreaCoverage: 0.008767015653146538,
     buildingHeight: {
-      V1: { averageBuildingHeight: 2.8215964845919133 },
+      V1: { averageBuildingHeight: 2.821596484591913 },
       V2: {
-        averageBuildingHeight: 8.308622623391704,
-        buildingCount: 21,
-        building3lessAreaCoverage: 0.00024352874373433583,
-        building3to8AreaCoverage: 0.000024207552572838347,
-        building8moreAreaCoverage: 0.0027547085793096023,
+        averageBuildingHeight: 4.842589977553807,
+        buildingCount: 12,
+        building3lessAreaCoverage: 0.00034959453687930767,
+        building3to8AreaCoverage: 0,
+        building8moreAreaCoverage: 0.00014241536458333334,
       },
     },
     buildingDamage: {
@@ -57,7 +57,7 @@ export const agri1: any = {
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 2.8215964845919133,
+    averageBuildingHeight: 2.821596484591913,
   },
   links: [],
 };
