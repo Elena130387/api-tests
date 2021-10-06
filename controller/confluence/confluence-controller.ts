@@ -29,18 +29,14 @@ const getTime = async (listEstimatorJobId: any[], path: any, func: any) => {
     const response = await getJobExecutionsById(jobId);
     arrTime.push(response.jobExecution[path]);
   }
-  return new Date(arrTime.reduce((a, b) => func(a, b)));
+  return new Date(arrTime.reduce((a, b) => func(new Date(a), new Date(b))));
 };
 const calcSpeed = async (id: number) => {
   const listEstimatorJobId: any[] = await getIdsExecutions(id);
   const countTile = await caclCountTile(listEstimatorJobId);
-  const createTime = await getTime(
-    listEstimatorJobId,
-    "createTime",
-    Math.min()
-  );
-  const startTime = await getTime(listEstimatorJobId, "startTime", Math.min());
-  const endTime = await getTime(listEstimatorJobId, "endTime", Math.max());
+  const createTime = await getTime(listEstimatorJobId, "createTime", Math.min);
+  const startTime = await getTime(listEstimatorJobId, "startTime", Math.min);
+  const endTime = await getTime(listEstimatorJobId, "endTime", Math.max);
 
   return {
     //see Confluence wiki https://syncretis.atlassian.net/wiki/spaces/EXRO/pages/121798682/Scaling+Performance
