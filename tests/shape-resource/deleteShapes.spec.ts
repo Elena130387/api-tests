@@ -5,7 +5,7 @@ import {
 } from "../../controller/shape/shape-controller";
 
 describe("delete all shape with name=`autotest, create from`", function () {
-  const NAME = `Comparison`,
+  const NAME = `autotest, create form`,
     STATUS = `deleted`,
     COUNT = 100;
   it(`deleted shapes`, async function () {
