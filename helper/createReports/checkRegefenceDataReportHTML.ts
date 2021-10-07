@@ -10,10 +10,6 @@ let bodyHTML = `
         <head><meta charset="UTF-8">
         <title>Reports</title>
         <style>
-     body{
-                display: flex;
-                justify-content: center;
-     }
      table { 
          border-collapse: collapse;  
          line-height: 1.1; 
