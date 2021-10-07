@@ -28,6 +28,19 @@ describe("create shapes LAA and Joplin", function () {
     );
   }, 100000);
 
+  it("successfully create LA shape", async function () {
+    const NAME = `LA airport and downtown.performance test: ${FULLDATE}`;
+    maxSec = 50;
+    forceProcessing = false;
+
+    const response = await createGqlMultiShape(
+      LAAirportAndDowntown300km2,
+      `${NAME}: LA`
+    );
+    id = response.data.calculate.id;
+    await waitWhenShapeStatusEqual(id);
+  }, 100000);
+
   it("successfully create joplin shape", async function () {
     const NAME = `Joplin. performance test: ${FULLDATE}`;
     maxSec = 60;
@@ -42,17 +55,4 @@ describe("create shapes LAA and Joplin", function () {
     id = response.id;
     await waitWhenShapeStatusEqual(id);
   }, 110000);
-
-  it("successfully create LA shape", async function () {
-    const NAME = `LA airport and downtown.performance test: ${FULLDATE}`;
-    maxSec = 50;
-    forceProcessing = false;
-
-    const response = await createGqlMultiShape(
-      LAAirportAndDowntown300km2,
-      `${NAME}: LA`
-    );
-    id = response.data.calculate.id;
-    await waitWhenShapeStatusEqual(id);
-  }, 100000);
 });

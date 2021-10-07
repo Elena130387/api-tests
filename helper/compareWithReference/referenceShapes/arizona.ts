@@ -1,6 +1,6 @@
 export const arizona: any = {
   jobSummaryDescriptor: {
-    ids: [720],
+    ids: [890],
     stats: {
       incomePerCapita: 30186,
       housingUnitsTotal: 1699628,
@@ -15,24 +15,19 @@ export const arizona: any = {
       medianUnitPrice: 224993,
     },
     objectCount: {
-      small: {
-        "large-vehicle": 26,
-        "small-vehicle": 828,
-        "swimming-pool": 74,
-        "basketball-court": 2,
-      },
+      small: { "large-vehicle": 20, "small-vehicle": 397, "swimming-pool": 49 },
       large: { "baseball-diamond": 1 },
     },
-    buildingCount: 487,
-    averageBuildingAreaCoverage: 0.2792678942783273,
+    buildingCount: 247,
+    averageBuildingAreaCoverage: 0.24663142154091283,
     buildingHeight: {
-      V1: { averageBuildingHeight: 2.397026463566949 },
+      V1: { averageBuildingHeight: 2.4543535220756274 },
       V2: {
-        averageBuildingHeight: 2.1499674735919885,
-        buildingCount: 940,
-        building3lessAreaCoverage: 0.09453462010664905,
-        building3to8AreaCoverage: 0.004024697722290917,
-        building8moreAreaCoverage: 0.0019032320530294514,
+        averageBuildingHeight: 2.5115013855528256,
+        buildingCount: 523,
+        building3lessAreaCoverage: 0.12954159786826686,
+        building3to8AreaCoverage: 0.029104232788085938,
+        building8moreAreaCoverage: 0.0022751657586348685,
       },
     },
     buildingDamage: {
@@ -43,28 +38,27 @@ export const arizona: any = {
         buildingDestroyedRate: 0,
       },
     },
-    populationCount: 7077,
+    populationCount: 4594,
     landUse: {
       V2: {
-        OTHERIMP: 0.02877697841726619,
-        COMMERCIAL: 0.02158273381294964,
-        CULTIVATED: 0.04316546762589928,
-        INDUSTRIAL: 0.02158273381294964,
-        RIGHTOFWAY: 0.02158273381294964,
-        RESIDENTIAL: 0.8633093525179856,
+        OTHERIMP: 0.013157894736842105,
+        CULTIVATED: 0.02631578947368421,
+        INDUSTRIAL: 0.02631578947368421,
+        RIGHTOFWAY: 0.013157894736842105,
+        RESIDENTIAL: 0.9210526315789473,
       },
     },
-    economicExposureValue: { V2: 1015256189 },
+    economicExposureValue: { V2: 506333997 },
     insuranceExposureValue: {
       V2: {
-        AGRI: 1403455,
-        COMMERCIAL: 42085285,
-        INDUSTRIAL: 5995564,
-        RESIDENTIAL: 740357559,
+        AGRI: 0,
+        COMMERCIAL: 13833080,
+        INDUSTRIAL: 3811064,
+        RESIDENTIAL: 379000959,
       },
     },
     derivativeFriendlyRate: 1,
-    averageBuildingHeight: 2.397026463566949,
+    averageBuildingHeight: 2.4543535220756274,
   },
   links: [],
 };

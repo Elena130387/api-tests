@@ -4,7 +4,7 @@ import {
 } from "../../controller/shape/shape-controller";
 import { DATE } from "../../helper/date";
 import * as referenceData from "../../helper/compareWithReference/index";
-import { referensShape } from "../../requests/shape-resource/createNewShape";
+import { referenceShape } from "../../requests/shape-resource/createNewShape";
 import { getListWithErorrsValue } from "../../helper/jsonProcessing";
 import { toFile, toFileReferenceData } from "../../helper/exportFile";
 import { reportHTML } from "../../helper/createReports/checkRegefenceDataReportHTML";
@@ -23,7 +23,7 @@ describe("comparison of reference data", function () {
         const NAME = `${
           el[0].toUpperCase() + el.slice(1)
         }. Comparison of with reference data: ${DATE}`;
-        const { id } = await createShape(NAME, true, false, referensShape[el]);
+        const { id } = await createShape(NAME, true, false, referenceShape[el]);
         await waitWhenShapeStatusEqual(id);
         const idExecutions = await getIdsExecutions(id);
         const response = await getSummaryDataAboutJobs(idExecutions[0]);
