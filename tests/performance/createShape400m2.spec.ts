@@ -8,13 +8,10 @@ import {
 } from "../../controller/shape/shape-controller";
 import { toFile } from "../../helper/exportFile";
 import { FULLDATE } from "../../helper/date";
-import {
-  shape400km2,
-  overclockingShape,
-} from "../../requests/shape-resource/createNewShape";
+import { shape400km2 } from "../../requests/shape-resource/createNewShape";
 
 describe("create shape 400m2 for a while", function () {
-  const NAME = `perfomance test: ${FULLDATE}`;
+  const NAME = `Florida. Perfomance test: ${FULLDATE}`;
   const TIME = 3000000;
   let id: any, forceProcessing: boolean;
 

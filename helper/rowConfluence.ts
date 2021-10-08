@@ -11,9 +11,9 @@ export const rowToTable = (obj: any, color: string) =>
             <p>${DATE}</p>
         </td>
         <td>
-            <p><a href=\"${URL + obj.Shapeid}\">${obj.geoInfo}, ${Math.round(
-    obj.areaSize
-  )}km2</a></p>
+            <p><a href=\"${URL + obj.Shapeid}\">${
+    obj.name.split(".")[0]
+  }, ${Math.round(obj.areaSize)}km2</a></p>
         </td>
         <td>
             <p>40</p>

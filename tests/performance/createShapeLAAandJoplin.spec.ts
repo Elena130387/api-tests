@@ -29,7 +29,7 @@ describe("create shapes LAA and Joplin", function () {
   }, 100000);
 
   it("successfully create LA shape", async function () {
-    const NAME = `LA airport and downtown.performance test: ${FULLDATE}`;
+    const NAME = `LA airport and downtown. Performance test: ${FULLDATE}`;
     maxSec = 50;
     forceProcessing = false;
 
@@ -42,7 +42,7 @@ describe("create shapes LAA and Joplin", function () {
   }, 100000);
 
   it("successfully create joplin shape", async function () {
-    const NAME = `Joplin. performance test: ${FULLDATE}`;
+    const NAME = `Joplin. Performance test: ${FULLDATE}`;
     maxSec = 60;
     forceProcessing = true;
 
