@@ -54,5 +54,5 @@ describe("create shapes LAA and Joplin", function () {
     );
     id = response.id;
     await waitWhenShapeStatusEqual(id);
-  }, 110000);
+  }, 500000);
 });
