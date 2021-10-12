@@ -12,6 +12,10 @@ import { joplinShape } from "../../requests/shape-resource/createNewShape";
 import { errorRgb } from "../../helper/rowConfluence";
 import { createGqlMultiShape } from "../../controller/graphql/shape";
 import { LAAirportAndDowntown300km2 } from "../../requests/graphql/createShape";
+import {
+  getIdsExecutions,
+  waitWhenProgressEqual,
+} from "../../controller/job-execution/job-executions-controller";
 
 describe("create shapes LAA and Joplin", function () {
   let id: any, forceProcessing: boolean, maxSec: number;
@@ -53,6 +57,10 @@ describe("create shapes LAA and Joplin", function () {
       joplinShape
     );
     id = response.id;
+
+    const jobIds = await getIdsExecutions(id);
+    await waitWhenProgressEqual(jobIds[0], 2000);
+
     await waitWhenShapeStatusEqual(id);
-  }, 110000);
+  }, 500000);
 });
