@@ -17,6 +17,18 @@ export const findJobExecutions = (limit: number, offset: number) =>
   );
 export const getJobExecutionsById = (shapeId: number) =>
   callRestApi(`${EXECUTIONS_URL}/${shapeId}`, getRestBody("GET", null));
+
+export const getJobExecutionsProgressById = (shapeId: number) =>
+  callRestApi(
+    `${EXECUTIONS_URL}/${shapeId}/progress`,
+    getRestBody("GET", null)
+  );
+
+export const reRequestMissingTile = (shapeId: number) =>
+  callRestApi(
+    `${EXECUTIONS_URL}/${shapeId}/request-missing-tiles`,
+    getRestBody("POST", null)
+  );
 export const startJobExecution = (forceProcessing: boolean, shapeId: number) =>
   callRestApi(
     EXECUTIONS_URL,
@@ -139,3 +151,16 @@ export const caclCountTileFilterBuildingHeight = async (
   }
   return value;
 };
+
+export async function waitWhenProgressEqual(jobId: number, countTile: number) {
+  await new Promise((r) => setTimeout(r, 1000));
+
+  const response = await getJobExecutionsProgressById(jobId);
+  const { completedTiles } = response;
+
+  if (completedTiles >= countTile) {
+    await reRequestMissingTile(jobId);
+    return;
+  }
+  await waitWhenProgressEqual(jobId, countTile);
+}
