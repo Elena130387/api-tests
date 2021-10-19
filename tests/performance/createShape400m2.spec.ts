@@ -12,7 +12,7 @@ import { shape400km2 } from "../../requests/shape-resource/createNewShape";
 
 describe("create shape 400m2 for a while", function () {
   const NAME = `Florida. Perfomance test: ${FULLDATE}`;
-  const TIME = 3000000;
+  const TIME = 9000000;
   let id: any, forceProcessing: boolean;
 
   afterEach(async function () {
