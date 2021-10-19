@@ -18,7 +18,7 @@ describe("stop creating shape", function () {
 
     expect(status).toEqual(STATUS);
     await waitWhenProcessStarted(shapeId);
-  }, 10000);
+  }, 20000);
 
   it("stop running shape process", async function () {
     const response = await stopShape(shapeId);
@@ -27,5 +27,5 @@ describe("stop creating shape", function () {
     expect(name).toEqual(NAME);
 
     await waitWhenShapeStatusEqual(shapeId, "stopped");
-  }, 35000);
+  }, 55000);
 });
