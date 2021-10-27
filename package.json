@@ -10,7 +10,8 @@
     "regression": "jest --testPathPattern tests/comparisonOfReferenceData --setupFiles ./setEnvVars",
     "perfomance": "jest --testPathPattern tests/performance  --setupFiles dotenv/config",
     "demoTest": "jest --setupFiles ./setEnvVars",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "performance-each-model": "jest --testPathPattern tests/performance/performanceAllModels"
   },
   "author": "NikolayKozub <Nikolay.Kozub@syncretis.com>",
   "license": "MIT",
@@ -21,6 +22,7 @@
     "dotenv": "^10.0.0",
     "flat": "^5.0.2",
     "got": "^11.8.2",
+    "image-to-base64": "^2.2.0",
     "jsonpath": "^1.1.1",
     "openapi-typescript": "^4.0.0",
     "ts-node": "^10.0.0",
