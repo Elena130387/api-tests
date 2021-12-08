@@ -14,8 +14,8 @@ resources:
 
 jobs:
   - job: Tests
-    timeoutInMinutes: 7
-    displayName: api_Tests
+    timeoutInMinutes: 120
+    displayName: Performance_test_each_model
     workspace:
       clean: all
     container: node
@@ -24,18 +24,20 @@ jobs:
         value: --max-old-space-size=8192
     steps:
       - task: Bash@3
+        displayName: create env file
+        inputs:
+          targetType: 'inline'
+          script: |
+            echo "token_confluence=$(token_confluence)" > ./.env
+            cat ./.env
+      - task: Bash@3
         displayName: 'install dependency'
         inputs:
           targetType: 'inline'
           script: 'npm install yarn && yarn install'
       - task: Bash@3
-        displayName: 'waiting for the end of the deployment'
-        inputs:
-          targetType: 'inline'
-          script: sleep 1m
-      - task: Bash@3
         displayName: 'Run tests'
         inputs:
           targetType: 'inline'
           script: |
-            yarn jest --testPathIgnorePatterns tests/performance tests/regressionTest
+            yarn jest --testPathPattern tests/performance/performanceAllModels

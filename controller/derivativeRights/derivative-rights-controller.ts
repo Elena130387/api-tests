@@ -26,12 +26,6 @@ export const getFilteredTiles = (coord: any) =>
     )
   );
 
-export const getRandomRangeCoord = (min: number, max: number) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-};
-
 export const getCoordForUSA = () => ({
   latNW: 48,
   latSE: 36,

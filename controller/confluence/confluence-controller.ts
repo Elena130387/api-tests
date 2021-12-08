@@ -5,7 +5,12 @@ import {
   getJobExecutionsById,
 } from "../job-execution/job-executions-controller";
 import { getShapeById } from "../shape/shape-controller";
-import { rowToTable, updatePage } from "../../helper/rowConfluence";
+import {
+  rowForFirstTable,
+  rowForSecondTable,
+  updateFirstTable,
+  updateSecondTable,
+} from "../../helper/createReports/rowConfluence";
 const pageId =
   "https://syncretis.atlassian.net/wiki/rest/api/content/121798682";
 const { token_confluence } = process.env;
@@ -72,9 +77,17 @@ export const createReport = async (id: number, preprocessing: boolean) => {
 };
 
 export const sendReportToConfluence = async (obj: any, color = `#36b37e`) => {
-  let newRow = rowToTable(obj, color);
+  let newRow = rowForFirstTable(obj, color);
   const response = await getPageConfluenceBody();
   const { value } = response.body.storage;
   const { number } = response.version;
-  await updatePageConfluenceBody(updatePage(value, newRow, number));
+  await updatePageConfluenceBody(updateFirstTable(value, newRow, number));
+};
+
+export const sendReportToConfluenceForSecondTable = async (obj: any) => {
+  let newRow = rowForSecondTable(obj);
+  const response = await getPageConfluenceBody();
+  const { value } = response.body.storage;
+  const { number } = response.version;
+  await updatePageConfluenceBody(updateSecondTable(value, newRow, number));
 };

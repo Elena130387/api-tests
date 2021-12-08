@@ -9,7 +9,7 @@ import {
 import { toFile } from "../../helper/exportFile";
 import { FULLDATE } from "../../helper/date";
 import { joplinShape } from "../../requests/shape-resource/createNewShape";
-import { errorRgb } from "../../helper/rowConfluence";
+import { errorRgb } from "../../helper/createReports/rowConfluence";
 import { createGqlMultiShape } from "../../controller/graphql/shape";
 import { LAAirportAndDowntown300km2 } from "../../requests/graphql/createShape";
 import {
