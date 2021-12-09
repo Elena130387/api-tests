@@ -1,6 +1,6 @@
 import {
   createShape,
-  waitWhenShapeStatusEqual,
+  waitWhenShapeStatusEqualCompleted,
 } from "../../controller/shape/shape-controller";
 import { DATE } from "../../helper/date";
 import * as referenceData from "../../helper/compareWithReference/index";
@@ -24,7 +24,7 @@ describe("comparison of reference data", function () {
           el[0].toUpperCase() + el.slice(1)
         }. Comparison of with reference data: ${DATE}`;
         const { id } = await createShape(NAME, true, false, referenceShape[el]);
-        await waitWhenShapeStatusEqual(id);
+        await waitWhenShapeStatusEqualCompleted(id);
         const idExecutions = await getIdsExecutions(id);
         const response = await getSummaryDataAboutJobs(idExecutions[0]);
         // @ts-ignore

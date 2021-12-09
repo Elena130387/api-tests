@@ -4,7 +4,7 @@ import {
 } from "../../controller/confluence/confluence-controller";
 import {
   createShape,
-  waitWhenShapeStatusEqual,
+  waitWhenShapeStatusEqualCompleted,
 } from "../../controller/shape/shape-controller";
 import { toFile } from "../../helper/exportFile";
 import { FULLDATE } from "../../helper/date";
@@ -35,7 +35,7 @@ describe("create shape 400m2 for a while", function () {
         shape400km2
       );
       id = response.id;
-      await waitWhenShapeStatusEqual(id);
+      await waitWhenShapeStatusEqualCompleted(id);
     },
     TIME
   );
@@ -50,7 +50,7 @@ describe("create shape 400m2 for a while", function () {
         shape400km2
       );
       id = response.id;
-      await waitWhenShapeStatusEqual(id);
+      await waitWhenShapeStatusEqualCompleted(id);
     },
     TIME
   );

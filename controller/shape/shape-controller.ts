@@ -67,9 +67,28 @@ export async function waitWhenProcessStarted(shapeId: number) {
   await waitWhenProcessStarted(shapeId);
 }
 
-export async function waitWhenShapeStatusEqual(
+export async function waitWhenShapeStatusEqualCompleted(
   shapeId: number,
   statusWhait: string = "completed"
+) {
+  await new Promise((r) => setTimeout(r, 1000));
+
+  const response = await getShapeById(shapeId);
+  const { status } = response;
+
+  if (
+    status === statusWhait &&
+    response.polygons[0].status === statusWhait &&
+    response.polygons[0].processingPhase === statusWhait
+  ) {
+    return;
+  }
+  await waitWhenShapeStatusEqualCompleted(shapeId);
+}
+
+export async function waitWhenShapeStatusEqualStopped(
+  shapeId: number,
+  statusWhait: string = "stopped"
 ) {
   await new Promise((r) => setTimeout(r, 1000));
 
@@ -79,7 +98,7 @@ export async function waitWhenShapeStatusEqual(
   if (status === statusWhait) {
     return;
   }
-  await waitWhenShapeStatusEqual(shapeId);
+  await waitWhenShapeStatusEqualStopped(shapeId);
 }
 const getAllShapesByName = async (count: number, name: string) =>
   (await getShapeByCount(count)).filter((el: any) => el.name.includes(name));

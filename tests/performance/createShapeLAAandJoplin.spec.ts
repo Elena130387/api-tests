@@ -4,7 +4,7 @@ import {
 } from "../../controller/confluence/confluence-controller";
 import {
   createShape,
-  waitWhenShapeStatusEqual,
+  waitWhenShapeStatusEqualCompleted,
 } from "../../controller/shape/shape-controller";
 import { toFile } from "../../helper/exportFile";
 import { FULLDATE } from "../../helper/date";
@@ -42,7 +42,7 @@ describe("create shapes LAA and Joplin", function () {
       `${NAME}: LA`
     );
     id = response.data.calculate.id;
-    await waitWhenShapeStatusEqual(id);
+    await waitWhenShapeStatusEqualCompleted(id);
   }, 100000);
 
   it("successfully create joplin shape", async function () {
@@ -61,6 +61,6 @@ describe("create shapes LAA and Joplin", function () {
     const jobIds = await getIdsExecutions(id);
     await waitWhenProgressEqual(jobIds[0], 2000);
 
-    await waitWhenShapeStatusEqual(id);
+    await waitWhenShapeStatusEqualCompleted(id);
   }, 500000);
 });

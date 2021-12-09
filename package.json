@@ -35,6 +35,7 @@
     "eslint-config-prettier": "^8.3.0",
     "husky": "^4.3.6",
     "jest": "^27.0.6",
+    "jest-junit": "^13.0.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.3"
@@ -50,5 +51,15 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "jest-junit": {
+    "suiteName": "jest tests",
+    "outputDirectory": ".",
+    "outputName": "reports/junit.xml",
+    "uniqueOutputName": "false",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true"
   }
 }

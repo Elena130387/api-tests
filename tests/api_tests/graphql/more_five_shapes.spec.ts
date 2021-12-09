@@ -2,7 +2,7 @@ import { createGqlShape } from "../../../controller/graphql/shape";
 import { simpleCoordinates } from "../../../requests/graphql/createShape";
 import {
   messages,
-  waitWhenShapeStatusEqual,
+  waitWhenShapeStatusEqualCompleted,
 } from "../../../controller/shape/shape-controller";
 import { FULLDATE } from "../../../helper/date";
 
@@ -34,7 +34,7 @@ xdescribe("create more than 5 shapes", function () {
     );
     await Promise.all(
       ALL_ID.map(async (shapeId) => {
-        await waitWhenShapeStatusEqual(shapeId);
+        await waitWhenShapeStatusEqualCompleted(shapeId);
       })
     );
   }, 40000);

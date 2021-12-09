@@ -39,3 +39,9 @@ jobs:
           targetType: 'inline'
           script: |
             yarn jest --testPathPattern tests/api_test --globalSetup ./setupBeforeAllTest.ts  --globalTeardown ./setupAfterAllTest.ts
+      - task: PublishTestResults@2
+        condition: succeededOrFailed()
+        inputs:
+          testResultsFiles: '$(Build.SourcesDirectory)/reports/*.xml'
+          failTaskOnFailedTests: true # Optional
+        displayName: Publish test Results to AzureDevops
