@@ -1,6 +1,6 @@
-import { FULLDATE } from "../../helper/date";
-import { createShape } from "../../controller/shape/shape-controller";
-import { shapeObject } from "../../requests/shape-resource/createNewShape";
+import { FULLDATE } from "../../../helper/date";
+import { createShape } from "../../../controller/shape/shape-controller";
+import { shapeObject } from "../../../requests/shape-resource/createNewShape";
 
 describe("create new shape", function () {
   let shapeId = 0;

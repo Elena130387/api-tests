@@ -2,6 +2,8 @@
 module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
+  testTimeout: 15000,
+  reporters: ["default", "jest-junit"],
 };
 
 // process.env
