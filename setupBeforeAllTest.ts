@@ -13,5 +13,5 @@ module.exports = async () => {
   const response = await createShape(NAME, true, false, smallShape);
   const { id } = response;
   await waitWhenShapeStatusEqual(id);
-  await sleep(15000);
+  await sleep(20000);
 };
