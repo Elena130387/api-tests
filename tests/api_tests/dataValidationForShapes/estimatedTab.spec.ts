@@ -22,7 +22,6 @@ describe("data validation for getShape Estimated Tab", function () {
 
   beforeAll(async function () {
     const idShape = await firstCompetedShapeId();
-    console.log(idShape);
     summary = (await getShape(idShape)).data.shape.summary;
     listEstimatorJobId = await getIdsExecutions(idShape);
     countTile = await caclCountTile(listEstimatorJobId);

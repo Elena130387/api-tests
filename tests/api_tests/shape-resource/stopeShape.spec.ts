@@ -2,7 +2,7 @@ import { FULLDATE } from "../../../helper/date";
 import {
   createShape,
   waitWhenProcessStarted,
-  waitWhenShapeStatusEqualStopped,
+  waitWhenShapeStatusEqual,
 } from "../../../controller/shape/shape-controller";
 import { stopShape } from "../../../controller/graphql/shape";
 
@@ -26,6 +26,6 @@ describe("stop creating shape", function () {
 
     expect(name).toEqual(NAME);
 
-    await waitWhenShapeStatusEqualStopped(shapeId);
+    await waitWhenShapeStatusEqual(shapeId, "stopped");
   }, 60000);
 });
