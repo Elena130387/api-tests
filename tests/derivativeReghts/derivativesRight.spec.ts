@@ -41,6 +41,6 @@ describe("calculated filter tile Derivative rights in one aggregated Tile", func
         }
       });
     },
-    15000
+    25000
   );
 });
