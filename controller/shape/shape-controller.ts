@@ -71,7 +71,6 @@ export async function waitWhenShapeStatusEqual(
   shapeId: number,
   statusWhait: string = "completed"
 ) {
-  const STATUS = "completed";
   await new Promise((r) => setTimeout(r, 1000));
 
   const response = await getShapeById(shapeId);
@@ -85,11 +84,13 @@ export async function waitWhenShapeStatusEqual(
 const getAllShapesByName = async (count: number, name: string) =>
   (await getShapeByCount(count)).filter((el: any) => el.name.includes(name));
 export const getAllidFromSortListShapesByName = async (
-  count: number,
-  name: string
+  name: string,
+  count: number = 1
 ) => (await getAllShapesByName(count, name)).map((el: any) => el.id);
 
 export const messages = {
-    toLargeShape: 'Maximum area size limit 50000 km² per 1 month reached. The maximum area size you can create now is',
-    aLotRunningShapes: 'There are already 5 in progress. You cannot create shape at the moment'
-}
+  toLargeShape:
+    "Maximum area size limit 50000 km² per 1 month reached. The maximum area size you can create now is",
+  aLotRunningShapes:
+    "There are already 5 in progress. You cannot create shape at the moment",
+};

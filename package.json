@@ -6,10 +6,10 @@
   "scripts": {
     "prepush": "yarn run lint",
     "lint": "eslint .",
-    "test": "jest --testPathIgnorePatterns tests/performance tests/comparisonOfReferenceData",
+    "test": "yarn jest --testPathPattern tests/api_test --globalSetup ./setupBeforeAllTest.ts  --globalTeardown ./setupAfterAllTest.ts",
     "regression": "jest --testPathPattern tests/comparisonOfReferenceData --setupFiles ./setEnvVars",
     "perfomance": "jest --testPathPattern tests/performance  --setupFiles dotenv/config",
-    "demoTest": "jest --setupFiles ./setEnvVars",
+    "demoTest": "yarn jest --testPathPattern tests/api_test --globalSetup ./setupBeforeAllTest.ts  --globalTeardown ./setupAfterAllTest.ts --setupFiles ./setEnvVars",
     "test:watch": "jest --watch",
     "performance-each-model": "jest --testPathPattern tests/performance/performanceAllModels"
   },
