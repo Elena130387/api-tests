@@ -1,6 +1,6 @@
-import { waitWhenAllProcessDone } from "../../controller/shape/shape-controller";
-import { createGqlShape } from "../../controller/graphql/shape";
-import { smallCoordinates } from "../../requests/graphql/createShape";
+import { waitWhenAllProcessDone } from "../../../controller/shape/shape-controller";
+import { createGqlShape } from "../../../controller/graphql/shape";
+import { smallCoordinates } from "../../../requests/graphql/createShape";
 
 describe("wait when progress shape will done", function () {
   let shapeId: number;

@@ -3,8 +3,8 @@ import {
   getShape,
   getSmallObjOfShape,
   getValueByTypeLand,
-} from "../../controller/graphql/shape";
-import { jsonkeys } from "../../helper/jsonKeys";
+} from "../../../controller/graphql/shape";
+import { jsonkeys } from "../../../helper/jsonKeys";
 import {
   getIdsExecutions,
   calcValueFromResponse,
@@ -12,13 +12,13 @@ import {
   calcObjFromTile,
   calcTypeOfLandUse,
   caclCountTileFilterBuildingHeight,
-} from "../../controller/job-execution/job-executions-controller";
+} from "../../../controller/job-execution/job-executions-controller";
 
 describe("data validation for getShape Estimated Tab", function () {
   let summary: any,
     listEstimatorJobId: any[] = [],
     countTile: number;
-  const timeTest = 15000;
+  const timeTest = 20000;
 
   beforeAll(async function () {
     const idShape = await firstCompetedShapeId();
@@ -31,22 +31,20 @@ describe("data validation for getShape Estimated Tab", function () {
     "successfully calculated obj count",
     async function () {
       const { small } = summary.objects;
-      if (Object.keys(small).length) {
-        const nameSmallObj = small[0].name;
-        const firstTypeSmallObj = getSmallObjOfShape(small, nameSmallObj);
+      const nameSmallObj = small[0].name;
+      const firstTypeSmallObj = getSmallObjOfShape(small, nameSmallObj);
 
-        expect(
-          await calcValueFromResponse(
-            listEstimatorJobId,
-            jsonkeys.getObjs,
-            "object_detection",
-            undefined,
-            undefined,
-            calcObjFromTile,
-            nameSmallObj
-          )
-        ).toEqual(firstTypeSmallObj);
-      }
+      expect(
+        await calcValueFromResponse(
+          listEstimatorJobId,
+          jsonkeys.getObjs,
+          "object_detection",
+          undefined,
+          undefined,
+          calcObjFromTile,
+          nameSmallObj
+        )
+      ).toEqual(firstTypeSmallObj);
     },
     timeTest
   );

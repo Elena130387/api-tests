@@ -1,10 +1,10 @@
-import { FULLDATE, LOCAL_TIME } from "../../helper/date";
+import { FULLDATE, LOCAL_TIME } from "../../../helper/date";
 import {
   createShape,
   getShapeById,
   renameShapeById,
-} from "../../controller/shape/shape-controller";
-import { isEmpty } from "../../helper/checkValue";
+} from "../../../controller/shape/shape-controller";
+import { isEmpty } from "../../../helper/checkValue";
 
 describe("put created shape", function () {
   let shapeId = 0;

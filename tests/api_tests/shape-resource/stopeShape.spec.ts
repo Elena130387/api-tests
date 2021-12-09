@@ -1,10 +1,10 @@
-import { FULLDATE } from "../../helper/date";
+import { FULLDATE } from "../../../helper/date";
 import {
   createShape,
   waitWhenProcessStarted,
   waitWhenShapeStatusEqual,
-} from "../../controller/shape/shape-controller";
-import { stopShape } from "../../controller/graphql/shape";
+} from "../../../controller/shape/shape-controller";
+import { stopShape } from "../../../controller/graphql/shape";
 
 describe("stop creating shape", function () {
   let shapeId: number;

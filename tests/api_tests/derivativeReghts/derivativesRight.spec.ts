@@ -4,7 +4,7 @@ import {
   getCalcDerivativeRights,
   getCoordForUSA,
   getFilteredTiles,
-} from "../../controller/derivativeRights/derivative-rights-controller";
+} from "../../../controller/derivativeRights/derivative-rights-controller";
 import * as util from "util";
 
 const typeDerivativeRights = [
@@ -41,6 +41,6 @@ describe("calculated filter tile Derivative rights in one aggregated Tile", func
         }
       });
     },
-    15000
+    25000
   );
 });
