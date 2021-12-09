@@ -15,6 +15,16 @@ export const getRestBody = (
   json: obj,
   allowGetBody,
 });
+export const getRestBodyImg = (
+  method: Method,
+  body: any,
+  allowGetBody = true
+) => ({
+  rejectUnauthorized: false,
+  method,
+  body,
+  allowGetBody,
+});
 
 export const callRestAndCheckSchema = async (
   baseUrl: string,
