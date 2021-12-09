@@ -31,22 +31,20 @@ describe("data validation for getShape Estimated Tab", function () {
     "successfully calculated obj count",
     async function () {
       const { small } = summary.objects;
-      if (Object.keys(small).length) {
-        const nameSmallObj = small[0].name;
-        const firstTypeSmallObj = getSmallObjOfShape(small, nameSmallObj);
+      const nameSmallObj = small[0].name;
+      const firstTypeSmallObj = getSmallObjOfShape(small, nameSmallObj);
 
-        expect(
-          await calcValueFromResponse(
-            listEstimatorJobId,
-            jsonkeys.getObjs,
-            "object_detection",
-            undefined,
-            undefined,
-            calcObjFromTile,
-            nameSmallObj
-          )
-        ).toEqual(firstTypeSmallObj);
-      }
+      expect(
+        await calcValueFromResponse(
+          listEstimatorJobId,
+          jsonkeys.getObjs,
+          "object_detection",
+          undefined,
+          undefined,
+          calcObjFromTile,
+          nameSmallObj
+        )
+      ).toEqual(firstTypeSmallObj);
     },
     timeTest
   );
