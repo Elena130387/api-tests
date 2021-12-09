@@ -3,8 +3,8 @@ import {
   getShape,
   getSmallObjOfShape,
   getValueByTypeLand,
-} from "../../controller/graphql/shape";
-import { jsonkeys } from "../../helper/jsonKeys";
+} from "../../../controller/graphql/shape";
+import { jsonkeys } from "../../../helper/jsonKeys";
 import {
   getIdsExecutions,
   calcValueFromResponse,
@@ -12,7 +12,7 @@ import {
   calcObjFromTile,
   calcTypeOfLandUse,
   caclCountTileFilterBuildingHeight,
-} from "../../controller/job-execution/job-executions-controller";
+} from "../../../controller/job-execution/job-executions-controller";
 
 describe("data validation for getShape Estimated Tab", function () {
   let summary: any,

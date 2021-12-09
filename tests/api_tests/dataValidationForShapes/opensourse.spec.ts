@@ -1,16 +1,14 @@
-import { firstCompetedShapeId, getShape } from "../../controller/graphql/shape";
+import {
+  firstCompetedShapeId,
+  getShape,
+} from "../../../controller/graphql/shape";
 import {
   getIdsExecutions,
-  getFilteredJobExecutionsById,
   calcValueFromResponse,
   calcDateOfStats,
-} from "../../controller/job-execution/job-executions-controller";
-import { jsonkeys } from "../../helper/jsonKeys";
-/*
-Some test are skipped because a bug has not been fixed.
-See bug 17903
-https://dev.azure.com/Syncretis/EXRO/_workitems/edit/17903/
- */
+} from "../../../controller/job-execution/job-executions-controller";
+import { jsonkeys } from "../../../helper/jsonKeys";
+
 describe("data validation for getShape open sourse Tab", function () {
   let summary: any,
     listEstimatorJobId: any[] = [];

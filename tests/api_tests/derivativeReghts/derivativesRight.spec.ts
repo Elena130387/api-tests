@@ -4,7 +4,7 @@ import {
   getCalcDerivativeRights,
   getCoordForUSA,
   getFilteredTiles,
-} from "../../controller/derivativeRights/derivative-rights-controller";
+} from "../../../controller/derivativeRights/derivative-rights-controller";
 import * as util from "util";
 
 const typeDerivativeRights = [

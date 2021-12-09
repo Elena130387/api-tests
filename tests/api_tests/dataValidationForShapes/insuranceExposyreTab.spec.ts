@@ -1,12 +1,14 @@
-import { firstCompetedShapeId, getShape } from "../../controller/graphql/shape";
+import {
+  firstCompetedShapeId,
+  getShape,
+} from "../../../controller/graphql/shape";
 import {
   getIdsExecutions,
-  getFilteredJobExecutionsById,
   calcValueFromResponse,
-} from "../../controller/job-execution/job-executions-controller";
-import { jsonkeys } from "../../helper/jsonKeys";
+} from "../../../controller/job-execution/job-executions-controller";
+import { jsonkeys } from "../../../helper/jsonKeys";
 
-describe("data validation for getShape economic Exposure Tab", function () {
+describe("data validation for getShape insurance Exposure Tab", function () {
   let summary: any,
     listEstimatorJobId: any[] = [];
 
@@ -17,14 +19,16 @@ describe("data validation for getShape economic Exposure Tab", function () {
   });
 
   it("successfully calculated value Economic Exposure", async function () {
-    const { economicExposure } = summary;
+    const { insuranceExposure } = summary;
+    let sumInsuranceExposure = 0;
+    insuranceExposure.forEach((el: any) => (sumInsuranceExposure += el.value));
     expect(
       await calcValueFromResponse(
         listEstimatorJobId,
-        jsonkeys.economicExposure,
+        jsonkeys.insuranceExposure,
         "exposure_values",
         "V2"
       )
-    ).toEqual(economicExposure);
+    ).toEqual(sumInsuranceExposure);
   });
 });

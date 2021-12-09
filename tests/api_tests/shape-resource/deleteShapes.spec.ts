@@ -2,7 +2,7 @@ import {
   deleteShapeById,
   getAllidFromSortListShapesByName,
   getShapeById,
-} from "../../controller/shape/shape-controller";
+} from "../../../controller/shape/shape-controller";
 
 describe("delete all shape with name=`autotest, create from`", function () {
   const NAME = `autotest, create form`,

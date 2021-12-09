@@ -38,4 +38,4 @@ jobs:
         inputs:
           targetType: 'inline'
           script: |
-            yarn jest --testPathIgnorePatterns tests/performance tests/regressionTest
+            yarn jest --testPathPattern tests/api_test
