@@ -10,9 +10,7 @@ describe("object detection model performance", function () {
   beforeAll(async function () {
     for (const item of numbersRuns) {
       const start_time = performance.now();
-      await getObjectDetectionModel(
-        "helper/compareWithReference/referenceTile/florida.jpg"
-      );
+      await getObjectDetectionModel(`florida`, "default");
       const end_time = performance.now();
       timeArr.push(end_time - start_time);
     }
