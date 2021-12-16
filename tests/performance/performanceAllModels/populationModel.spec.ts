@@ -10,9 +10,7 @@ describe("population model performance", function () {
   beforeAll(async function () {
     for (const item of numbersRuns) {
       const start_time = performance.now();
-      await getPopulationModel(
-        "helper/compareWithReference/referenceTile/florida.jpg"
-      );
+      await getPopulationModel(`florida`);
       const end_time = performance.now();
       timeArr.push(end_time - start_time);
     }
