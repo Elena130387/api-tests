@@ -10,5 +10,12 @@ const fs = require("fs");
 export const getBuildingRoofModel = async (imgPath: string) =>
   callRestApi(
     `${BUILDINGROOFS_URL}`,
-    getRestBodyImg("POST", Buffer.from(fs.readFileSync(imgPath)))
+    getRestBodyImg(
+      "POST",
+      Buffer.from(
+        fs.readFileSync(
+          `helper/compareWithReference/regression_for_all_models/tiles/defaultTiles/${imgPath}.jpg`
+        )
+      )
+    )
   );
