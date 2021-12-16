@@ -11,7 +11,7 @@ describe("building roof model performance", function () {
     for (const item of numbersRuns) {
       const start_time = performance.now();
       await getBuildingRoofModel(
-        "helper/compareWithReference/referenceTile/tileForPerformance.jpg"
+        "helper/compareWithReference/referenceTile/florida.jpg"
       );
       const end_time = performance.now();
       timeArr.push(end_time - start_time);

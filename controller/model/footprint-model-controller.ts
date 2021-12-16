@@ -7,8 +7,14 @@ export const FOOTPRINTS_URL = process.env.TEST_ENV
   ? `${DEMO_URL}${FOOTPRINT}`
   : `${MAIN_URL}${FOOTPRINT}`;
 
-export const getFootprintModel = async (coord: any, imgPath: string) =>
+export const getFootprintModel = async (coord: any, imgName: string) =>
   callRestApi(
     `${FOOTPRINTS_URL}`,
-    getRestBody("POST", await footprintObj(coord, imgPath))
+    getRestBody(
+      "POST",
+      await footprintObj(
+        coord,
+        `helper/compareWithReference/regression_for_all_models/tiles/defaultTiles/${imgName}.jpg`
+      )
+    )
   );

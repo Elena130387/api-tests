@@ -7,8 +7,17 @@ export const OBJECTDETECTIONS_URL = process.env.TEST_ENV
   ? `${DEMO_URL}${OBJECTDETECTION}`
   : `${MAIN_URL}${OBJECTDETECTION}`;
 
-export const getObjectDetectionModel = async (imgPath: string) =>
+export const getObjectDetectionModel = async (
+  imgName: string,
+  source: string
+) =>
   callRestApi(
     `${OBJECTDETECTIONS_URL}`,
-    getRestBody("POST", await objectDetectionObj(imgPath))
+    getRestBody(
+      "POST",
+      await objectDetectionObj(
+        `helper/compareWithReference/regression_for_all_models/tiles/${imgName}.jpg`,
+        source
+      )
+    )
   );

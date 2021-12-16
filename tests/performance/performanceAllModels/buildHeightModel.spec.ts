@@ -1,4 +1,4 @@
-import { coordForPerformance } from "../../../helper/compareWithReference/referenceTile/coordForTile/coordForPerformance";
+import { florida } from "../../../helper/compareWithReference/referenceTile/coordForTile/florida";
 import { arrayAverage } from "../../../helper/arrayProcessing";
 import {
   getBuildHeightModelV1,
@@ -26,8 +26,8 @@ describe("building height model performance", function () {
         for (const item of numbersRuns) {
           const start_time = performance.now();
           await func(
-            coordForPerformance,
-            "helper/compareWithReference/referenceTile/tileForPerformance.jpg"
+            florida,
+            "helper/compareWithReference/referenceTile/florida.jpg"
           );
           const end_time = performance.now();
           timeArr.push(end_time - start_time);

@@ -3,7 +3,7 @@ import {
   waitWhenShapeStatusEqual,
 } from "../../controller/shape/shape-controller";
 import { DATE } from "../../helper/date";
-import * as referenceData from "../../helper/compareWithReference/index";
+import * as referenceData from "../../helper/compareWithReference/referenceShapes/index";
 import { referenceShape } from "../../requests/shape-resource/createNewShape";
 import { getListWithErorrsValue } from "../../helper/jsonProcessing";
 import { toFile, toFileReferenceData } from "../../helper/exportFile";

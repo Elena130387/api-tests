@@ -1,5 +1,5 @@
 import { getFootprintModel } from "../../../controller/model/footprint-model-controller";
-import { coordForPerformance } from "../../../helper/compareWithReference/referenceTile/coordForTile/coordForPerformance";
+import { florida } from "../../../helper/compareWithReference/referenceTile/coordForTile/florida";
 import { arrayAverage } from "../../../helper/arrayProcessing";
 import { sendReportToConfluenceForSecondTable } from "../../../controller/confluence/confluence-controller";
 
@@ -12,8 +12,8 @@ describe("footprintModel performance", function () {
     for (const item of numbersRuns) {
       const start_time = performance.now();
       await getFootprintModel(
-        coordForPerformance,
-        "helper/compareWithReference/referenceTile/tileForPerformance.jpg"
+        florida,
+        "helper/compareWithReference/referenceTile/florida.jpg"
       );
       const end_time = performance.now();
       timeArr.push(end_time - start_time);

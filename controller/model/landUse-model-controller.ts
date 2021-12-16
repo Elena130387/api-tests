@@ -10,5 +10,10 @@ export const LANDUSES_URL = process.env.TEST_ENV
 export const getLandUseModel = async (imgPath: string) =>
   callRestApi(
     `${LANDUSES_URL}`,
-    getRestBody("POST", await landUseObj(imgPath))
+    getRestBody(
+      "POST",
+      await landUseObj(
+        `helper/compareWithReference/regression_for_all_models/tiles/defaultTiles/${imgPath}.jpg`
+      )
+    )
   );
