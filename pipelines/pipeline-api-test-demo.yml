@@ -38,12 +38,6 @@ jobs:
           targetType: 'inline'
           script: 'npm install yarn && yarn install'
       - task: Bash@3
-        displayName: 'get ip'
-        inputs:
-          targetType: 'inline'
-          script: |
-            hostname --ip-address
-      - task: Bash@3
         displayName: 'Run tests'
         inputs:
           targetType: 'inline'
