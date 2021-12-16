@@ -10,7 +10,7 @@ describe("object detection model performance", function () {
   beforeAll(async function () {
     for (const item of numbersRuns) {
       const start_time = performance.now();
-      await getObjectDetectionModel(`defaultTiles/florida`, "default");
+      await getObjectDetectionModel(`florida`, "default");
       const end_time = performance.now();
       timeArr.push(end_time - start_time);
     }
