@@ -1,0 +1,55 @@
+trigger: none
+
+name: $(Date:dd-MM-yyyy_HH-mm)
+
+# variables:
+# - group: test-credentials
+
+pool: Default
+
+resources:
+  containers:
+    - container: node
+      image: node:15
+
+jobs:
+  - job: Tests
+    timeoutInMinutes: 10
+    displayName: Regression_test
+    workspace:
+      clean: all
+    container: node
+    variables:
+      - name: NODE_OPTIONS
+        value: --max-old-space-size=8192
+    steps:
+      - task: Bash@3
+        displayName: 'install dependency'
+        inputs:
+          targetType: 'inline'
+          script: 'npm install yarn && yarn install'
+      - task: Bash@3
+        displayName: 'Run tests'
+        inputs:
+          targetType: 'inline'
+          script: |
+            yarn jest --testPathPattern tests/regressionTest/models/segmentation/objectDetectionSegmentation.spec.ts
+      - task: CopyFiles@2
+        condition: succeededOrFailed()
+        inputs:
+          sourceFolder: '$(Build.SourcesDirectory)/reports'
+          contents: '**/*'
+          targetFolder: '$(Build.ArtifactStagingDirectory)'
+        displayName: Copy Reports
+      - task: PublishBuildArtifacts@1
+        condition: succeededOrFailed()
+        inputs:
+          pathToPublish: '$(Build.ArtifactStagingDirectory)'
+          artifactName: Reports
+        displayName: Publish Reports
+      - task: PublishTestResults@2
+        condition: succeededOrFailed()
+        inputs:
+          testResultsFiles: '$(Build.SourcesDirectory)/reports/*.xml'
+          failTaskOnFailedTests: true # Optional
+        displayName: Publish test Results to AzureDevops

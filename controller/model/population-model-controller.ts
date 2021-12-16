@@ -7,8 +7,13 @@ export const POPULATIONS_URL = process.env.TEST_ENV
   ? `${DEMO_URL}${POPULATION}`
   : `${MAIN_URL}${POPULATION}`;
 
-export const getPopulationModel = async (imgPath: string) =>
+export const getPopulationModel = async (imgName: string) =>
   callRestApi(
     `${POPULATIONS_URL}`,
-    getRestBody("POST", await populationObj(imgPath))
+    getRestBody(
+      "POST",
+      await populationObj(
+        `helper/compareWithReference/regression_for_all_models/tiles/populationModels/${imgName}.jpg`
+      )
+    )
   );

@@ -1,0 +1,59 @@
+{
+  "stats": {
+    "incomePerCapita": 26608,
+    "housingUnitsTotal": 13771,
+    "population": 25083,
+    "unitsInStructure1": 11018,
+    "unitsInStructure2to9": 1043,
+    "unitsInStructure10to19": 117,
+    "unitsInStructure20more": 221,
+    "unitsInStructureMobile": 1372,
+    "totalUnits": 7196,
+    "averageUnitPrice": 207354,
+    "medianUnitPrice": 128937
+  },
+  "landUseModel": [
+    {
+      "label": "RESIDENTIAL",
+      "probability": 0.8066489696502685,
+      "order": 0
+    },
+    {
+      "label": "NATURE",
+      "probability": 0.41170069575309753,
+      "order": 1
+    },
+    {
+      "label": "CULTIVATED",
+      "probability": 0.22850915789604187,
+      "order": 2
+    },
+    {
+      "label": "RIGHTOFWAY",
+      "probability": 0.17469307780265808,
+      "order": 3
+    },
+    {
+      "label": "OTHERIMP",
+      "probability": 0.07831627130508423,
+      "order": 4
+    },
+    {
+      "label": "COMMERCIAL",
+      "probability": 0.07176646590232849,
+      "order": 5
+    },
+    {
+      "label": "INDUSTRIAL",
+      "probability": 0.022156089544296264,
+      "order": 6
+    }
+  ],
+  "buildingHeightModel": {
+    "heightMeanEstimate": 3.165809206058607,
+    "heightMeanOpensourcedata": -1
+  },
+  "buildingCoverageModel": {
+    "value": 0.2276458740234375
+  }
+}

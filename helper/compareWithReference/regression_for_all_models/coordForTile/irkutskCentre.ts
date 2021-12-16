@@ -1,0 +1,6 @@
+export const irkutskCentre = {
+  latNW: 52.28909090909091,
+  lonNW: 104.28947368421052,
+  latSE: 52.28818181818182,
+  lonSE: 104.2909356725146,
+};
