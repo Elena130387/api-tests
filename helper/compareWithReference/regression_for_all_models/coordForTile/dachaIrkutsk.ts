@@ -1,0 +1,6 @@
+export const dachaIrkutsk = {
+  latNW: 52.29363636363636,
+  lonNW: 104.22514619883042,
+  latSE: 52.29272727272727,
+  lonSE: 104.2266081871345,
+};

@@ -9,7 +9,7 @@ import {
 } from "../../../controller/job-execution/job-executions-controller";
 import { jsonkeys } from "../../../helper/jsonKeys";
 
-describe("data validation for getShape open sourse Tab", function () {
+describe("data validation for getShape open source Tab", function () {
   let summary: any,
     listEstimatorJobId: any[] = [];
   const timeTest = 20000;
