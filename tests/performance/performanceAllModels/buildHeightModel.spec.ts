@@ -3,7 +3,6 @@ import { arrayAverage } from "../../../helper/arrayProcessing";
 import {
   getBuildHeightModelV1,
   getBuildHeightModelV2,
-  getBuildHeightModelV3,
 } from "../../../controller/model/buildHeight-model-controller";
 import * as util from "util";
 import { sendReportToConfluenceForSecondTable } from "../../../controller/confluence/confluence-controller";
@@ -13,7 +12,6 @@ const numbersRuns = Array.from(Array(50).keys());
 const requestsForBuildingHeight = [
   getBuildHeightModelV1,
   getBuildHeightModelV2,
-  getBuildHeightModelV3,
 ];
 
 describe("building height model performance", function () {
