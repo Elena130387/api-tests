@@ -14,7 +14,7 @@ export const getBuildingRoofModel = async (imgPath: string) =>
       "POST",
       Buffer.from(
         fs.readFileSync(
-          "helper/compareWithReference/regression_for_all_models/tiles/defaultTiles/florida.jpg"
+          `helper/compareWithReference/regression_for_all_models/tiles/defaultTiles/${imgPath}.jpg`
         )
       )
     )
