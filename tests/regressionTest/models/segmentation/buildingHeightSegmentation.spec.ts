@@ -4,18 +4,18 @@ import * as referencePolygonsForEachTile from "../../../../helper/compareWithRef
 import {
   createPNGDifferentBetweenMasks,
   createPNGMaskPolygonsForTile,
-} from "../../../helper/compareWithReference/imageProcessing";
+} from "../../../../helper/compareWithReference/imageProcessing";
 import {
   copyTileToReportDir,
   createReportsDirs,
   toFile,
-} from "../../../helper/exportFile";
-import { createReportModelsRegression } from "../../../helper/createReports/regressionModelsReportHTML";
+} from "../../../../helper/exportFile";
+import { createReportModelsRegression } from "../../../../helper/createReports/regressionModelsReportHTML";
 import {
   calcIoUClassBuildings,
   calcIoUClassNoneBuildings,
   getIoUForEachClassBuildings,
-} from "../../../helper/calcIntersectionOverUnion";
+} from "../../../../helper/calcIntersectionOverUnion";
 
 describe("comparisons of reference data with current for 1 tile Building Height model", function () {
   const typeModel = "buildingHeightV2";
