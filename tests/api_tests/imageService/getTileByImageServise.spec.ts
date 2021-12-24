@@ -1,10 +1,14 @@
 import { getImageTile } from "../../../controller/imageService/image-service-controller";
 import {
-  connectDB,
-  disconnectDB,
+  connectMongoDB,
+  disconnectMongoDB,
   findByKeyInMongoDB,
   removeByKeyInMongoDB,
+  urlMongoDB,
 } from "../../../controller/mongoDB-conncection";
+
+const { MongoClient } = require("mongodb");
+const client = new MongoClient(urlMongoDB);
 
 describe("check serviceImage", function () {
   const keyForSearching = "38.38_-110.4_38.39_-110.41_16";
@@ -16,10 +20,10 @@ describe("check serviceImage", function () {
   };
   const mapProviders = ["bing", "google"];
   beforeAll(async function () {
-    await connectDB();
+    await connectMongoDB();
   });
   afterAll(async function () {
-    await disconnectDB();
+    await disconnectMongoDB();
   });
   afterEach(async function () {
     await removeByKeyInMongoDB(keyForSearching);
