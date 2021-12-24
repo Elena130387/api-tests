@@ -4,11 +4,11 @@ export const urlMongoDB =
 const client = new MongoClient(urlMongoDB);
 const dbName = "exro-imageservice-db";
 
-export const connectDB = async () => {
+export const connectMongoDB = async () => {
   await client.connect();
 };
 
-export const disconnectDB = async () => {
+export const disconnectMongoDB = async () => {
   await client.close();
 };
 

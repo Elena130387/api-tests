@@ -1,7 +1,7 @@
 import { getImageTile } from "../../../controller/imageService/image-service-controller";
 import {
-  connectDB,
-  disconnectDB,
+  connectMongoDB,
+  disconnectMongoDB,
   findByKeyInMongoDB,
   removeByKeyInMongoDB,
 } from "../../../controller/mongoDB-conncection";
@@ -16,10 +16,10 @@ describe("check serviceImage", function () {
   };
   const mapProviders = ["bing", "google"];
   beforeAll(async function () {
-    await connectDB();
+    await connectMongoDB();
   });
   afterAll(async function () {
-    await disconnectDB();
+    await disconnectMongoDB();
   });
   afterEach(async function () {
     await removeByKeyInMongoDB(keyForSearching);
