@@ -4,8 +4,15 @@ export const urlMongoDB =
 const client = new MongoClient(urlMongoDB);
 const dbName = "exro-imageservice-db";
 
-export const findByKeyInMongoDB = async (key: string) => {
+export const connectDB = async () => {
   await client.connect();
+};
+
+export const disconnectDB = async () => {
+  await client.close();
+};
+
+export const findByKeyInMongoDB = async (key: string) => {
   const db = client.db(dbName);
   const collection = db.collection("satellite-images");
   const elements = await collection.find({ key: key }).toArray();
@@ -14,7 +21,6 @@ export const findByKeyInMongoDB = async (key: string) => {
 };
 
 export const removeByKeyInMongoDB = async (key: string) => {
-  await client.connect();
   const db = client.db(dbName);
   const collection = db.collection("satellite-images");
   await collection.deleteMany({ key: key });
