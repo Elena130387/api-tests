@@ -14,7 +14,7 @@ resources:
 
 jobs:
   - job: Tests
-    timeoutInMinutes: 10
+    timeoutInMinutes: 15
     displayName: api_Tests
     workspace:
       clean: all
@@ -38,7 +38,7 @@ jobs:
         inputs:
           targetType: 'inline'
           script: |
-            yarn jest --testPathPattern tests/api_test --globalSetup ./setupBeforeAllTest.ts  --globalTeardown ./setupAfterAllTest.ts
+            yarn jest --testPathPattern tests/api_test --detectOpenHandles --globalSetup ./setupBeforeAllTest.ts  --globalTeardown ./setupAfterAllTest.ts
       - task: PublishTestResults@2
         condition: succeededOrFailed()
         inputs:

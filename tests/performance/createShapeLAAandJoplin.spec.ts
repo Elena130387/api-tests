@@ -30,7 +30,7 @@ describe("create shapes LAA and Joplin", function () {
       JSON.stringify(objReport),
       `LAandJoplinReportPreprocessing${!forceProcessing}`
     );
-  }, 100000);
+  }, 600000);
 
   it("successfully create LA shape", async function () {
     const NAME = `LA airport and downtown. Performance test: ${FULLDATE}`;
@@ -43,7 +43,7 @@ describe("create shapes LAA and Joplin", function () {
     );
     id = response.data.calculate.id;
     await waitWhenShapeStatusEqual(id);
-  }, 100000);
+  }, 600000);
 
   it("successfully create joplin shape", async function () {
     const NAME = `Joplin. Performance test: ${FULLDATE}`;
@@ -62,5 +62,5 @@ describe("create shapes LAA and Joplin", function () {
     await waitWhenProgressEqual(jobIds[0], 2000);
 
     await waitWhenShapeStatusEqual(id);
-  }, 500000);
+  }, 600000);
 });

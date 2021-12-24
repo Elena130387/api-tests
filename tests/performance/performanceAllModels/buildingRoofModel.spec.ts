@@ -4,13 +4,13 @@ import { sendReportToConfluenceForSecondTable } from "../../../controller/conflu
 
 const { performance } = require("perf_hooks");
 const numbersRuns = Array.from(Array(50).keys());
-
-describe("building roof model performance", function () {
+//resize 224x224 => 256x256
+describe.skip("building roof model performance", function () {
   let timeArr: any = [];
   beforeAll(async function () {
     for (const item of numbersRuns) {
       const start_time = performance.now();
-      await getBuildingRoofModel(`florida`);
+      await getBuildingRoofModel("sss");
       const end_time = performance.now();
       timeArr.push(end_time - start_time);
     }
