@@ -6,7 +6,7 @@ parameters:
 
 
 steps:
-  - ${{if eq(parametrs.chooseDirTest,true)}}:
+  - ${{if eq(parameters.chooseDirTest,true)}}:
       - task: Bash@3
         displayName: 'Run tests'
         inputs:
