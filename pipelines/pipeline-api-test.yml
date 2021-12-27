@@ -34,27 +34,27 @@ jobs:
           targetType: 'inline'
           script: sleep 1m
       - template: template/run-api-test.yml
-        parametrs:
+        parameters:
           chooseDirTest: ${{ parameters.dataValidationForShapes }}
           yarnScript: dataValidationForShapes
       - template: template/run-api-test.yml
-        parametrs:
+        parameters:
           chooseDirTest: ${{ parameters.derivativeRights }}
           yarnScript: derivativeReghts
       - template: template/run-api-test.yml
-        parametrs:
+        parameters:
           chooseDirTest: ${{ parameters.graphql }}
           yarnScript: graphql
       - template: template/run-api-test.yml
-        parametrs:
+        parameters:
           chooseDirTest: ${{ parameters.imageService }}
           yarnScript: imageService
       - template: template/run-api-test.yml
-        parametrs:
+        parameters:
           chooseDirTest: ${{ parameters.jobExecutions }}
           yarnScript: job-executions
       - template: template/run-api-test.yml
-        parametrs:
+        parameters:
           chooseDirTest: ${{ parameters.shapeResource }}
           yarnScript: shape-resource
 

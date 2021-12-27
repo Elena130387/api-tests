@@ -1,5 +1,6 @@
 parameters:
   - name: yarnScript
+    type: string
   - name: chooseDirTest
     type: boolean
 
