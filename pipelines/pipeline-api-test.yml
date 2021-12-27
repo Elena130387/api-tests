@@ -37,27 +37,27 @@ jobs:
       - template: template/run-api-test.yml
         parametrs:
           chooseDirTest: ${{ parameters.dataValidationForShapes }}
-          yarnScript: dataValidationForShapes
+          yarnScript: 'dataValidationForShapes'
       - template: template/run-api-test.yml
         parametrs:
           chooseDirTest: ${{ parameters.derivativeRights }}
-          yarnScript: derivativeReghts
+          yarnScript: 'derivativeReghts'
       - template: template/run-api-test.yml
         parametrs:
           chooseDirTest: ${{ parameters.graphql }}
-          yarnScript: graphql
+          yarnScript: 'graphql'
       - template: template/run-api-test.yml
         parametrs:
           chooseDirTest: ${{ parameters.imageService }}
-          yarnScript: imageService
+          yarnScript: 'imageService'
       - template: template/run-api-test.yml
         parametrs:
           chooseDirTest: ${{ parameters.jobExecutions }}
-          yarnScript: job-executions
+          yarnScript: 'job-executions'
       - template: template/run-api-test.yml
         parametrs:
           chooseDirTest: ${{ parameters.shapeResource }}
-          yarnScript: shape-resource
+          yarnScript: 'shape-resource'
 
       - task: PublishTestResults@2
         condition: succeededOrFailed()
