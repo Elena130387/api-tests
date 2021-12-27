@@ -8,9 +8,9 @@ parameters:
     type: boolean
   - name: imageService
     type: boolean
-  - name: job-executions
+  - name: jobExecutions
     type: boolean
-  - name: shape-resource
+  - name: shapeResource
     type: boolean
 
 jobs:
@@ -52,11 +52,11 @@ jobs:
           yarnScript: imageService
       - template: template/run-api-test.yml
         parametrs:
-          chooseDirTest: ${{ parameters.job-executions }}
+          chooseDirTest: ${{ parameters.jobExecutions }}
           yarnScript: job-executions
       - template: template/run-api-test.yml
         parametrs:
-          chooseDirTest: ${{ parameters.shape-resource }}
+          chooseDirTest: ${{ parameters.shapeResource }}
           yarnScript: shape-resource
 
       - task: PublishTestResults@2
