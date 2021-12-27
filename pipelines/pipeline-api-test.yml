@@ -8,9 +8,9 @@ parameters:
 
 steps:
   - ${{if eq(parametrs.chooseDirTest,true)}}
-  - task: Bash@3
-    displayName: 'Run tests'
-    inputs:
-      targetType: 'inline'
-      script: |
-        yarn jest --testPathPattern tests/api_test/${{parameters.yarnScript}} --globalSetup ./setupBeforeAllTest.ts  --globalTeardown ./setupAfterAllTest.ts
+    - task: Bash@3
+      displayName: 'Run tests'
+      inputs:
+        targetType: 'inline'
+        script: |
+          yarn jest --testPathPattern tests/api_test/${{parameters.yarnScript}} --globalSetup ./setupBeforeAllTest.ts  --globalTeardown ./setupAfterAllTest.ts
