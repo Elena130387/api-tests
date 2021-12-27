@@ -1,16 +1,67 @@
+
 parameters:
-  - name: yarnScript
-    type: string
-    default: ''
-  - name: chooseDirTest
+  - name: dataValidationForShapes
+    type: boolean
+  - name: derivativeRights
+    type: boolean
+  - name: graphql
+    type: boolean
+  - name: imageService
+    type: boolean
+  - name: job-executions
+    type: boolean
+  - name: shape-resource
     type: boolean
 
+jobs:
+  - job: Tests
+    timeoutInMinutes: 15
+    displayName: api_Tests
+    workspace:
+      clean: all
+    container: node
+    variables:
+      - name: NODE_OPTIONS
+        value: --max-old-space-size=8192
+    steps:
+      - task: Bash@3
+        displayName: 'install dependency'
+        inputs:
+          targetType: 'inline'
+          script: 'npm install yarn && yarn install'
+      - task: Bash@3
+        displayName: 'waiting for the end of the deployment'
+        inputs:
+          targetType: 'inline'
+          script: sleep 1m
+      - template: template/run-api-test.yml
+        parametrs:
+          chooseDirTest: ${{ parameters.dataValidationForShapes }}
+          yarnScript: dataValidationForShapes
+      - template: template/run-api-test.yml
+        parametrs:
+          chooseDirTest: ${{ parameters.derivativeRights }}
+          yarnScript: derivativeReghts
+      - template: template/run-api-test.yml
+        parametrs:
+          chooseDirTest: ${{ parameters.graphql }}
+          yarnScript: graphql
+      - template: template/run-api-test.yml
+        parametrs:
+          chooseDirTest: ${{ parameters.imageService }}
+          yarnScript: imageService
+      - template: template/run-api-test.yml
+        parametrs:
+          chooseDirTest: ${{ parameters.job-executions }}
+          yarnScript: job-executions
+      - template: template/run-api-test.yml
+        parametrs:
+          chooseDirTest: ${{ parameters.shape-resource }}
+          yarnScript: shape-resource
 
-steps:
-  - ${{if eq(parametrs.chooseDirTest,true)}}:
-    - task: Bash@3
-      displayName: 'Run tests'
-      inputs:
-        targetType: 'inline'
-        script: |
-          yarn jest --testPathPattern tests/api_test/${{parameters.yarnScript}} --globalSetup ./setupBeforeAllTest.ts  --globalTeardown ./setupAfterAllTest.ts
+      - task: PublishTestResults@2
+        condition: succeededOrFailed()
+        inputs:
+          testResultsFiles: '$(Build.SourcesDirectory)/reports/*.xml'
+          failTaskOnFailedTests: true # Optional
+        displayName: Publish test Results to AzureDevops
